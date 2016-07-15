@@ -1,0 +1,7 @@
+<script>/// write to file
+jQuery.get('text.txt', function(data) {
+   alert(data);
+   //process text file line by line
+   $('#div').html(data.replace('n',''));
+});
+</script>
