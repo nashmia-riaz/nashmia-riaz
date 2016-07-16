@@ -22,6 +22,7 @@ $(function () { // Same as document.addEventListener("DOMContentLoaded"...
 
 var dc = {};
 var nr = {};
+dc.history=[];
 var homeHtml = "snippets/home-snippet.html";
 var allCategoriesUrl =
   "https://davids-restaurant.herokuapp.com/categories.json";
@@ -71,31 +72,34 @@ var switchMenuToActive = function () {
 
 // On page load (before images or CSS)
 document.addEventListener("DOMContentLoaded", function (event) {
-
-// On first load, show home view
-showLoading("#main-content");
-$ajaxUtils.sendGetRequest(
-  homeHtml,
-  function (responseText) {
-    document.querySelector("#main-content")
-      .innerHTML = responseText;
-  },
-  false);
+    dc.loadHome();
 });
 
+
+dc.loadHome = function(){
+  // On first load, show home view
+  showLoading("#main-content");
+  $ajaxUtils.sendGetRequest(
+    homeHtml,
+    function (responseText) {
+      document.querySelector("#main-content")
+        .innerHTML = responseText;
+    },
+    false);
+}
 /**************** BUILD ARTWORKS PAGE *********************/
-dc.loadArt = function(){
-  $.getJSON('text.json', function(data) {
+dc.loadArt = function(type){
+  showLoading("#main-content");
+  $.getJSON('/misc/'+type+'.json', function(data) {
   var finalHtml = "<div class='container'><div class='row' id='artGrid'>";
   var c=0;
-  console.log(data);
   for (var i=0; i<data.length; i++){
     c++;
     var imageFileName = data[i].image.filename;
     var imageName = data[i].image.name;
     var imageDate = data[i].image.date;
     finalHtml += "<section id='column"+c+"' class='col-lg-4 col-sm-6'> <div id='artwork'>"+
-    "<a id='pictureLink' href='#' onclick="+'"'+"$dc.loadPicture('"+imageFileName+"');"+'"'+"><img id='pictureArt'src="+"'images/artworks/"+imageFileName+"'"+"></a>"
+    "<a id='pictureLink' href='#' onclick="+'"'+"$dc.loadPicture('"+imageFileName+"','"+type+"');"+'"'+"><img id='pictureArt'src="+"'images/"+type+"/"+imageFileName+"'"+"></a>"
     +"<div id='details'><p id='imgName'>"+imageName+"</p><p id='imgDate'>"+imageDate+"</p></div></img></div></section>";
     if (c==3){
       c=0;    
@@ -110,9 +114,10 @@ dc.loadArt = function(){
 }
 /**********************************************************/
 
-dc.loadPicture = function(filename){
+dc.loadPicture = function(filename, path){
   showLoading("#main-content");
-  finalHtml = "<img id='singleImg' src='/images/artworks/"+filename+"'>";
+  console.log(path);
+  finalHtml = "<img id='singleImg' src='images/"+path+"/"+filename+"'>";
   insertHtml("#main-content", finalHtml);
 };
 
@@ -321,11 +326,31 @@ function insertItemPortionName(html,
 
 global.$dc = dc;
 
+
+
+
 })(window);
 /************************* SLOWLY SCROLL TO TOP ******************************/
 $(document).ready(function(){
   
-  //Check to see if the window is top if not then display button
+  if($("body").is(":hover")){
+    window.innerDocClick = true;
+  }
+  else{
+    window.innerDocClick = false;
+  }
+  window.onhashchange =function()
+  {    
+      if(!window.innerDocClick) {
+          //Browser back button was clicked
+          $dc.history.pop();
+          console.log($dc.history);
+          var back = $dc.history.pop();
+          back();
+
+      }
+  }
+    //Check to see if the window is top if not then display button
   $(window).scroll(function(){
     if ($(this).scrollTop() > 100) {
       $('#backtotop').fadeIn(500);
@@ -342,4 +367,3 @@ $(document).ready(function(){
   
 });
 /*****************************************************************************/
-
