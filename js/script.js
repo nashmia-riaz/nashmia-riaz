@@ -72,14 +72,15 @@ var switchMenuToActive = function () {
 
 // On page load (before images or CSS)
 document.addEventListener("DOMContentLoaded", function (event) {
-    dc.loadHome();
+    $dc.loadHome();
+    history.pushState('$dc.loadHome()','index.html#','index.html#');
 });
 
 
 dc.loadHome = function(){
   // On first load, show home view
   showLoading("#main-content");
-  $ajaxUtils.sendGetRequest(
+    $ajaxUtils.sendGetRequest(
     homeHtml,
     function (responseText) {
       document.querySelector("#main-content")
@@ -87,6 +88,8 @@ dc.loadHome = function(){
     },
     false);
 }
+
+
 /**************** BUILD ARTWORKS PAGE *********************/
 dc.loadArt = function(type){
   showLoading("#main-content");
@@ -98,8 +101,11 @@ dc.loadArt = function(type){
     var imageFileName = data[i].image.filename;
     var imageName = data[i].image.name;
     var imageDate = data[i].image.date;
+    var loc= "($dc.loadPicture(\'"+imageFileName+"\',\'"+type+"\'))" ;
     finalHtml += "<section id='column"+c+"' class='col-lg-4 col-sm-6'> <div id='artwork'>"+
-    "<a id='pictureLink' href='#' onclick="+'"'+"$dc.loadPicture('"+imageFileName+"','"+type+"');"+'"'+"><img id='pictureArt'src="+"'images/"+type+"/"+imageFileName+"'"+"></a>"
+    "<a id='pictureLink' href='#' onclick=\"(function(){"+
+    "$dc.loadPicture('"+imageFileName+"','"+type+"');\n"+
+    "}());\"><img id='pictureArt'src='images/"+type+"/"+imageFileName+"'></a>"
     +"<div id='details'><p id='imgName'>"+imageName+"</p><p id='imgDate'>"+imageDate+"</p></div></img></div></section>";
     if (c==3){
       c=0;    
@@ -111,14 +117,18 @@ dc.loadArt = function(type){
     finalHtml+="</div></div>";
     insertHtml("#main-content", finalHtml);
 });
+  // history.pushState(loc,null,null);
 }
 /**********************************************************/
-
-dc.loadPicture = function(filename, path){
+dc.loadImg = function(filename, path){
   showLoading("#main-content");
-  console.log(path);
   finalHtml = "<img id='singleImg' src='images/"+path+"/"+filename+"'>";
   insertHtml("#main-content", finalHtml);
+};
+dc.loadPicture = function(filename, path){
+  $dc.loadImg(filename,path);
+  var loc= "$dc.loadImg('"+filename+"','"+path+"')";
+  history.pushState(loc,null,null);
 };
 
 // Load the menu categories view
@@ -332,26 +342,9 @@ global.$dc = dc;
 })(window);
 /************************* SLOWLY SCROLL TO TOP ******************************/
 $(document).ready(function(){
-  
-  if($("body").is(":hover")){
-    window.innerDocClick = true;
-  }
-  else{
-    window.innerDocClick = false;
-  }
-  window.onhashchange =function()
-  {    
-      if(!window.innerDocClick) {
-          //Browser back button was clicked
-          $dc.history.pop();
-          console.log($dc.history);
-          var back = $dc.history.pop();
-          back();
 
-      }
-  }
     //Check to see if the window is top if not then display button
-  $(window).scroll(function(){
+  $('#scroller').scroll(function() {
     if ($(this).scrollTop() > 100) {
       $('#backtotop').fadeIn(500);
     } else {
@@ -367,3 +360,10 @@ $(document).ready(function(){
   
 });
 /*****************************************************************************/
+
+window.onpopstate = function(event) {    
+    if(event && event.state) {
+        console.log(event.state);
+        eval(event.state);
+    }
+}
