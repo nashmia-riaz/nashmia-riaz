@@ -102,15 +102,16 @@ text-decoration: none;
   bottom:   5px;
   left:auto;
   right:5px;
+  display: block;
 }
 
 #backtotop img:hover,#backtotop img:focus {
   background: #74446d;
-  -webkit-animation: bgfadein 0.5s; /* Safari, Chrome and Opera > 12.1 */
-   -moz-animation: bgfadein 0.5s; /* Firefox < 16 */
-    -ms-animation: bgfadein 0.5s; /* Internet Explorer */
-     -o-animation: bgfadein 0.5; /* Opera < 12.1 */
-        animation: bgfadein 0.5s;
+-webkit-transition: all 0.5s ease-in-out; /* Safari, Chrome and Opera > 12.1 */
+   -moz-transition: all 0.5s ease-in-out; /* Firefox < 16 */
+    -ms-transition: all 0.5s ease-in-out; /* Internet Explorer */
+     -o-transition: all 0.5s ease-in-out; /* Opera < 12.1 */
+        transition: all 0.5s ease-in-out;
 }
 .panel-footer {
   margin-top: 30px;
@@ -169,6 +170,7 @@ body #profilepic{
   text-align: center;
   font-weight: lighter;
   font-family: "Josefin Sans", sans-serif;
+  margin-bottom:-50px;
     /*visibility:   hidden;*/
   -webkit-animation: slideupfadein 2s; /* Safari, Chrome and Opera > 12.1 */
      -moz-animation: slideupfadein 2s; /* Firefox < 16 */
@@ -193,13 +195,33 @@ body #profilepic{
 #linkHP {
   text-align: center;
   max-width:100%;
-  margin: 20px auto 20px;
+  margin: 0px auto 30px;
+  width: 200px;
+  height: 200px;
+  border-radius:  50%;
+  border: solid #fff 3.5px;
+
+}
+#linkHP:hover, #linkHP:focus{
+  background: #97c6c9;
+-webkit-transition: all 0.5s ease-in-out; /* Safari, Chrome and Opera > 12.1 */
+   -moz-transition: all 0.5s ease-in-out; /* Firefox < 16 */
+    -ms-transition: all 0.5s ease-in-out; /* Internet Explorer */
+     -o-transition: all 0.5s ease-in-out; /* Opera < 12.1 */
+        transition: all 0.5s ease-in-out;
+}
+#linkHP img{
+  display:block;
+  width:125px;
+  height:125px;
+  margin-left: 35px;
+  margin-top: 20px;
+  margin-bottom: 10px;
 }
 #linkHP a{
   color:#fff;
 }
 #linkHP a:hover{
-  color:#3a4072;
   text-decoration: none;
 }
 /* End Home Page */
@@ -279,18 +301,23 @@ body #profilepic{
   #column1{
     clear:left;
   }
+    #linkHP{
+    margin-top: 100px;
+  }
 }
 
 @media (min-width: 767px) and (max-width: 1200px){
   #artGrid section:nth-child(2n+1) {  
     clear:left;
   }
+
+
 }
 /*****************************************************/
 /***************/
 
 /*single artwork page*/
- #singleImg{
+ #singleImg, #imageName, #imageDate{
     -webkit-animation: slideupfadein 2s; /* Safari, Chrome and Opera > 12.1 */
      -moz-animation: slideupfadein 2s; /* Firefox < 16 */
       -ms-animation: slideupfadein 2s; /* Internet Explorer */
@@ -302,6 +329,15 @@ body #profilepic{
           position: relative;
           margin:20px auto 20px;
           display: block;
+          text-align: center;
+          font-size:20px;
+ }
+ #imageName{
+  font-family:'Oswald';
+ }
+ #imageDate{
+  font-family: 'Josefin Sans';
+  margin-top: -10px;
  }
 /********** Small devices only **********/
 @media (min-width: 768px) and (max-width: 991px) {

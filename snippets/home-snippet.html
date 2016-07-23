@@ -4,19 +4,35 @@
 <div linksfromHP>
 <div class='containter-fluid' id='linksfromHP'>
 	<div class='row'>
-		<div id="linkHP" class='col-lg-3 col-sm-6'><a href="#" onclick="(function(){
-			$dc.loadArt('artworks');
-			var a ='\'artworks\'';
-    		var art = '$dc.loadArt('+a+')';
-			history.pushState(art,null,null);
-			console.log(art);
-			}());">Artworks</a></div>
-		<div id="linkHP" class='col-lg-3 col-sm-6'><a href="#" onclick="(function(){
-			$dc.loadArt('designs');
-			history.pushState('$dc.loadArt(\'designs\')',null,null);
-			}());">Designs</a></div>
-		<div id="linkHP" class='col-lg-3 col-sm-6'><a href="https://nashmia-riaz.github.io/BlogPosts/">Blog</a></div>
-		<div id="linkHP" class='col-lg-3 col-sm-6'><a href="#">Projects</a></div>
+		<div class='col-lg-3 col-sm-6'>
+			<div id="linkHP">
+				<a href="#" onclick="(function(){
+					$dc.loadArt('artworks');
+					var a ='\'artworks\'';
+		    		var art = '$dc.loadArt('+a+')';
+					history.pushState(art,null,null);
+					console.log(art);
+					}());"><img src='images/artworks.png'>Artworks</a>
+			</div>
+		</div>
+		<div class='col-lg-3 col-sm-6'>
+			<div  id="linkHP">
+				<a href="#" onclick="(function(){
+					$dc.loadArt('designs');
+					history.pushState('$dc.loadArt(\'designs\')',null,null);
+					}());"><img src='images/designs.png'>Designs</a>
+			</div>
+		</div>
+		<div class='col-lg-3 col-sm-6'>
+			<div  id="linkHP">
+				<a href="https://nashmia-riaz.github.io/BlogPosts/"><img src='images/blogposts.png'>Blog</a>
+			</div>
+		</div>
+		<div class='col-lg-3 col-sm-6'>
+			<div  id="linkHP">
+				<a href="#" onclick="$dc.loadProgramming()"><img src='images/programming.png'>Programming</a>
+			</div>
+		</div>
 	</div>
 </div>
 </div>

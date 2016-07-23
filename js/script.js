@@ -104,7 +104,7 @@ dc.loadArt = function(type){
     var loc= "($dc.loadPicture(\'"+imageFileName+"\',\'"+type+"\'))" ;
     finalHtml += "<section id='column"+c+"' class='col-lg-4 col-sm-6'> <div id='artwork'>"+
     "<a id='pictureLink' href='#' onclick=\"(function(){"+
-    "$dc.loadPicture('"+imageFileName+"','"+type+"');\n"+
+    "$dc.loadPicture('"+imageFileName+"','"+imageName+"','"+imageDate+"','"+type+"');\n"+
     "}());\"><img id='pictureArt'src='images/"+type+"/"+imageFileName+"'></a>"
     +"<div id='details'><p id='imgName'>"+imageName+"</p><p id='imgDate'>"+imageDate+"</p></div></img></div></section>";
     if (c==3){
@@ -120,219 +120,46 @@ dc.loadArt = function(type){
   // history.pushState(loc,null,null);
 }
 /**********************************************************/
-dc.loadImg = function(filename, path){
-  showLoading("#main-content");
-  finalHtml = "<img id='singleImg' src='images/"+path+"/"+filename+"'>";
+dc.loadImg = function(filename, name, date, path){
+  finalHtml = "<img id='singleImg' src='images/"+path+"/"+filename+"'>"+
+  "<div id='imageName'>"+name+"</div><div id='imageDate'>"+date+"</div>";
   insertHtml("#main-content", finalHtml);
 };
-dc.loadPicture = function(filename, path){
-  $dc.loadImg(filename,path);
-  var loc= "$dc.loadImg('"+filename+"','"+path+"')";
+dc.loadPicture = function(filename, name, date, path){
+  showLoading("#main-content");
+  $dc.loadImg(filename,name,date,path);
+  var loc= "$dc.loadImg('"+filename+"','"+name+"','"+date+"','"+path+"')";
   history.pushState(loc,null,null);
 };
 
-// Load the menu categories view
-dc.loadMenuCategories = function () {
+dc.loadProgramming = function(){
   showLoading("#main-content");
-  $ajaxUtils.sendGetRequest(
-    allCategoriesUrl,
-    buildAndShowCategoriesHTML);
-};
+  $.getJSON('/misc/programming.json', function(data) {
+  var finalHtml = "<div class='container'><div class='row' id='artGrid'>";
+  var c=0;
+  for (var i=0; i<data.length; i++){
+    c++;
+    var imageFileName = data[i].image.filename;
+    var imageName = data[i].image.name;
+    var imageDate = data[i].image.date;
+    var loc= "($dc.loadPicture(\'"+imageFileName+"\',\'"+type+"\'))" ;
+    finalHtml += "<section id='column"+c+"' class='col-lg-4 col-sm-6'> <div id='artwork'>"+
+    "<a id='pictureLink' href='#' onclick=\"(function(){"+
+    "$dc.loadPicture('"+imageFileName+"','"+type+"');\n"+
+    "}());\"><img id='pictureArt'src='images/"+type+"/"+imageFileName+"'></a>"
+    +"<div id='details'><p id='imgName'>"+imageName+"</p><p id='imgDate'>"+imageDate+"</p></div></img></div></section>";
+    if (c==3){
+      c=0;    
+     } 
 
-
-// Load the menu items view
-// 'categoryShort' is a short_name for a category
-dc.loadMenuItems = function (categoryShort) {
-  showLoading("#main-content");
-  $ajaxUtils.sendGetRequest(
-    menuItemsUrl + categoryShort,
-    buildAndShowMenuItemsHTML);
-};
-
-
-// Builds HTML for the categories page based on the data
-// from the server
-function buildAndShowCategoriesHTML (categories) {
-  // Load title snippet of categories page
-  $ajaxUtils.sendGetRequest(
-    categoriesTitleHtml,
-    function (categoriesTitleHtml) {
-      // Retrieve single category snippet
-      $ajaxUtils.sendGetRequest(
-        categoryHtml,
-        function (categoryHtml) {
-          // Switch CSS class active to menu button
-          switchMenuToActive();
-
-          var categoriesViewHtml =
-            buildCategoriesViewHtml(categories,
-                                    categoriesTitleHtml,
-                                    categoryHtml);
-          insertHtml("#main-content", categoriesViewHtml);
-        },
-        false);
-    },
-    false);
+     // if((i+1)%2==0){
+     //  finalHtml+="<hr class='hidden'>";}
+   }
+    finalHtml+="</div></div>";
+    insertHtml("#main-content", finalHtml);
+});
+  // history.pushState(loc,null,null);
 }
-
-
-
-
-// Using categories data and snippets html
-// build categories view HTML to be inserted into page
-function buildCategoriesViewHtml(categories,
-                                 categoriesTitleHtml,
-                                 categoryHtml) {
-
-  var finalHtml = categoriesTitleHtml;
-  finalHtml += "<section class='row'>";
-
-  // Loop over categories
-  for (var i = 0; i < categories.length; i++) {
-    // Insert category values
-    var html = categoryHtml;
-    var name = "" + categories[i].name;
-    var short_name = categories[i].short_name;
-    html =
-      insertProperty(html, "name", name);
-    html =
-      insertProperty(html,
-                     "short_name",
-                     short_name);
-    finalHtml += html;
-  }
-
-  finalHtml += "</section>";
-  return finalHtml;
-}
-
-
-
-
-// Builds HTML for the single category page based on the data
-// from the server
-function buildAndShowMenuItemsHTML (categoryMenuItems) {
-  // Load title snippet of menu items page
-  $ajaxUtils.sendGetRequest(
-    menuItemsTitleHtml,
-    function (menuItemsTitleHtml) {
-      // Retrieve single menu item snippet
-      $ajaxUtils.sendGetRequest(
-        menuItemHtml,
-        function (menuItemHtml) {
-          // Switch CSS class active to menu button
-          switchMenuToActive();
-
-          var menuItemsViewHtml =
-            buildMenuItemsViewHtml(categoryMenuItems,
-                                   menuItemsTitleHtml,
-                                   menuItemHtml);
-          insertHtml("#main-content", menuItemsViewHtml);
-        },
-        false);
-    },
-    false);
-}
-
-
-// Using category and menu items data and snippets html
-// build menu items view HTML to be inserted into page
-function buildMenuItemsViewHtml(categoryMenuItems,
-                                menuItemsTitleHtml,
-                                menuItemHtml) {
-
-  menuItemsTitleHtml =
-    insertProperty(menuItemsTitleHtml,
-                   "name",
-                   categoryMenuItems.category.name);
-  menuItemsTitleHtml =
-    insertProperty(menuItemsTitleHtml,
-                   "special_instructions",
-                   categoryMenuItems.category.special_instructions);
-
-  var finalHtml = menuItemsTitleHtml;
-  finalHtml += "<section class='row'>";
-
-  // Loop over menu items
-  var menuItems = categoryMenuItems.menu_items;
-  var catShortName = categoryMenuItems.category.short_name;
-  for (var i = 0; i < menuItems.length; i++) {
-    // Insert menu item values
-    var html = menuItemHtml;
-    html =
-      insertProperty(html, "short_name", menuItems[i].short_name);
-    html =
-      insertProperty(html,
-                     "catShortName",
-                     catShortName);
-    html =
-      insertItemPrice(html,
-                      "price_small",
-                      menuItems[i].price_small);
-    html =
-      insertItemPortionName(html,
-                            "small_portion_name",
-                            menuItems[i].small_portion_name);
-    html =
-      insertItemPrice(html,
-                      "price_large",
-                      menuItems[i].price_large);
-    html =
-      insertItemPortionName(html,
-                            "large_portion_name",
-                            menuItems[i].large_portion_name);
-    html =
-      insertProperty(html,
-                     "name",
-                     menuItems[i].name);
-    html =
-      insertProperty(html,
-                     "description",
-                     menuItems[i].description);
-
-    // Add clearfix after every second menu item
-    if (i % 2 != 0) {
-      html +=
-        "<div class='clearfix visible-lg-block visible-md-block'></div>";
-    }
-
-    finalHtml += html;
-  }
-
-  finalHtml += "</section>";
-  return finalHtml;
-}
-
-
-// Appends price with '$' if price exists
-function insertItemPrice(html,
-                         pricePropName,
-                         priceValue) {
-  // If not specified, replace with empty string
-  if (!priceValue) {
-    return insertProperty(html, pricePropName, "");;
-  }
-
-  priceValue = "$" + priceValue.toFixed(2);
-  html = insertProperty(html, pricePropName, priceValue);
-  return html;
-}
-
-
-// Appends portion name in parens if it exists
-function insertItemPortionName(html,
-                               portionPropName,
-                               portionValue) {
-  // If not specified, return original string
-  if (!portionValue) {
-    return insertProperty(html, portionPropName, "");
-  }
-
-  portionValue = "(" + portionValue + ")";
-  html = insertProperty(html, portionPropName, portionValue);
-  return html;
-}
-
 
 global.$dc = dc;
 
@@ -344,9 +171,9 @@ global.$dc = dc;
 $(document).ready(function(){
 
     //Check to see if the window is top if not then display button
-  $('#scroller').scroll(function() {
+  $(window).scroll(function(){
     if ($(this).scrollTop() > 100) {
-      $('#backtotop').fadeIn(500);
+      $('#backtotop').fadeIn();
     } else {
       $('#backtotop').fadeOut();
     }
