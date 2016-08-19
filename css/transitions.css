@@ -43,6 +43,51 @@
            visibility:  visible;  }
 }
 /*********************************************************************/
+/************************* sliderightfadein *****************************/
+@keyframes sliderightfadein {
+    from { opacity:0;
+           transform:  translateX(-50px); }
+    to   { opacity:1;
+           transform:  translateX(0px); 
+           visibility:  visible;  }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes sliderightfadein {
+    from { opacity:0;
+           transform:  translateX(-50px); }
+    to   { opacity:1;
+           transform:  translateX(0px);
+           visibility:  visible;   }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes sliderightfadein {
+    from { opacity:0;
+           transform:  translateX(-50px); }
+    to   { opacity:1;
+           transform:  translateX(0px); 
+           visibility:  visible;  }
+}
+
+/* Internet Explorer */
+@-ms-keyframes sliderightfadein {
+    from { opacity:0;
+           transform:  translateX(-50px); }
+    to   { opacity:1;
+           transform:  translateX(0px); 
+           visibility:  visible;  }
+}
+
+/* Opera < 12.1 */
+@-o-keyframes sliderightfadein {
+    from { opacity:0;
+           transform:  translateX(-50px); }
+    to   { opacity:1;
+           transform:  translateX(0px); 
+           visibility:  visible;  }
+}
+/*********************************************************************/
 
 /************************* slidedown *****************************/
 @keyframes slidedown {
@@ -200,5 +245,127 @@
     from { opacity:1;}
     to   { opacity:0; 
            visibility:  hidden;  }
+}
+/*********************************************************************/
+
+/************************* rotatecwninety *****************************/
+@keyframes rotatecwninety {
+    from{transform: rotate(90deg);}
+    to{transform: rotate(0deg);}
+}
+
+/* Firefox < 16 */
+@-moz-keyframes rotatecwninety {
+    from{transform: rotate(90deg);}
+    to{transform: rotate(0deg);}
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes rotatecwninety {
+    from{transform: rotate(90deg);}
+    to{transform: rotate(0deg);}
+}
+
+/* Internet Explorer */
+@-ms-keyframes rotatecwninety {
+    from{transform: rotate(90deg);}
+    to{transform: rotate(0deg);}
+}
+
+/* Opera < 12.1 */
+@-o-keyframes rotatecwninety {
+    from{transform: rotate(90deg);}
+    to{transform: rotate(0deg);}
+}
+/*********************************************************************/
+/************************* rotateccwninety *****************************/
+@keyframes rotateccwninety {
+    from{transform: rotate(-90deg);}
+    to{transform: rotate(0deg);}
+}
+
+/* Firefox < 16 */
+@-moz-keyframes rotateccwninety {
+    from{transform: rotate(-90deg);}
+    to{transform: rotate(0deg);}
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes rotateccwninety {
+    from{transform: rotate(-90deg);}
+    to{transform: rotate(0deg);}
+}
+
+/* Internet Explorer */
+@-ms-keyframes rotateccwninety {
+    from{transform: rotate(-90deg);}
+    to{transform: rotate(0deg);}
+}
+
+/* Opera < 12.1 */
+@-o-keyframes rotateccwninety {
+    from{transform: rotate(-90deg);}
+    to{transform: rotate(0deg);}
+}
+/*********************************************************************/
+
+/********************bgslideright************************************/
+@keyframes bgslideright {
+    from{background-position: -200px bottom;}
+    to{background-position:   left bottom;}
+}
+
+/* Firefox < 16 */
+@-moz-keyframes bgslideright {
+    from{background-position: -200px bottom;}
+    to{background-position:   left bottom;}
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes bgslideright {
+    from{background-position: -200px bottom;}
+    to{background-position:   left bottom;}
+}
+
+/* Internet Explorer */
+@-ms-keyframes bgslideright {
+    from{background-position: -200px bottom;}
+    to{background-position:   left bottom;}
+}
+
+/* Opera < 12.1 */
+@-o-keyframes bgslideright {
+    from{background-position: -200px bottom;}
+    to{background-position:   left bottom;}
+}
+/*********************************************************************/
+/********************bgslideleft************************************/
+@keyframes bgslideleft {
+    from{background-position: 200px top;}
+    to{background-position:   right top;}
+}
+
+/* Firefox < 16 */
+@-moz-keyframes bgslideleft {
+    from{background-position: 200px top;}
+    to{background-position:   right top;}
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes bgslideleft {
+    from{background-position: 200px top;}
+    to{background-position:   right top;}
+}
+
+/* Internet Explorer */
+@-ms-keyframes bgslideleft {
+    from{background-position: 200px top;}
+    to{background-position:   right top;}
+}
+
+/* Opera < 12.1 */
+@-o-keyframes bgslideleft {
+    from{background-position: 200px top;}
+    to{background-position:   right top;}
 }
 /*********************************************************************/

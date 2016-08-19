@@ -8,7 +8,7 @@
 body {
   font-size: 16px;
   color: #fff;
-  background-color: #b893bd;
+  background-color: #74446d;
   font-family: 'Oswald', sans-serif;
   margin: 0 0 20px;
 }
@@ -183,7 +183,7 @@ body #profilepic{
 } 
 #linksfromHP{
   margin-top: 100px;
-    -webkit-animation: slideupfadein 2s; /* Safari, Chrome and Opera > 12.1 */
+  -webkit-animation: slideupfadein 2s; /* Safari, Chrome and Opera > 12.1 */
      -moz-animation: slideupfadein 2s; /* Firefox < 16 */
       -ms-animation: slideupfadein 2s; /* Internet Explorer */
        -o-animation: slideupfadein 2s; /* Opera < 12.1 */
@@ -192,38 +192,242 @@ body #profilepic{
           animation-fill-mode:  forwards; 
           visibility: hidden;
 }
+
+#linksfromHP a{
+  color:#fff;
+}
+#linksfromHP a:hover{
+  text-decoration: none;
+}
+/**********************artworks**************/
 #linkHP {
+  text-align: center;
+  max-width:100%;
+  margin: 0px auto;
+  width: 200px;
+  height: 200px;
+  border: solid #fff 5px;
+  border-radius: 50%;
+  padding-top: 55px
+
+}
+#linkHPtext{
+  clear: both;
+  margin: 10px auto 10px auto;
+}
+
+
+#HPimg1{
+  background-repeat:  no-repeat; 
+  background-image: url("../images/artworks1.png");
+  height: 30px;
+  width: 190px;
+  border-radius:  30%;
+  background-position:  200px top;
+}
+
+#HPimg2{
+ background-repeat:  no-repeat;    
+ background-image: url("../images/artworks2.png");
+  height: 30px;
+  width:190px;
+  border-radius:  30%;
+  background-position:  -200px bottom;
+}
+
+#linkHP:hover #HPimg1{
+  -webkit-animation: bgslideleft 1s; /* Safari, Chrome and Opera > 12.1 */
+     -moz-animation: bgslideleft 1s; /* Firefox < 16 */
+      -ms-animation: bgslideleft 1s; /* Internet Explorer */
+       -o-animation: bgslideleft 1s; /* Opera < 12.1 */
+          animation: bgslideleft 1s;
+          animation-fill-mode:  forwards; 
+}
+#linkHP:hover #HPimg2{
+  -webkit-animation: bgslideright 1s; /* Safari, Chrome and Opera > 12.1 */
+     -moz-animation: bgslideright 1s; /* Firefox < 16 */
+      -ms-animation: bgslideright 1s; /* Internet Explorer */
+       -o-animation: bgslideright 1s; /* Opera < 12.1 */
+          animation: bgslideright 1s;
+          animation-fill-mode:  forwards; 
+}
+
+/**********************************************/
+/***************design*************************/
+#linkHPD {
+  text-align: center;
+  max-width:100%;
+  margin: 0px auto;
+  width: 200px;
+  height: 200px;
+
+  /*border: solid #fff 5px;
+  border-radius: 50%;*//*
+  padding-top: 55px*/
+
+}
+#linkHPD:hover #design1{
+  -webkit-animation: rotatecwninety 1s; /* Safari, Chrome and Opera > 12.1 */
+     -moz-animation: rotatecwninety 1s; /* Firefox < 16 */
+      -ms-animation: rotatecwninety 1s; /* Internet Explorer */
+       -o-animation: rotatecwninety 1s; /* Opera < 12.1 */
+          animation: rotatecwninety 1s;
+          animation-fill-mode:  forwards; 
+}
+#linkHPD:hover #design2{
+  -webkit-animation: rotatecwninety 1s; /* Safari, Chrome and Opera > 12.1 */
+     -moz-animation: rotatecwninety 1s; /* Firefox < 16 */
+      -ms-animation: rotatecwninety 1s; /* Internet Explorer */
+       -o-animation: rotatecwninety 1s; /* Opera < 12.1 */
+          animation: rotatecwninety 1s;
+          animation-fill-mode:  forwards; 
+}
+#linkHPD:hover #design3{
+  -webkit-animation: rotatecwninety 1s; /* Safari, Chrome and Opera > 12.1 */
+     -moz-animation: rotatecwninety 1s; /* Firefox < 16 */
+      -ms-animation: rotatecwninety 1s; /* Internet Explorer */
+       -o-animation: rotatecwninety 1s; /* Opera < 12.1 */
+          animation: rotatecwninety 1s;
+          animation-fill-mode:  forwards; 
+}
+#linkHPD:hover #linkHPtextD{
+ 
+}
+#design1{
+  background-repeat:  no-repeat; 
+  background-image: url("../images/design1.png");
+  height: 200px;
+  width: 200px;
+  background-position: left top;
+  transform:rotate(90deg); 
+  position:absolute ;
+  /*border:solid blue 2px;*/
+}
+#design2{
+  background-repeat:  no-repeat; 
+  background-image: url("../images/design2.png");
+  height: 200px;
+  width: 200px;
+  background-position: left top;
+  transform:rotate(-90deg); 
+  position:absolute ;
+}
+#design3{
+  background-repeat:  no-repeat; 
+  background-image: url("../images/design3.png");
+  height: 200px;
+  width: 200px;
+  background-position: left top;
+  padding-top:  90px;
+  transform:rotate(90deg); 
+  position:absolute ;
+}
+#linkHPtextD{
+  position:fixed;
+  float:right;
+  margin-left: 75px;
+  margin-top: 90px;
+}
+
+
+/**********************************************/
+/********************blog**********************/
+#linkHPB {
+  text-align: center;
+  max-width:100%;
+  margin: 0px auto;
+  width: 200px;
+  height: 200px;
+  border: solid #fff 5px;
+  border-radius: 50%;
+
+}
+#linkHPBtext{
+  clear: both;
+  position:   absolute; 
+  bottom:20px;
+  margin-left:  80px;
+}
+#blog1{
+  background-repeat:  no-repeat; 
+  background-image: url("../images/blog1.png");
+  height: 200px;
+  width: 200px;
+  background-position: left top;
+}
+#blog2{
+  background-repeat:  no-repeat; 
+  background-image: url("../images/blog2.png");
+  height: 200px;
+  width: 200px;
+  background-position: -200px top;
+  border-radius:  50%;
+}
+#linkHPB:hover #blog2{
+  -webkit-animation: bgslideright 1s; /* Safari, Chrome and Opera > 12.1 */
+     -moz-animation: bgslideright 1s; /* Firefox < 16 */
+      -ms-animation: bgslideright 1s; /* Internet Explorer */
+       -o-animation: bgslideright 1s; /* Opera < 12.1 */
+          animation: bgslideright 1s;
+          animation-fill-mode:  forwards;
+}
+/**********************************************/
+/**********************projects**************/
+#linkHPP {
   text-align: center;
   max-width:100%;
   margin: 0px auto 30px;
   width: 200px;
   height: 200px;
-  border-radius:  50%;
-  border: solid #fff 3.5px;
+  border: solid #fff 5px;
+  border-radius: 50%;
+  padding-top: 30px;
 
 }
-#linkHP:hover, #linkHP:focus{
-  background: #97c6c9;
--webkit-transition: all 0.5s ease-in-out; /* Safari, Chrome and Opera > 12.1 */
-   -moz-transition: all 0.5s ease-in-out; /* Firefox < 16 */
-    -ms-transition: all 0.5s ease-in-out; /* Internet Explorer */
-     -o-transition: all 0.5s ease-in-out; /* Opera < 12.1 */
-        transition: all 0.5s ease-in-out;
+#linkHPPtext{
+  clear: both;
+  margin: 10px auto 10px auto;
 }
-#linkHP img{
-  display:block;
-  width:125px;
-  height:125px;
-  margin-left: 35px;
-  margin-top: 20px;
-  margin-bottom: 10px;
+
+
+#programming1{
+  background-repeat:  no-repeat; 
+  background-image: url("../images/programming2.png");
+  height: 45px;
+  width: 180px;
+  border-radius:  30%;
+  background-position:  200px top;
 }
-#linkHP a{
-  color:#fff;
+
+#programming2{
+ background-repeat:  no-repeat;    
+ background-image: url("../images/programming1.png");
+  height: 45px;
+  width:150px;
+  margin-left:  10px;
+  border-radius:  30%;
+  background-position:  -200px bottom;
 }
-#linkHP a:hover{
-  text-decoration: none;
+
+#linkHPP:hover #programming1{
+  -webkit-animation: bgslideleft 1s; /* Safari, Chrome and Opera > 12.1 */
+     -moz-animation: bgslideleft 1s; /* Firefox < 16 */
+      -ms-animation: bgslideleft 1s; /* Internet Explorer */
+       -o-animation: bgslideleft 1s; /* Opera < 12.1 */
+          animation: bgslideleft 1s;
+          animation-fill-mode:  forwards; 
 }
+#linkHPP:hover #programming2{
+  -webkit-animation: bgslideright 1s; /* Safari, Chrome and Opera > 12.1 */
+     -moz-animation: bgslideright 1s; /* Firefox < 16 */
+      -ms-animation: bgslideright 1s; /* Internet Explorer */
+       -o-animation: bgslideright 1s; /* Opera < 12.1 */
+          animation: bgslideright 1s;
+          animation-fill-mode:  forwards; 
+}
+
+/**********************************************/
+
 /* End Home Page */
 /* artworks page */
 #column1{
@@ -301,7 +505,7 @@ body #profilepic{
   #column1{
     clear:left;
   }
-    #linkHP{
+    #linkHP, #linkHPD, #linkHPP, #linkHPB{
     margin-top: 100px;
   }
 }
@@ -309,6 +513,13 @@ body #profilepic{
 @media (min-width: 767px) and (max-width: 1200px){
   #artGrid section:nth-child(2n+1) {  
     clear:left;
+  }
+  #linkHPB{
+    margin-top:   100px;
+  }
+  #linkHPP{
+
+    margin-top:   100px;
   }
 
 
@@ -347,13 +558,15 @@ body #profilepic{
     height: 432px;
   }
 
-
 }
 
 
 
 /********** Extra small devices only **********/
 @media (max-width: 767px) {
+  #linkHPD, #linkHPB, #linkHPP{
+    margin-top:   50px;
+  }
   /* Header */
   .navbar-brand {
     padding-top: 10px;

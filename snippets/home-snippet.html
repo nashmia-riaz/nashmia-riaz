@@ -4,35 +4,53 @@
 <div linksfromHP>
 <div class='containter-fluid' id='linksfromHP'>
 	<div class='row'>
-		<div class='col-lg-3 col-sm-6'>
-			<div id="linkHP">
-				<a href="#" onclick="(function(){
+		<div class='col-lg-3 col-sm-6' >
+			<a href="#" onclick="(function(){
 					$dc.loadArt('artworks');
 					var a ='\'artworks\'';
 		    		var art = '$dc.loadArt('+a+')';
 					history.pushState(art,null,null);
 					console.log(art);
-					}());"><img src='images/artworks.png'>Artworks</a>
-			</div>
+					}());"><div id="linkHP">
+				
+					<div id="HPimg1"></div>
+					<span id="linkHPtext">Artworks</span>
+					<div id="HPimg2"></div>
+					
+			</div></a>
 		</div>
 		<div class='col-lg-3 col-sm-6'>
-			<div  id="linkHP">
+			<div  id="linkHPD">
 				<a href="#" onclick="(function(){
 					$dc.loadArt('designs');
 					history.pushState('$dc.loadArt(\'designs\')',null,null);
-					}());"><img src='images/designs.png'>Designs</a>
+					}());"><div id="linkHPtextD">Designs
+									</div>
+					<div id='design1'>
+						<div id='design2'>
+							<div id='design3'>
+							</div>
+						</div>
+					</div>
+					</a>
 			</div>
 		</div>
 		<div class='col-lg-3 col-sm-6'>
-			<div  id="linkHP">
-				<a href="https://nashmia-riaz.github.io/BlogPosts/"><img src='images/blogposts.png'>Blog</a>
+			<div  id="linkHPB">
+				<a href="https://nashmia-riaz.github.io/BlogNR/">
+				<div id="blog1">
+				<div id='blog2'></div></div>
+				<div id="linkHPBtext">Blog</div></a>
 			</div>
 		</div>
 		<div class='col-lg-3 col-sm-6'>
-			<div  id="linkHP">
-				<a href="#" onclick="$dc.loadProgramming()"><img src='images/programming.png'>Programming</a>
-			</div>
-		</div>
+				<a href="#" onclick="$dc.loadProgramming()">
+			<div  id="linkHPP">
+				<div id="programming1"></div>
+				<div id="linkHPPtext">Projects</div>
+				<div id="programming2"></div>
+			</div></a>
+		</div> 
 	</div>
 </div>
 </div>
