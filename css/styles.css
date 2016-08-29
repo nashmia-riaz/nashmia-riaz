@@ -4,13 +4,18 @@
 #b893bd
 #b1dbcf
 #74446d
+#ffe8be
 */
 body {
   font-size: 16px;
   color: #fff;
   background-color: #74446d;
   font-family: 'Oswald', sans-serif;
-  margin: 0 0 20px;
+  /*margin: 0 0 20px;*/
+}
+#main-content{
+  width:80%;
+  margin: 0 auto 150px;
 }
 /***********************fix horizontal overflow**************************/
 .row{
@@ -38,12 +43,17 @@ body {
           animation: slidedown 1s;
 }
 
-#emailadd{
-  margin-top:12px;
-  color:#74446d;
+#footerlink{
+  /*margin-top:12px;*/
+  color:#ffe8be;
+  margin:10px 0px 15px;
 }
-#emailadd:hover, #emailadd:focus{
+#footerlink:hover, #footerlink:focus{
 text-decoration: none;
+  color:#ffe8be;
+}
+.icon-linkedin:before {
+  content: "\eac9";
 }
 
 .navbar-brand {
@@ -114,13 +124,15 @@ text-decoration: none;
         transition: all 0.5s ease-in-out;
 }
 .panel-footer {
-  margin-top: 30px;
+  border-top: 3px solid #b1dbcf;
   /*padding-top: 0px;*/
   /*padding-bottom: 30px;*/
-  background-color: #3a4072;
-  border-top: 0;
+  background-color: #5d3c62;
+  border-top: 3px solid #b1dbcf;
   position: relative;
   width:100%;
+  clear:both;
+  height: 150px;
 }
 
 /******************not needed right now **********************/
@@ -463,13 +475,21 @@ body #profilepic{
 }
 
 #pictureArt{
-  display:block;
+  width:100%;
+}
+#pictureArt img{
+  /*display:block;*/
   width: 100%;
   /*margin-left: 30px;*/
-  box-shadow: 5px 5px 15px #74446d;
+  box-shadow: 5px 5px 15px #111;
   position:relative;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
+#pictureArt span{
+
+  display: inline-block;
+}
+
 #singleImg{
   width:80%;
   margin:500px;
@@ -482,22 +502,70 @@ body #profilepic{
 #details{
   visibility: hidden;
   opacity: 0;
-  position: relative;
+  position: absolute;
   text-align: center;
-  bottom:132px;
   width:100%;
-  padding:10px;
-  background-color:#3a4072;
-  color:#b1dbcf;
+  padding:0px;
+  right:0%;
+  bottom:30px;
+  padding-right: 15px;
+  padding-left: 15px;
 }
 
-#pictureLink:hover + #details{
+#details div{
+  width: 100%;
+  background-color:#3a4072;
+  color:#b1dbcf;
+  padding: 10px;
+}
+
+#pictureLink:hover #details{
   -webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
      -moz-animation: fadein 1s; /* Firefox < 16 */
       -ms-animation: fadein 1s; /* Internet Explorer */
        -o-animation: fadein 1s; /* Opera < 12.1 */
           animation: fadein 1s;
           animation-fill-mode: forwards;
+}
+
+
+/*************programming page*************************/
+#pagetitleh1{
+text-align: center;
+font-size: 3em;
+text-transform: uppercase;
+margin:40px;
+}
+#projects{
+  /*margin-bottom: 40px;*/
+}
+#projectName{
+  text-align: center; 
+  margin-bottom:  20px;
+}
+#projectName span{
+  font-family:  'Josefin Sans';
+}
+#pictureGallery{
+}
+#pictureGallery .fotorama{
+  width:100%;
+}
+#informationProject {
+  font-size: 1.25em;
+  font-weight: 0.01;
+}
+#informationProject a{
+  color: #b1dbcf;
+  font-family:  'Oswald', normal;
+}
+#informationProject p{
+  margin-bottom: 50px;
+}
+hr{
+}
+#gameLink{
+  margin-top:   10px;
 }
 
 /*********************position art*********************/
@@ -560,6 +628,83 @@ body #profilepic{
 
 }
 
+/********** tablet devices only **********/
+@media (max-width: 1199px) {
+  #pictureLink:active #details{
+  -webkit-animation: fadein 1s; /* Safari, Chrome and Opera > 12.1 */
+     -moz-animation: fadein 1s; /* Firefox < 16 */
+      -ms-animation: fadein 1s; /* Internet Explorer */
+       -o-animation: fadein 1s; /* Opera < 12.1 */
+          animation: fadein 1s;
+          animation-fill-mode: forwards;
+}
+
+#linkHP:active #HPimg1{
+  -webkit-animation: bgslideleft 1s; /* Safari, Chrome and Opera > 12.1 */
+     -moz-animation: bgslideleft 1s; /* Firefox < 16 */
+      -ms-animation: bgslideleft 1s; /* Internet Explorer */
+       -o-animation: bgslideleft 1s; /* Opera < 12.1 */
+          animation: bgslideleft 1s;
+          animation-fill-mode:  forwards; 
+}
+#linkHP:active #HPimg2{
+  -webkit-animation: bgslideright 1s; /* Safari, Chrome and Opera > 12.1 */
+     -moz-animation: bgslideright 1s; /* Firefox < 16 */
+      -ms-animation: bgslideright 1s; /* Internet Explorer */
+       -o-animation: bgslideright 1s; /* Opera < 12.1 */
+          animation: bgslideright 1s;
+          animation-fill-mode:  forwards; 
+}
+#linkHPD:active #design1{
+  -webkit-animation: rotatecwninety 1s; /* Safari, Chrome and Opera > 12.1 */
+     -moz-animation: rotatecwninety 1s; /* Firefox < 16 */
+      -ms-animation: rotatecwninety 1s; /* Internet Explorer */
+       -o-animation: rotatecwninety 1s; /* Opera < 12.1 */
+          animation: rotatecwninety 1s;
+          animation-fill-mode:  forwards; 
+}
+#linkHPD:active #design2{
+  -webkit-animation: rotatecwninety 1s; /* Safari, Chrome and Opera > 12.1 */
+     -moz-animation: rotatecwninety 1s; /* Firefox < 16 */
+      -ms-animation: rotatecwninety 1s; /* Internet Explorer */
+       -o-animation: rotatecwninety 1s; /* Opera < 12.1 */
+          animation: rotatecwninety 1s;
+          animation-fill-mode:  forwards; 
+}
+#linkHPD:active #design3{
+  -webkit-animation: rotatecwninety 1s; /* Safari, Chrome and Opera > 12.1 */
+     -moz-animation: rotatecwninety 1s; /* Firefox < 16 */
+      -ms-animation: rotatecwninety 1s; /* Internet Explorer */
+       -o-animation: rotatecwninety 1s; /* Opera < 12.1 */
+          animation: rotatecwninety 1s;
+          animation-fill-mode:  forwards; 
+}
+#linkHPB:active #blog2{
+  -webkit-animation: bgslideright 1s; /* Safari, Chrome and Opera > 12.1 */
+     -moz-animation: bgslideright 1s; /* Firefox < 16 */
+      -ms-animation: bgslideright 1s; /* Internet Explorer */
+       -o-animation: bgslideright 1s; /* Opera < 12.1 */
+          animation: bgslideright 1s;
+          animation-fill-mode:  forwards;
+}
+
+#linkHPP:active #programming1{
+  -webkit-animation: bgslideleft 1s; /* Safari, Chrome and Opera > 12.1 */
+     -moz-animation: bgslideleft 1s; /* Firefox < 16 */
+      -ms-animation: bgslideleft 1s; /* Internet Explorer */
+       -o-animation: bgslideleft 1s; /* Opera < 12.1 */
+          animation: bgslideleft 1s;
+          animation-fill-mode:  forwards; 
+}
+#linkHPP:active #programming2{
+  -webkit-animation: bgslideright 1s; /* Safari, Chrome and Opera > 12.1 */
+     -moz-animation: bgslideright 1s; /* Firefox < 16 */
+      -ms-animation: bgslideright 1s; /* Internet Explorer */
+       -o-animation: bgslideright 1s; /* Opera < 12.1 */
+          animation: bgslideright 1s;
+          animation-fill-mode:  forwards; 
+}
+}
 
 
 /********** Extra small devices only **********/

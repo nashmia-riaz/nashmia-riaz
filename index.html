@@ -8,10 +8,15 @@
     <link rel="stylesheet" href="css/transitions.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/icomoon.css">
     <link href='https://fonts.googleapis.com/css?family=Oxygen:400,300,700' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Josefin+Sans' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+
+
+<!-- fotorama.css & fotorama.js. -->
+<link  href="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.css" rel="stylesheet"> <!-- 3 KB -->
   </head>
 
   <body>
@@ -38,25 +43,38 @@
 
                 <div id="collapsable-nav" class="collapse navbar-collapse">
                     <ul id="nav-list" class="nav navbar-nav navbar-right">
-                        <li id="navHomeButton" class="active ">
-                          <a href="#" onclick="$dc.loadHome()">
-                            <span class="glyphicon glyphicon-home"></span><br class="hidden-xs"> Home</a>
+                        <li id="navHomeButton" >
+                          <a href="#" onclick="
+                              $dc.loadHome();
+                              var home = '$dc.loadHome()';
+                              history.pushState(home,null,null);
+                              "> Home</a>
                         </li>
-                        <li id="navMenuButton">
-                          <a href="#" onclick="$dc.loadArt('artworks');">
-                            <span class="glyphicon glyphicon-cutlery"></span><br class="hidden-xs"> Artworks</a>
+                        <li id="navartworksButton">
+                          <a href="#" onclick="
+                          // (function(){
+                            $dc.loadArt('artworks');
+                              var a ='\'artworks\'';
+                              var art = '$dc.loadArt('+a+')';
+                              history.pushState(art,null,null);
+                              // });
+                              "> Artworks</a>
                         </li>
-                        <li>
-                          <a href="#" onclick="$dc.loadArt('designs');">
-                            <span class="glyphicon glyphicon-info-sign"></span><br class="hidden-xs"> Designs</a>
+                        <li id="navdesignsButton">
+                          <a href="#" onclick="
+                            $dc.loadArt('designs');
+                            history.pushState('$dc.loadArt(\'designs\')',null,null);
+                            "> Designs</a>
                         </li>
-                        <li>
-                          <a href="https://nashmia-riaz.github.io/BlogPosts/">
-                            <span class="glyphicon glyphicon-info-sign"></span><br class="hidden-xs"> Blog</a>
+                        <li id="navBlogButton">
+                          <a href="https://nashmia-riaz.github.io/BlogNR/"> Blog</a>
                         </li>
-                        <li>
-                          <a href="#" onclick="$dc.loadProgramming();">
-                            <span class="glyphicon glyphicon-certificate"></span><br class="hidden-xs"> Programming</a>
+                        <li id="navProjectsButton">
+                          <a href="#" onclick="
+                            $dc.loadProgramming();
+                            var programming = '$dc.loadProgramming()';
+                            history.pushState(programming,null,null);
+                            "> Programming</a>
                         </li>
                     </ul><!-- #nav-list -->
                 </div><!-- .collapse .navbar-collapse --> 
@@ -66,13 +84,24 @@
 
     <div id="main-content"></div>
 
-    
+  <footer class="panel-footer">
+          <div class="container">
+              <div id="footerlink"><span class="glyphicon glyphicon-envelope"></span>
+              <a href="mailto:nashmia-riaz@hotmail.com" id="footerlink">
+              Email
+              </a></div>
+
+              <div id="footerlink">
+                <span class="icon-linkedin-square"></span><a href="#" id="footerlink"> LinkedIn</a></div>
+
+                <div id="footerlink">
+                <span class="icon-github"></span><a href="#" id="footerlink"> Github</a></div>
+
+
+          </div>
+  </footer>
   </body>
-<!--     <footer class="panel-footer">
-        <div class="container">
-            <a href="mailto:nashmia-riaz@hotmail.com" class="pull-right" id="emailadd">nashmia-riaz@hotmail.com</a>
-        </div>
-    </footer> -->
+    
 <span id='bgfade'><a href="#header-nav" id="backtotop"><img src="images/Arrow_top.png"></a>
             </span>
     <!-- jQuery (Bootstrap JS plugins depend on it) -->
@@ -81,5 +110,5 @@
   <script src="js/bootstrap.min.js"></script>
   <script src="js/ajax-utils.js"></script>
   <script src="js/script.js"></script>
-</body>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/fotorama/4.6.4/fotorama.js"></script> 
 </html>

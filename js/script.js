@@ -1,3 +1,4 @@
+
 $(function () { // Same as document.addEventListener("DOMContentLoaded"...
 
   // Same as document.querySelector("#navbarToggle").addEventListener("blur",...
@@ -24,15 +25,8 @@ var dc = {};
 var nr = {};
 dc.history=[];
 var homeHtml = "snippets/home-snippet.html";
-var allCategoriesUrl =
-  "https://davids-restaurant.herokuapp.com/categories.json";
-var categoriesTitleHtml = "snippets/categories-title-snippet.html";
-var categoryHtml = "snippets/category-snippet.html";
-var menuItemsUrl =
-  "https://davids-restaurant.herokuapp.com/menu_items.json?category=";
-var menuItemsTitleHtml = "snippets/menu-items-title.html";
-var menuItemHtml = "snippets/menu-item.html";
-
+var programmingHTML= "snippets/programming-snippet.html";
+var artworksHTML = "snippets/artworks-snippet.html";
 // Convenience function for inserting innerHTML for 'select'
 var insertHtml = function (selector, html) {
   var targetElem = document.querySelector(selector);
@@ -56,18 +50,18 @@ var insertProperty = function (string, propName, propValue) {
 }
 
 // Remove the class 'active' from home and switch to Menu button
-var switchMenuToActive = function () {
-  // Remove 'active' from home button
-  var classes = document.querySelector("#navHomeButton").className;
-  classes = classes.replace(new RegExp("active", "g"), "");
-  document.querySelector("#navHomeButton").className = classes;
+var switchMenuToActive = function (name) {
 
-  // Add 'active' to menu button if not already there
-  classes = document.querySelector("#navMenuButton").className;
-  if (classes.indexOf("active") == -1) {
-    classes += " active";
-    document.querySelector("#navMenuButton").className = classes;
+  var activeElements = document.getElementById("nav-list");
+
+  for (var i=0; i<activeElements.childNodes.length; i++){
+    if(activeElements.childNodes[i].className=='active'){
+      activeElements.childNodes[i].className='';
+    }
   }
+  console.log("nav"+name+"Button");
+  var nowActive = document.getElementById("nav"+name+"Button");
+  nowActive.className+='active';
 };
 
 // On page load (before images or CSS)
@@ -78,6 +72,7 @@ document.addEventListener("DOMContentLoaded", function (event) {
 
 
 dc.loadHome = function(){
+  switchMenuToActive('Home');
   // On first load, show home view
   showLoading("#main-content");
     $ajaxUtils.sendGetRequest(
@@ -89,35 +84,132 @@ dc.loadHome = function(){
     false);
 }
 
+dc.loadProgramming= function(){
+  showLoading("#main-content");
+  switchMenuToActive('Projects');
+     $ajaxUtils.sendGetRequest(
+    programmingHTML,
+    function (exampleHTML) {
+      $.getJSON('/misc/programming.json', function(data) {
+        var finalHtml = "<h1 id=\"pagetitleh1\">Projects</h1><div id=\"projects\">";
+    // Loop over categories
+    for (var i = 0; i < data.length; i++) {
+      // Insert category values
+      var html = exampleHTML;
+      var name =  data[i].project.name;
+      var description = data[i].project.description;
+      var link = data[i].project.link;
+      var imageNames = data[i].project.images;
+      var date = data[i].project.date;
+      var images = '';
+      for (var j=0; j<imageNames.length;j++)
+      {
+          images+="<img src='images/projects/"+imageNames[j]+"'>";
+      }
+
+      var projectLink='';
+
+      if(data[i].project.projectLink){
+        projectLink = "<div id='gameLink'>Project can be seen in action <a href="+projectLink+">here</a>.</div>";
+                      
+      }
+      
+      html =
+        insertProperty(html,
+                       "projectLink",
+                       projectLink);
+      html =
+        insertProperty(html, "name", name);
+      html =
+        insertProperty(html,
+                       "description",
+                       description);
+      html =
+        insertProperty(html,
+                       "link",
+                       link);
+      html =
+        insertProperty(html,
+                       "images",
+                       images);
+
+      html =
+        insertProperty(html,
+                       "date",
+                       date);
+      
+      finalHtml += html;
+    }
+
+    finalHtml += "<div class=\"col-lg-12 col-sd-12\"><hr></div></div>";
+
+    document.querySelector("#main-content")
+    .innerHTML=finalHtml;
+
+  $('.fotorama').fotorama();
+    });
+    },
+    false);
+  // type='example';
+  
+  
+   
+}
+
 
 /**************** BUILD ARTWORKS PAGE *********************/
 dc.loadArt = function(type){
   showLoading("#main-content");
-  $.getJSON('/misc/'+type+'.json', function(data) {
-  var finalHtml = "<div class='container'><div class='row' id='artGrid'>";
-  var c=0;
-  for (var i=0; i<data.length; i++){
-    c++;
-    var imageFileName = data[i].image.filename;
-    var imageName = data[i].image.name;
-    var imageDate = data[i].image.date;
-    var loc= "($dc.loadPicture(\'"+imageFileName+"\',\'"+type+"\'))" ;
-    finalHtml += "<section id='column"+c+"' class='col-lg-4 col-sm-6'> <div id='artwork'>"+
-    "<a id='pictureLink' href='#' onclick=\"(function(){"+
-    "$dc.loadPicture('"+imageFileName+"','"+imageName+"','"+imageDate+"','"+type+"');\n"+
-    "}());\"><img id='pictureArt'src='images/"+type+"/"+imageFileName+"'></a>"
-    +"<div id='details'><p id='imgName'>"+imageName+"</p><p id='imgDate'>"+imageDate+"</p></div></img></div></section>";
-    if (c==3){
+  switchMenuToActive(type);
+
+  $ajaxUtils.sendGetRequest(artworksHTML,
+    function(artsHTML){
+      $.getJSON('/misc/'+type+'.json', function(data) {
+        var finalHtml = "<h1 id=\"pagetitleh1\">"+type+"</h1><div class='container'><div class='row' id='artGrid'>";
+    // Loop over categories
+    var c=0;
+    for (var i = 0; i < data.length; i++) {
+      c++;
+      // Insert category values
+      var html = artsHTML;
+      var filename =  data[i].image.filename;
+      var name = data[i].image.name;
+      var date = data[i].image.date;
+      html =
+        insertProperty(html, "name", name);
+      html =
+        insertProperty(html,
+                       "filename",
+                       filename);
+      html =
+        insertProperty(html,
+                       "date",
+                       date);
+      html =
+        insertProperty(html,
+                       "type",
+                       type);
+      html =
+        insertProperty(html,
+                       "columncount",
+                       c);
+      
+
+      finalHtml += html;
+
+      if (c==3){
       c=0;    
      } 
+    }
 
-     // if((i+1)%2==0){
-     //  finalHtml+="<hr class='hidden'>";}
-   }
-    finalHtml+="</div></div>";
-    insertHtml("#main-content", finalHtml);
-});
-  // history.pushState(loc,null,null);
+    finalHtml += "</div></div>";
+
+    document.querySelector("#main-content")
+    .innerHTML=finalHtml;
+
+    });
+    }, false);
+  
 }
 /**********************************************************/
 dc.loadImg = function(filename, name, date, path){
@@ -132,34 +224,7 @@ dc.loadPicture = function(filename, name, date, path){
   history.pushState(loc,null,null);
 };
 
-dc.loadProgramming = function(){
-  showLoading("#main-content");
-  $.getJSON('/misc/programming.json', function(data) {
-  var finalHtml = "<div class='container'><div class='row' id='artGrid'>";
-  var c=0;
-  for (var i=0; i<data.length; i++){
-    c++;
-    var imageFileName = data[i].image.filename;
-    var imageName = data[i].image.name;
-    var imageDate = data[i].image.date;
-    var loc= "($dc.loadPicture(\'"+imageFileName+"\',\'"+type+"\'))" ;
-    finalHtml += "<section id='column"+c+"' class='col-lg-4 col-sm-6'> <div id='artwork'>"+
-    "<a id='pictureLink' href='#' onclick=\"(function(){"+
-    "$dc.loadPicture('"+imageFileName+"','"+type+"');\n"+
-    "}());\"><img id='pictureArt'src='images/"+type+"/"+imageFileName+"'></a>"
-    +"<div id='details'><p id='imgName'>"+imageName+"</p><p id='imgDate'>"+imageDate+"</p></div></img></div></section>";
-    if (c==3){
-      c=0;    
-     } 
 
-     // if((i+1)%2==0){
-     //  finalHtml+="<hr class='hidden'>";}
-   }
-    finalHtml+="</div></div>";
-    insertHtml("#main-content", finalHtml);
-});
-  // history.pushState(loc,null,null);
-}
 
 global.$dc = dc;
 

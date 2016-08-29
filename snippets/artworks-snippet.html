@@ -1,0 +1,11 @@
+<section id=column{{columncount}} class='col-lg-4 col-sm-6'> 
+	<div id='artwork'>
+		<a id='pictureLink' href='#' onclick="(function(){
+	    $dc.loadPicture('{{filename}}','{{name}}','{{date}}','{{type}}');
+	    }());">
+	    	<div id='pictureArt'>
+	    		<img src='images/{{type}}/{{filename}}'><span id='details'><div><p id='imgName'>{{name}}</p><p id='imgDate'>{{date}}</p></div></span>
+	    	</div>
+	    </a>
+	</div>
+</section>

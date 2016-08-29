@@ -1,17 +1,93 @@
 [
 	{
-	"language":{
-		"name":"C++",
-		"skill":"90"
-	}
+		"project":{
+			"name":"Worm Guy",
+			"date":"December 2014",
+			"description":"This was my very first programming project in university. Snake 2.0 was meant to be a rendition of the classic snake game, made with OpenGL and C programming language. The game involved us programming to move a simple OpenGL block using the keyboard, to making an array of blocks in order to represent the 'snake', to finally adding other powerups and collision detection in the game. The rendition included introduction of new powerups such as portals, gates, a singleplayer mode and an endless mode.",
+			"link":"https://1drv.ms/f/s!AqWQ56ZDOk9vhVw41cbwPBhzAnm8",
+			"images":["WormGuy1.jpg","WormGuy2.jpg","WormGuy3.jpg"]
+		}
+		
+	},
+
+	{
+		"project":{
+			"name":"A Song Of Fire And Ice",
+			"date":"May 2015",
+			"description":"My second programming project ever, involved making an object-oriented game. The project was done in SDL and C++, with sprites found online. SDL helped us learn animation in game development. Collision detection was again mapped for the game. The game involved a character on a restricted square in the middle of the screen, while an enemey circled the square, firing at the player. AI had to be programmed separately. ",
+			"link":"https://1drv.ms/f/s!AqWQ56ZDOk9vhUlVj_bcXwlYQAtI",
+			"images":["ASOFAI1.jpg","ASOFAI2.jpg","ASOFAI3.jpg"]
+		}
 	
 	},
 
 	{
-	"language":{
-		"name":"",
-		"skill":"90"
-	}
+		"project":{
+			"name":"WebGL CAD application",
+			"date":"August 2015",
+			"description":"Made for Coursera WebGL course, this project involved making a web-based CAD application that allowed users to create 3D shapes on the canvas, and change their positions and size. On the backend, it also involved the programming of the shapes' material and the manipulation of two light sources in addition to ambient light.",
+			"link":"https://github.com/nashmia-riaz/Coursera-WebGL",
+			"projectLink":"https://nashmia-riaz.github.io/Coursera-WebGL/EXAMPLES/Assignment%204.html",
+			"images":["cwgl1.jpg"]
+		}
 	
 	},
+
+	{
+		"project":{
+			"name":"The Scholar's Ship",
+			"date":"December 2015",
+			"description":"This project was made for two courses, Database Systems and Data Structures and Algorihms. The project was a website for students to sign up and log in, view and download course books. It involved carrying out MySQL queries via PHP to retrieve, edit or add information, and a tailor-made recommendations alsgorithm.",
+			"link":"https://github.com/nashmia-riaz/thescholarship",
+			"images":["TSS1.jpg","TSS2.jpg","TSS3.jpg"]
+		}
+	
+	},
+
+	{
+		"project":{
+			"name":"Collaborative Whiteboard",
+			"date":"May 2016",
+			"description":"Collaborative Whiteboard was a webapp made for Software Requirements Engineering course. Using PubNub keys, it involved a virtual whiteboard upon which a user could draw, and another user would see the drawing in realtime. This was a prototupe for the project proposed for the course, as the course mostly involved documentation of the requiremnts engineering process.",
+			"link":"https://github.com/nashmia-riaz/collabwhiteboard",
+			"projectLink":"https://nashmia-riaz.github.io/collabwhiteboard",
+			"images":["colwb1.jpg"]
+		}
+	
+	},
+
+	{
+		"project":{
+			"name":"Image Steganography",
+			"date":"May 2016",
+			"description":"A project made for Computer Networks course, it involved building a TCP-based HTTP server. The server held some messages, which when requested, would be encoded in an image file and sent to the client. The client would then decode these using their program.",
+			"link":"https://github.com/nashmia-riaz/ImageStenographyPy",
+			"images":["is1.jpg", "is2.jpg"]
+		}
+	
+	},
+
+	{
+		"project":{
+			"name":"Fat Cat",
+			"date":"July 2016",
+			"description":"While not for a particular course, Fat Cat was a game made to learn Unity 3D. It was all designed and built from scratch. A relatively simple game, it involves a cat jumping up to eat food.",
+			"link":"https://github.com/nashmia-riaz/FatCat",
+			"projectLink":"https://nashmia-riaz.github.io/FatCat",
+			"images":["fc1.jpg", "fc2.jpg","fc3.jpg"]
+		}
+	
+	},
+
+	{
+		"project":{
+			"name":"Github Site",
+			"date":"August 2016",
+			"description":"A followup to the HTML, CSS and Javascript course on Coursera, this site was made from scratch. All CSS transitions and stylings were done customly.",
+			"link":"https://github.com/nashmia-riaz/nashmia-riaz.github.io",
+			"projectLink":"https://nashmia-riaz.github.io",
+			"images":["gs1.jpg", "gs2.jpg", "gs3.jpg"]
+		}
+	
+	}
 ]
