@@ -42,11 +42,19 @@ body {
        -o-animation: slidedown 1s; /* Opera < 12.1 */
           animation: slidedown 1s;
 }
-
+.panel-footer .container{
+  width:70%;
+  height:100%;
+  padding:20px;
+}
 #footerlink{
-  /*margin-top:12px;*/
   color:#ffe8be;
-  margin:10px 0px 15px;
+  margin-bottom: 5px;
+
+}
+#footerlink a{
+
+  color:#ffe8be;
 }
 #footerlink:hover, #footerlink:focus{
 text-decoration: none;
@@ -132,7 +140,7 @@ text-decoration: none;
   position: relative;
   width:100%;
   clear:both;
-  height: 150px;
+  /*height: 150px;*/
 }
 
 /******************not needed right now **********************/
@@ -589,7 +597,7 @@ hr{
 
     margin-top:   100px;
   }
-
+ 
 
 }
 /*****************************************************/
@@ -638,7 +646,9 @@ hr{
           animation: fadein 1s;
           animation-fill-mode: forwards;
 }
-
+#footerlink{
+    text-align:   center;
+  }
 #linkHP:active #HPimg1{
   -webkit-animation: bgslideleft 1s; /* Safari, Chrome and Opera > 12.1 */
      -moz-animation: bgslideleft 1s; /* Firefox < 16 */
@@ -712,6 +722,7 @@ hr{
   #linkHPD, #linkHPB, #linkHPP{
     margin-top:   50px;
   }
+   
   /* Header */
   .navbar-brand {
     padding-top: 10px;
@@ -738,7 +749,7 @@ hr{
     margin-right: 5px;
   }
 
-  #call-btn > a {
+  /*#call-btn > a {
     font-size: 1.5em;
     display: block;
     margin: 0 20px;
@@ -746,7 +757,7 @@ hr{
     border: 2px solid #fff;
     background-color: #f6b319;
     color: #951c49;
-  }
+  }*/
   #xs-deliver {
     margin-top: 5px;
     font-size: .7em;
@@ -756,8 +767,16 @@ hr{
   /* End Header */
 
   /* Footer */
+  #selfDescription{
+    width:100%;
+    margin:0px;
+  }
+  .container>hr{
+    padding:0px;
+  }
   .panel-footer section {
     margin-bottom: 30px;
+    margin-top:30px;
     text-align: center;
   }
   .panel-footer section:nth-child(3) {
