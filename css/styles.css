@@ -818,7 +818,9 @@ hr{
     padding-top:17px;
     font-size: 5vw;
   }
-  
+  .panel-footer .container{
+    width:100%;
+  }
   /* End Header */
   
   /* Home page */
