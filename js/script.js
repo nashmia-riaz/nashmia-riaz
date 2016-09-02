@@ -165,7 +165,7 @@ dc.loadArt = function(type){
   $ajaxUtils.sendGetRequest(artworksHTML,
     function(artsHTML){
       $.getJSON('/misc/'+type+'.json', function(data) {
-        var finalHtml = "<h1 id=\"pagetitleh1\">"+type+"</h1><div class='container'><div class='row' id='artGrid'>";
+        var finalHtml = "<h1 id=\"pagetitleh1\">"+type+"</h1><div class='container-fluid'><div class='row' id='artGrid'>";
     // Loop over categories
     var c=0;
     for (var i = 0; i < data.length; i++) {

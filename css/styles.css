@@ -48,6 +48,15 @@ body {
   height:100%;
   padding:20px;
 }
+#aboutMe{
+    /*width:100%;*/
+    margin:0px auto ;
+    padding:0px;
+  }
+#socialLinks{
+    margin:0px 0px;
+  padding:0px;
+  }
 #footerlink{
   color:#ffe8be;
   margin-bottom: 5px;
@@ -769,10 +778,7 @@ hr{
   /* End Header */
 
   /* Footer */
-  #selfDescription{
-    width:100%;
-    margin:0px;
-  }
+  
   .container>hr{
     padding:0px;
   }
