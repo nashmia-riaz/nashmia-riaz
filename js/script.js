@@ -60,14 +60,15 @@ var switchMenuToActive = function (name) {
       activeElements.childNodes[i].className='';
     }
   }
-  console.log("nav"+name+"Button");
+  // console.log("nav"+name+"Button");
   var nowActive = document.getElementById("nav"+name+"Button");
   nowActive.className+='active';
 };
 
 // On page load (before images or CSS)
 document.addEventListener("DOMContentLoaded", function (event) {
-    if(location.hash)
+  console.log('dom content');
+    if(location.hash || location.search)
       $dc.showPage();
     else{
     $dc.loadHome();
@@ -172,26 +173,51 @@ dc.loadProgramming= function(){
   
    
 }
+
 dc.showPage = function(){
+  console.log(document.location.hash);
   if(document.location.hash == '#Home'){
-    $dc.loadHome();
     history.pushState('$dc.loadHome()',null,'#Home');
+    $dc.loadHome();
   }
   else if (document.location.hash=='#Artworks'){
-    $dc.loadArt('artworks');
     history.pushState('$dc.loadArt(\'artworks\')',null,'#Artworks');
+    $dc.loadArt('artworks');
   }
   else if (document.location.hash=='#Designs'){
-    $dc.loadArt('designs');
     history.replaceState('$dc.loadArt(\'designs\')',null,'#Designs');
+    $dc.loadArt('designs');
   }
   else if (document.location.hash=='#Projects'){
-    $dc.loadProgramming();
     history.pushState('$dc.loadProgramming()','null','#Projects');
+    $dc.loadProgramming();
+  }
+  else if (document.location.search){
+    var name=getQueryVariable('name');
+    var filename = getQueryVariable('filename');
+    var date = getQueryVariable('date');
+    var path = getQueryVariable('path');
+
+    // history.pushState(null,null,'?name='+name+'&filename='+filename+'&date='+date+'&path='+path);
+    $dc.loadPicture(filename,name,date,path);
   }
   
 }
 
+function getQueryVariable(variable)
+{
+       var query = window.location.search.substring(1);
+       var vars = query.split("&");
+       for (var i=0;i<vars.length;i++) {
+               var pair = vars[i].split("=");
+               if(pair[0] == variable){
+                pair[1] = pair[1]
+    .replace(new RegExp("%20", "g"), ' ');
+                return pair[1];
+              }
+       }
+       return(false);
+}
 dc.showPage2 = function(){
   if(document.location.hash == '#Home'){
     $dc.loadHome();
@@ -209,7 +235,14 @@ dc.showPage2 = function(){
     $dc.loadProgramming();
     // history.pushState('$dc.loadProgramming()','null','#Projects');
   }
-  
+  else if (!document.location.hash){
+    var name=getQueryVariable('name');
+    var filename = getQueryVariable('filename');
+    var date = getQueryVariable('date');
+    var path = getQueryVariable('path');
+
+    $dc.loadImg(filename,name,date,path);
+  }
 }
 
 /**************** BUILD ARTWORKS PAGE *********************/
@@ -270,15 +303,18 @@ dc.loadArt = function(type){
 }
 /**********************************************************/
 dc.loadImg = function(filename, name, date, path){
+  showLoading("#main-content");
   finalHtml = "<img id='singleImg' src='images/"+path+"/"+filename+"'>"+
   "<div id='imageName'>"+name+"</div><div id='imageDate'>"+date+"</div>";
   insertHtml("#main-content", finalHtml);
+  console.log('show img');
 };
 dc.loadPicture = function(filename, name, date, path){
-  showLoading("#main-content");
-  $dc.loadImg(filename,name,date,path);
-  var loc= "$dc.loadImg('"+filename+"','"+name+"','"+date+"','"+path+"')";
-  history.pushState(loc,null,'#'+name);
+  // showLoading("#main-content");
+  // $dc.loadImg(filename,name,date,path);
+  history.pushState(null,null,'#?name='+name+'&filename='+filename+'&date='+date+'&path='+path);
+  dc.loadImg(filename,name,date,path);
+  console.log('add history');
 };
 
 
@@ -311,10 +347,13 @@ $(document).ready(function(){
 /*****************************************************************************/
 
 window.onpopstate = function(event) {  
-console.log('state change');  
+// console.log('state change');  
     if(event || event.state) {
         // console.log(event.state);
         // eval(event.state);
         $dc.showPage2();
     }
+    // else{
+        
+    // }
 }
