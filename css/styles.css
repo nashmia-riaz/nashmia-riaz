@@ -159,29 +159,6 @@ text-decoration: none;
   /*height: 150px;*/
 }
 
-/******************not needed right now **********************/
-.panel-footer div.row {
-  margin-bottom: 35px;
-}
-#hours, #address {
-  line-height: 2;
-}
-#hours > span, #address > span {
-  font-size: 1.3em;
-}
-#address p {
-  color: #557c3e;
-  font-size: .8em;
-  line-height: 1.8;
-}
-#testimonials {
-  font-style: italic;
-}
-#testimonials p:nth-child(2) {
-  margin-top: 25px;
-}
-
-/************************************************************/
 /* END FOOTER */
 
 
@@ -621,7 +598,7 @@ hr{
 
 /*single artwork page*/
  #singleImg, #imageName, #imageDate{
-    -webkit-animation: slideupfadein 2s; /* Safari, Chrome and Opera > 12.1 */
+  -webkit-animation: slideupfadein 2s; /* Safari, Chrome and Opera > 12.1 */
      -moz-animation: slideupfadein 2s; /* Firefox < 16 */
       -ms-animation: slideupfadein 2s; /* Internet Explorer */
        -o-animation: slideupfadein 2s; /* Opera < 12.1 */
@@ -749,13 +726,7 @@ hr{
     padding-top: 15px;
     font-size: 3vw; /* 1vw = 1% of viewport width */
   }
-  .navbar-brand p { /* Kosher cert */
-    font-size: .6em;
-    margin-top: 12px;
-  }
-  .navbar-brand p img { /* Star-K */
-    height: 20px;
-  }
+
  
   #collapsable-nav a { /* Collapsed nav menu text */
     font-size: 1.2em;
@@ -766,21 +737,7 @@ hr{
     margin-right: 5px;
   }
 
-  /*#call-btn > a {
-    font-size: 1.5em;
-    display: block;
-    margin: 0 20px;
-    padding: 10px;
-    border: 2px solid #fff;
-    background-color: #f6b319;
-    color: #951c49;
-  }*/
-  #xs-deliver {
-    margin-top: 5px;
-    font-size: .7em;
-    letter-spacing: .1em;
-    text-transform: uppercase;
-  }
+  
   /* End Header */
 
   /* Footer */
@@ -788,17 +745,7 @@ hr{
   .container>hr{
     padding:0px;
   }
-  .panel-footer section {
-    margin-bottom: 30px;
-    margin-top:30px;
-    text-align: center;
-  }
-  .panel-footer section:nth-child(3) {
-    margin-bottom: 0; /* margin already exists on the whole row */
-  }
-  .panel-footer section hr {
-    width: 50%;
-  }
+  
   /* End Footer */
 
   /* Home Page */
@@ -836,10 +783,6 @@ hr{
   /* End Header */
   
   /* Home page */
-  #menu-tile, #specials-tile {
-    width: 280px;
-    margin: 0 auto 15px;
-  }
 
   .col-xxs-12 {
     position: relative;
@@ -852,37 +795,3 @@ hr{
 
 
 }
-/*@media (max-width: 2000px) {
-    .navbar-header {
-        float: none;
-    }
-    .navbar-left,.navbar-right {
-        float: none !important;
-    }
-    
-    .navbar-collapse {
-        border-top: 1px solid transparent;
-        box-shadow: inset 0 1px 0 rgba(255,255,255,0.1);
-    }
-    .navbar-fixed-top {
-        top: 0;
-        border-width: 0 0 1px;
-    }
-    .navbar-collapse.collapse {
-        display: none!important;
-    }
-    .navbar-nav {
-        float: none!important;
-        margin-top: 7.5px;
-    }
-    .navbar-nav>li {
-        float: none;
-    }
-    .navbar-nav>li>a {
-        padding-top: 10px;
-        padding-bottom: 10px;
-    }
-    .collapse.in{
-        display:block !important;
-    }
-}*/
