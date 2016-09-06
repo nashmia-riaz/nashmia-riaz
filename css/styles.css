@@ -31,6 +31,12 @@ body {
 }
 /************************************************************************/
 /** HEADER **/
+.header-hidden{
+  display: none;
+}
+.header-visible{
+  display: visible;
+}
 #header-nav {
   background-color: #b1dbcf;
   border-radius: 0;

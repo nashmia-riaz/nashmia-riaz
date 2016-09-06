@@ -5,13 +5,13 @@
 <div class='containter-fluid' id='linksfromHP'>
 	<div class='row'>
 		<div class='col-lg-3 col-sm-6' >
-			<a href="#" onclick="(
+			<a href="#Artworks" onclick="(
 				function(){
+					var art = '$dc.loadArt(\'artworks\')';
+                    
+                    history.pushState(art,null,'#Artworks');
 					setTimeout(function(){
-						$dc.loadArt('artworks');
-							var a ='\'artworks\'';
-				    		var art = '$dc.loadArt('+a+')';
-							history.pushState(art,null,null);
+						$dc.loadArt('artworks');          
 						},500); 
 					}()
 					);"><div id="linkHP">
@@ -24,10 +24,10 @@
 		</div>
 		<div class='col-lg-3 col-sm-6'>
 			<div  id="linkHPD">
-				<a href="#" onclick="(function(){
+				<a href="#Designs" onclick="(function(){
+					history.pushState('$dc.loadArt(\'designs\')',null,'#Designs');
 					setTimeout(function(){
 					$dc.loadArt('designs');
-					history.pushState('$dc.loadArt(\'designs\')',null,null);
 					},500); 
 					}()
 					);"><div id="linkHPtextD">Designs
@@ -51,12 +51,12 @@
 			</div>
 		</div>
 		<div class='col-lg-3 col-sm-6'>
-				<a href="#" onclick="
+				<a href="#Projects" onclick="
 				(function(){
+				    var programming = '$dc.loadProgramming()';
+					history.pushState(programming,'null','#Projects');
 					setTimeout(function(){
 						$dc.loadProgramming();
-				    		var programming = '$dc.loadProgramming()';
-							history.pushState(programming,null,null);
 						},500); 
 					}());">
 			<div  id="linkHPP">

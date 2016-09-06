@@ -44,36 +44,35 @@
                 <div id="collapsable-nav" class="collapse navbar-collapse">
                     <ul id="nav-list" class="nav navbar-nav navbar-right">
                         <li id="navHomeButton" >
-                          <a href="#" onclick="
+                          <a href="#Home" onclick="
                               $dc.loadHome();
                               var home = '$dc.loadHome()';
-                              history.pushState(home,null,null);
+                              history.pushState('$dc.loadHome()',null,'#Home');
                               "> Home</a>
                         </li>
                         <li id="navartworksButton">
-                          <a href="#" onclick="
+                          <a href="#Artworks" onclick="
                           // (function(){
                             $dc.loadArt('artworks');
-                              var a ='\'artworks\'';
-                              var art = '$dc.loadArt('+a+')';
-                              history.pushState(art,null,null);
+                              var art = '$dc.loadArt(\'artworks\')';
+                              history.pushState(art,null,'#Artworks');
                               // });
                               "> Artworks</a>
                         </li>
                         <li id="navdesignsButton">
-                          <a href="#" onclick="
+                          <a href="#Designs" onclick="
                             $dc.loadArt('designs');
-                            history.pushState('$dc.loadArt(\'designs\')',null,null);
+                            history.pushState('$dc.loadArt(\'designs\')',null,'#Designs');
                             "> Designs</a>
                         </li>
                         <li id="navBlogButton">
                           <a href="https://nashmia-riaz.github.io/BlogNR/"> Blog</a>
                         </li>
                         <li id="navProjectsButton">
-                          <a href="#" onclick="
+                          <a href="#Projects" onclick="
                             $dc.loadProgramming();
                             var programming = '$dc.loadProgramming()';
-                            history.pushState(programming,null,null);
+                            history.pushState(programming,'null','#Projects');
                             "> Programming</a>
                         </li>
                     </ul><!-- #nav-list -->

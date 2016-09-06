@@ -49,6 +49,7 @@ var insertProperty = function (string, propName, propValue) {
   return string;
 }
 
+
 // Remove the class 'active' from home and switch to Menu button
 var switchMenuToActive = function (name) {
 
@@ -66,8 +67,11 @@ var switchMenuToActive = function (name) {
 
 // On page load (before images or CSS)
 document.addEventListener("DOMContentLoaded", function (event) {
+    if(location.hash)
+      $dc.showPage();
+    else{
     $dc.loadHome();
-    history.pushState('$dc.loadHome()','index.html#','index.html#');
+    history.pushState('$dc.loadHome()',null,'#Home');}
 });
 
 
@@ -75,6 +79,17 @@ dc.loadHome = function(){
   switchMenuToActive('Home');
   // On first load, show home view
   showLoading("#main-content");
+
+  $('#nav-list').addClass(' header-hidden');
+  // for (var i=0; i<activeElements.childNodes.length; i++){
+  //   if(activeElements.childNodes[i].className=='active'){
+  //     activeElements.childNodes[i].className='';
+  //   }
+  // }
+  // console.log("nav"+name+"Button");
+  // var nowActive = document.getElementById("nav"+name+"Button");
+  // nowActive.className+='active';
+
     $ajaxUtils.sendGetRequest(
     homeHtml,
     function (responseText) {
@@ -87,6 +102,8 @@ dc.loadHome = function(){
 dc.loadProgramming= function(){
   showLoading("#main-content");
   switchMenuToActive('Projects');
+  $('#nav-list').removeClass('header-hidden');
+
      $ajaxUtils.sendGetRequest(
     programmingHTML,
     function (exampleHTML) {
@@ -155,12 +172,52 @@ dc.loadProgramming= function(){
   
    
 }
+dc.showPage = function(){
+  if(document.location.hash == '#Home'){
+    $dc.loadHome();
+    history.pushState('$dc.loadHome()',null,'#Home');
+  }
+  else if (document.location.hash=='#Artworks'){
+    $dc.loadArt('artworks');
+    history.pushState('$dc.loadArt(\'artworks\')',null,'#Artworks');
+  }
+  else if (document.location.hash=='#Designs'){
+    $dc.loadArt('designs');
+    history.replaceState('$dc.loadArt(\'designs\')',null,'#Designs');
+  }
+  else if (document.location.hash=='#Projects'){
+    $dc.loadProgramming();
+    history.pushState('$dc.loadProgramming()','null','#Projects');
+  }
+  
+}
 
+dc.showPage2 = function(){
+  if(document.location.hash == '#Home'){
+    $dc.loadHome();
+    // history.pushState('$dc.loadHome()',null,'#Home');
+  }
+  else if (document.location.hash=='#Artworks'){
+    $dc.loadArt('artworks');
+    // history.pushState('$dc.loadArt(\'artworks\')',null,'#Artworks');
+  }
+  else if (document.location.hash=='#Designs'){
+    $dc.loadArt('designs');
+    // history.replaceState('$dc.loadArt(\'designs\')',null,'#Designs');
+  }
+  else if (document.location.hash=='#Projects'){
+    $dc.loadProgramming();
+    // history.pushState('$dc.loadProgramming()','null','#Projects');
+  }
+  
+}
 
 /**************** BUILD ARTWORKS PAGE *********************/
 dc.loadArt = function(type){
   showLoading("#main-content");
   switchMenuToActive(type);
+  $('#nav-list').removeClass('header-hidden');
+  $('#nav-list').addClass('header-visible');
 
   $ajaxUtils.sendGetRequest(artworksHTML,
     function(artsHTML){
@@ -221,7 +278,7 @@ dc.loadPicture = function(filename, name, date, path){
   showLoading("#main-content");
   $dc.loadImg(filename,name,date,path);
   var loc= "$dc.loadImg('"+filename+"','"+name+"','"+date+"','"+path+"')";
-  history.pushState(loc,null,null);
+  history.pushState(loc,null,'#'+name);
 };
 
 
@@ -253,9 +310,11 @@ $(document).ready(function(){
 });
 /*****************************************************************************/
 
-window.onpopstate = function(event) {    
-    if(event && event.state) {
-        console.log(event.state);
-        eval(event.state);
+window.onpopstate = function(event) {  
+console.log('state change');  
+    if(event || event.state) {
+        // console.log(event.state);
+        // eval(event.state);
+        $dc.showPage2();
     }
 }
