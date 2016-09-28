@@ -33,5 +33,59 @@
 		"date":"5 April 2016"
 	}
 	
+	},
+
+	{
+	"image":{
+		"filename": "5.jpg",
+		"name":"Week Of Welcome Cover",
+		"date":"20th September 2016"
+	}
+	
+	},
+
+	{
+	"image":{
+		"filename": "6.jpg",
+		"name":"Week Of Welcome Activities Poster",
+		"date":"20th September 2016"
+	}
+	
+	},
+
+	{
+	"image":{
+		"filename": "7.jpg",
+		"name":"WIE Poster",
+		"date":"20th September 2016"
+	}
+	
+	},
+
+	{
+	"image":{
+		"filename": "8.jpg",
+		"name":"IEEE Flyer",
+		"date":"20th September 2016"
+	}
+	
+	},
+
+	{
+	"image":{
+		"filename": "9.jpg",
+		"name":"Recruitment Cover",
+		"date":"27th September 2016"
+	}
+	
+	},
+
+	{
+	"image":{
+		"filename": "10.jpg",
+		"name":"Recruitment Poster",
+		"date":"27th September 2016"
+	}
+	
 	}
 ]
