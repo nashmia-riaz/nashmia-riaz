@@ -5,7 +5,7 @@ $(function () { // Same as document.addEventListener("DOMContentLoaded"...
   $("#navbarToggle").blur(function (event) {
     var screenWidth = window.innerWidth;
       $("#collapsable-nav").collapse('hide');
-    
+
   });
 
   // In Firefox and Safari, the click event doesn't retain the focus
@@ -129,9 +129,9 @@ dc.loadProgramming= function(){
 
       if(data[i].project.projectLink){
         projectLink = "<div id='gameLink'>Project can be seen in action <a href="+projectLink+">here</a>.</div>";
-                      
+
       }
-      
+
       html =
         insertProperty(html,
                        "projectLink",
@@ -155,7 +155,7 @@ dc.loadProgramming= function(){
         insertProperty(html,
                        "date",
                        date);
-      
+
       finalHtml += html;
     }
 
@@ -169,9 +169,9 @@ dc.loadProgramming= function(){
     },
     false);
   // type='example';
-  
-  
-   
+
+
+
 }
 
 dc.showPage = function(){
@@ -201,7 +201,7 @@ dc.showPage = function(){
     // history.pushState(null,null,'?name='+name+'&filename='+filename+'&date='+date+'&path='+path);
     $dc.loadPicture(filename,name,date,path);
   }
-  
+
 }
 
 function getQueryVariable(variable)
@@ -283,13 +283,13 @@ dc.loadArt = function(type){
         insertProperty(html,
                        "columncount",
                        c);
-      
+
 
       finalHtml += html;
 
       if (c==3){
-      c=0;    
-     } 
+      c=0;
+     }
     }
 
     finalHtml += "</div></div>";
@@ -299,7 +299,7 @@ dc.loadArt = function(type){
 
     });
     }, false);
-  
+
 }
 /**********************************************************/
 dc.loadImg = function(filename, name, date, path){
@@ -336,24 +336,36 @@ $(document).ready(function(){
       $('#backtotop').fadeOut();
     }
   });
-  
+
   //Click event to scroll to top
   $('#backtotop').click(function(){
     $('html, body').animate({scrollTop : 0},800);
     return false;
   });
-  
+
 });
 /*****************************************************************************/
 
-window.onpopstate = function(event) {  
-// console.log('state change');  
+window.onpopstate = function(event) {
+// console.log('state change');
     if(event || event.state) {
         // console.log(event.state);
         // eval(event.state);
         $dc.showPage2();
     }
     // else{
-        
+
     // }
 }
+
+$(document).mouseup(function (e)
+{
+    var container = $("#Form");
+
+    if (!container.is(e.target) // if the target of the click isn't the container...
+        && container.has(e.target).length === 0) // ... nor a descendant of the container
+    {
+        container.hide();
+        $('#contactMeForm').hide();
+    }
+});

@@ -115,7 +115,58 @@ text-decoration: none;
   font-size: 1.8em;
 }
 
-
+#homePage h1, #homePage h3{
+  text-align: center;
+  -webkit-animation: slideupfadein 2s; /* Safari, Chrome and Opera > 12.1 */
+     -moz-animation: slideupfadein 2s; /* Firefox < 16 */
+      -ms-animation: slideupfadein 2s; /* Internet Explorer */
+       -o-animation: slideupfadein 2s; /* Opera < 12.1 */
+          animation: slideupfadein 2s;
+          animation-delay:  0.3s;
+          animation-fill-mode:  forwards;
+          visibility: hidden;
+}
+#contactMeForm{
+  display: none;
+  height: 100%;
+  width: 100%;
+  position:fixed;
+  top:0%;
+  left:0%;
+  background-color: rgba(0,0,0,0.8);
+  text-align: center;
+}
+#Form{
+  text-align: center;
+  position:fixed;
+  vertical-align: top;
+  width: 50%;
+  left: 25%;
+  top:25%;
+}
+.input{
+  color: #97c6c9;
+  text-align: left;
+  padding: 10px;
+  margin: 10px auto;
+  border: #97c6c9 2px solid;
+  border-radius: 5px;
+  font: 'Josefin Sans', sans;
+  width: 100%;
+}
+textarea{
+  vertical-align: top;
+  height:200px;
+}
+#button{
+  background-color: #b1dbcf;
+  width: 100%;
+  padding: 10px;
+  text-align: center;
+  color:#74446d;
+  border-radius: 5px;
+  font: 'Josefin Sans', sans;
+}
 .navbar-header button.navbar-toggle, .navbar-header .icon-bar {
   border: 1px solid #3a4072;
 }
@@ -177,7 +228,7 @@ body #profilepic{
       -ms-animation: slideupfadein 2s; /* Internet Explorer */
        -o-animation: slideupfadein 2s; /* Opera < 12.1 */
           animation: slideupfadein 2s;
-}  
+}
 #description{
   color:#fff;
   text-align: center;
@@ -191,9 +242,9 @@ body #profilepic{
        -o-animation: slideupfadein 2s; /* Opera < 12.1 */
           animation: slideupfadein 2s;
           animation-delay:  0.3s;
-          animation-fill-mode:  forwards; 
+          animation-fill-mode:  forwards;
           visibility: hidden;
-} 
+}
 #linksfromHP{
   margin-top: 100px;
   -webkit-animation: slideupfadein 2s; /* Safari, Chrome and Opera > 12.1 */
@@ -202,7 +253,7 @@ body #profilepic{
        -o-animation: slideupfadein 2s; /* Opera < 12.1 */
           animation: slideupfadein 2s;
           animation-delay:  0.6s;
-          animation-fill-mode:  forwards; 
+          animation-fill-mode:  forwards;
           visibility: hidden;
 }
 
@@ -231,7 +282,7 @@ body #profilepic{
 
 
 #HPimg1{
-  background-repeat:  no-repeat; 
+  background-repeat:  no-repeat;
   background-image: url("../images/artworks1.png");
   height: 30px;
   width: 190px;
@@ -240,7 +291,7 @@ body #profilepic{
 }
 
 #HPimg2{
- background-repeat:  no-repeat;    
+ background-repeat:  no-repeat;
  background-image: url("../images/artworks2.png");
   height: 30px;
   width:190px;
@@ -254,7 +305,7 @@ body #profilepic{
       -ms-animation: bgslideleft 1s; /* Internet Explorer */
        -o-animation: bgslideleft 1s; /* Opera < 12.1 */
           animation: bgslideleft 1s;
-          animation-fill-mode:  forwards; 
+          animation-fill-mode:  forwards;
 }
 #linkHP:hover #HPimg2{
   -webkit-animation: bgslideright 1s; /* Safari, Chrome and Opera > 12.1 */
@@ -262,7 +313,7 @@ body #profilepic{
       -ms-animation: bgslideright 1s; /* Internet Explorer */
        -o-animation: bgslideright 1s; /* Opera < 12.1 */
           animation: bgslideright 1s;
-          animation-fill-mode:  forwards; 
+          animation-fill-mode:  forwards;
 }
 
 /**********************************************/
@@ -285,7 +336,7 @@ body #profilepic{
       -ms-animation: rotatecwninety 1s; /* Internet Explorer */
        -o-animation: rotatecwninety 1s; /* Opera < 12.1 */
           animation: rotatecwninety 1s;
-          animation-fill-mode:  forwards; 
+          animation-fill-mode:  forwards;
 }
 #linkHPD:hover #design2{
   -webkit-animation: rotatecwninety 1s; /* Safari, Chrome and Opera > 12.1 */
@@ -293,7 +344,7 @@ body #profilepic{
       -ms-animation: rotatecwninety 1s; /* Internet Explorer */
        -o-animation: rotatecwninety 1s; /* Opera < 12.1 */
           animation: rotatecwninety 1s;
-          animation-fill-mode:  forwards; 
+          animation-fill-mode:  forwards;
 }
 #linkHPD:hover #design3{
   -webkit-animation: rotatecwninety 1s; /* Safari, Chrome and Opera > 12.1 */
@@ -301,38 +352,38 @@ body #profilepic{
       -ms-animation: rotatecwninety 1s; /* Internet Explorer */
        -o-animation: rotatecwninety 1s; /* Opera < 12.1 */
           animation: rotatecwninety 1s;
-          animation-fill-mode:  forwards; 
+          animation-fill-mode:  forwards;
 }
 #linkHPD:hover #linkHPtextD{
- 
+
 }
 #design1{
-  background-repeat:  no-repeat; 
+  background-repeat:  no-repeat;
   background-image: url("../images/design1.png");
   height: 200px;
   width: 200px;
   background-position: left top;
-  transform:rotate(90deg); 
+  transform:rotate(90deg);
   position:absolute ;
   /*border:solid blue 2px;*/
 }
 #design2{
-  background-repeat:  no-repeat; 
+  background-repeat:  no-repeat;
   background-image: url("../images/design2.png");
   height: 200px;
   width: 200px;
   background-position: left top;
-  transform:rotate(-90deg); 
+  transform:rotate(-90deg);
   position:absolute ;
 }
 #design3{
-  background-repeat:  no-repeat; 
+  background-repeat:  no-repeat;
   background-image: url("../images/design3.png");
   height: 200px;
   width: 200px;
   background-position: left top;
   padding-top:  90px;
-  transform:rotate(90deg); 
+  transform:rotate(90deg);
   position:absolute ;
 }
 #linkHPtextD{
@@ -357,19 +408,19 @@ body #profilepic{
 }
 #linkHPBtext{
   clear: both;
-  position:   absolute; 
+  position:   absolute;
   bottom:20px;
   margin-left:  80px;
 }
 #blog1{
-  background-repeat:  no-repeat; 
+  background-repeat:  no-repeat;
   background-image: url("../images/blog1.png");
   height: 200px;
   width: 200px;
   background-position: left top;
 }
 #blog2{
-  background-repeat:  no-repeat; 
+  background-repeat:  no-repeat;
   background-image: url("../images/blog2.png");
   height: 200px;
   width: 200px;
@@ -404,7 +455,7 @@ body #profilepic{
 
 
 #programming1{
-  background-repeat:  no-repeat; 
+  background-repeat:  no-repeat;
   background-image: url("../images/programming2.png");
   height: 45px;
   width: 180px;
@@ -413,7 +464,7 @@ body #profilepic{
 }
 
 #programming2{
- background-repeat:  no-repeat;    
+ background-repeat:  no-repeat;
  background-image: url("../images/programming1.png");
   height: 45px;
   width:150px;
@@ -428,7 +479,7 @@ body #profilepic{
       -ms-animation: bgslideleft 1s; /* Internet Explorer */
        -o-animation: bgslideleft 1s; /* Opera < 12.1 */
           animation: bgslideleft 1s;
-          animation-fill-mode:  forwards; 
+          animation-fill-mode:  forwards;
 }
 #linkHPP:hover #programming2{
   -webkit-animation: bgslideright 1s; /* Safari, Chrome and Opera > 12.1 */
@@ -436,7 +487,7 @@ body #profilepic{
       -ms-animation: bgslideright 1s; /* Internet Explorer */
        -o-animation: bgslideright 1s; /* Opera < 12.1 */
           animation: bgslideright 1s;
-          animation-fill-mode:  forwards; 
+          animation-fill-mode:  forwards;
 }
 
 /**********************************************/
@@ -449,7 +500,7 @@ body #profilepic{
       -ms-animation: slideupfadein 2s; /* Internet Explorer */
        -o-animation: slideupfadein 2s; /* Opera < 12.1 */
           animation: slideupfadein 2s;
-          animation-fill-mode:  forwards; 
+          animation-fill-mode:  forwards;
           visibility: hidden;
 }
 
@@ -460,7 +511,7 @@ body #profilepic{
        -o-animation: slideupfadein 2s; /* Opera < 12.1 */
           animation: slideupfadein 2s;
           animation-delay:  0.3s;
-          animation-fill-mode:  forwards; 
+          animation-fill-mode:  forwards;
           visibility: hidden;
 }
 
@@ -471,7 +522,7 @@ body #profilepic{
        -o-animation: slideupfadein 2s; /* Opera < 12.1 */
           animation: slideupfadein 2s;
           animation-delay:  0.6s;
-          animation-fill-mode:  forwards; 
+          animation-fill-mode:  forwards;
           visibility: hidden;
 }
 
@@ -541,7 +592,7 @@ margin:40px;
   /*margin-bottom: 40px;*/
 }
 #projectName{
-  text-align: center; 
+  text-align: center;
   margin-bottom:  20px;
 }
 #projectName span{
@@ -580,7 +631,7 @@ hr{
 }
 
 @media (min-width: 767px) and (max-width: 1200px){
-  #artGrid section:nth-child(2n+1) {  
+  #artGrid section:nth-child(2n+1) {
     clear:left;
   }
   #linkHPB{
@@ -590,7 +641,7 @@ hr{
 
     margin-top:   100px;
   }
- 
+
 
 }
 /*****************************************************/
@@ -604,7 +655,7 @@ hr{
        -o-animation: slideupfadein 2s; /* Opera < 12.1 */
           animation: slideupfadein 2s;
           animation-delay:  0.3s;
-          animation-fill-mode:  forwards; 
+          animation-fill-mode:  forwards;
           visibility: hidden;
           position: relative;
           margin:20px auto 20px;
@@ -648,7 +699,7 @@ hr{
       -ms-animation: bgslideleft 1s; /* Internet Explorer */
        -o-animation: bgslideleft 1s; /* Opera < 12.1 */
           animation: bgslideleft 1s;
-          animation-fill-mode:  forwards; 
+          animation-fill-mode:  forwards;
 }
 #linkHP:active #HPimg2{
   -webkit-animation: bgslideright 1s; /* Safari, Chrome and Opera > 12.1 */
@@ -656,7 +707,7 @@ hr{
       -ms-animation: bgslideright 1s; /* Internet Explorer */
        -o-animation: bgslideright 1s; /* Opera < 12.1 */
           animation: bgslideright 1s;
-          animation-fill-mode:  forwards; 
+          animation-fill-mode:  forwards;
 }
 #linkHPD:active #design1{
   -webkit-animation: rotatecwninety 1s; /* Safari, Chrome and Opera > 12.1 */
@@ -664,7 +715,7 @@ hr{
       -ms-animation: rotatecwninety 1s; /* Internet Explorer */
        -o-animation: rotatecwninety 1s; /* Opera < 12.1 */
           animation: rotatecwninety 1s;
-          animation-fill-mode:  forwards; 
+          animation-fill-mode:  forwards;
 }
 #linkHPD:active #design2{
   -webkit-animation: rotatecwninety 1s; /* Safari, Chrome and Opera > 12.1 */
@@ -672,7 +723,7 @@ hr{
       -ms-animation: rotatecwninety 1s; /* Internet Explorer */
        -o-animation: rotatecwninety 1s; /* Opera < 12.1 */
           animation: rotatecwninety 1s;
-          animation-fill-mode:  forwards; 
+          animation-fill-mode:  forwards;
 }
 #linkHPD:active #design3{
   -webkit-animation: rotatecwninety 1s; /* Safari, Chrome and Opera > 12.1 */
@@ -680,7 +731,7 @@ hr{
       -ms-animation: rotatecwninety 1s; /* Internet Explorer */
        -o-animation: rotatecwninety 1s; /* Opera < 12.1 */
           animation: rotatecwninety 1s;
-          animation-fill-mode:  forwards; 
+          animation-fill-mode:  forwards;
 }
 #linkHPB:active #blog2{
   -webkit-animation: bgslideright 1s; /* Safari, Chrome and Opera > 12.1 */
@@ -697,7 +748,7 @@ hr{
       -ms-animation: bgslideleft 1s; /* Internet Explorer */
        -o-animation: bgslideleft 1s; /* Opera < 12.1 */
           animation: bgslideleft 1s;
-          animation-fill-mode:  forwards; 
+          animation-fill-mode:  forwards;
 }
 #linkHPP:active #programming2{
   -webkit-animation: bgslideright 1s; /* Safari, Chrome and Opera > 12.1 */
@@ -705,7 +756,7 @@ hr{
       -ms-animation: bgslideright 1s; /* Internet Explorer */
        -o-animation: bgslideright 1s; /* Opera < 12.1 */
           animation: bgslideright 1s;
-          animation-fill-mode:  forwards; 
+          animation-fill-mode:  forwards;
 }
 }
 
@@ -715,7 +766,7 @@ hr{
   #linkHPD, #linkHPB, #linkHPP{
     margin-top:   50px;
   }
-   
+
   /* Header */
   .navbar-brand {
     padding-top: 10px;
@@ -727,7 +778,7 @@ hr{
     font-size: 3vw; /* 1vw = 1% of viewport width */
   }
 
- 
+
   #collapsable-nav a { /* Collapsed nav menu text */
     font-size: 1.2em;
     font-family: 'Josefin Sans';
@@ -737,15 +788,15 @@ hr{
     margin-right: 5px;
   }
 
-  
+
   /* End Header */
 
   /* Footer */
-  
+
   .container>hr{
     padding:0px;
   }
-  
+
   /* End Footer */
 
   /* Home Page */
@@ -781,7 +832,7 @@ hr{
     width:100%;
   }
   /* End Header */
-  
+
   /* Home page */
 
   .col-xxs-12 {

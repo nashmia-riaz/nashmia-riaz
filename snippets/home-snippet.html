@@ -1,5 +1,7 @@
 <div id="homePage">
         <img src="images/Profilepic.jpg" id="profilepic">
+				<h3>I AM</h3>
+        <h1>Nashmia Riaz</h1>
         <p id="description" >Programmer. Designer. Digital Artist.</p>
 <div linksfromHP>
 <div class='containter-fluid' id='linksfromHP'>
@@ -8,18 +10,18 @@
 			<a href="#Artworks" onclick="(
 				function(){
 					var art = '$dc.loadArt(\'artworks\')';
-                    
+
                     history.pushState(art,null,'#Artworks');
 					setTimeout(function(){
-						$dc.loadArt('artworks');          
-						},500); 
+						$dc.loadArt('artworks');
+						},500);
 					}()
 					);"><div id="linkHP">
-				
+
 					<div id="HPimg1"></div>
 					<span id="linkHPtext">Artworks</span>
 					<div id="HPimg2"></div>
-					
+
 			</div></a>
 		</div>
 		<div class='col-lg-3 col-sm-6'>
@@ -28,7 +30,7 @@
 					history.pushState('$dc.loadArt(\'designs\')',null,'#Designs');
 					setTimeout(function(){
 					$dc.loadArt('designs');
-					},500); 
+					},500);
 					}()
 					);"><div id="linkHPtextD">Designs
 									</div>
@@ -57,14 +59,14 @@
 					history.pushState(programming,'null','#Projects');
 					setTimeout(function(){
 						$dc.loadProgramming();
-						},500); 
+						},500);
 					}());">
 			<div  id="linkHPP">
 				<div id="programming1"></div>
 				<div id="linkHPPtext">Projects</div>
 				<div id="programming2"></div>
 			</div></a>
-		</div> 
+		</div>
 	</div>
 </div>
 </div>

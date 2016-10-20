@@ -22,7 +22,7 @@
   <body>
     <header>
         <nav id="header-nav" class="navbar navbar-default ">
-            <div class="container-fluid"><!-- 
+            <div class="container-fluid"><!--
                 <div class="navbar-header">
                     <a href="index.html" class="pull-left"></a>
                 </div> -->
@@ -30,7 +30,7 @@
                     <div class="navbar-brand">
                         <a href="index.html" class="pull-left"><h1>Nashmia Riaz</h1></a>
                     </div>
-                   
+
 
                 <!--This is in other pages -->
                     <button id="navbarToggle" type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#collapsable-nav" aria-expanded="false">
@@ -76,7 +76,7 @@
                             "> Programming</a>
                         </li>
                     </ul><!-- #nav-list -->
-                </div><!-- .collapse .navbar-collapse --> 
+                </div><!-- .collapse .navbar-collapse -->
             </div><!-- container -->
         </nav>
     </header>
@@ -90,6 +90,25 @@
                 Nashmia Riaz is currently studying Software Engineering at National University of Science &amp; Technology, Pakistan. During her free time, she enjoys coding, designing, and making digital paintings. She's a hard worker and a quick learner who likes taking on challenges.
               </p>
             </div>
+            <div id="contactMe">
+                    If you would like to contact me, click <a href="#contactMeForm"
+                    onclick="
+                    document.getElementById('contactMeForm').style.display = 'block';
+                    document.getElementById('Form').style.display = 'block';
+                    ">here</a>.
+                <div id="contactMeForm">
+                    <div id="Form">
+                        <h1>Contact Me</h1>
+                        <form action="https://formspree.io/nashmia-riaz@hotmail.com"
+                              method="POST">
+                            <input type="text" name="name" placeholder="Your name" class="input"><br/>
+                            <input type="email" name="_replyto" placeholder="Your email" class="input"><br/>
+                            <textarea type="textarea" name="message"  placeholder="Your message" class="input"  id="message" ></textarea><br/>
+                            <input type="submit" value="Send" class="btn-block" id="button">
+                        </form>
+                    </div>
+                </div>
+                </div>
             <span class='hidden-lg hidden-sd col-xs-12 col-sm-12 text-center'><hr></span>
             <div class='col-lg-2 col-sd-2 col-sm-12 col-xs-12' id='socialLinks'>
                 <div id="footerlink" class='col-lg-12 col-sd-12 col-sm-4 col-xs-4 col-xxs-12'><span class="glyphicon glyphicon-envelope"></span>
@@ -112,7 +131,7 @@
           </div>
   </footer>
   </body>
-    
+
 <span id='bgfade'><a href="#header-nav" id="backtotop"><img src="images/Arrow_top.png"></a>
             </span>
     <!-- jQuery (Bootstrap JS plugins depend on it) -->
@@ -121,5 +140,5 @@
   <script src="js/bootstrap.min.js"></script>
   <script src="js/ajax-utils.js"></script>
   <script src="js/script.js"></script>
-  <script src="js/fotorama.js"></script> 
+  <script src="js/fotorama.js"></script>
 </html>
