@@ -1,371 +1,85 @@
 
-$(function () { // Same as document.addEventListener("DOMContentLoaded"...
+/* Set the width of the side navigation to 250px */
 
-  // Same as document.querySelector("#navbarToggle").addEventListener("blur",...
-  $("#navbarToggle").blur(function (event) {
-    var screenWidth = window.innerWidth;
-      $("#collapsable-nav").collapse('hide');
-
-  });
-
-  // In Firefox and Safari, the click event doesn't retain the focus
-  // on the clicked button. Therefore, the blur event will not fire on
-  // user clicking somewhere else in the page and the blur event handler
-  // which is set up above will not be called.
-  // Refer to issue #28 in the repo.
-  // Solution: force focus on the element that the click event fired on
-  $("#navbarToggle").click(function (event) {
-    $(event.target).focus();
-  });
+$(window).load(function(){
+	// Animate loader off screen
+	$(".se-pre-con").fadeOut();
 });
 
-(function (global) {
+(function() {
+  "use strict";
 
-var dc = {};
-var nr = {};
-dc.history=[];
-var homeHtml = "snippets/home-snippet.html";
-var programmingHTML= "snippets/programming-snippet.html";
-var artworksHTML = "snippets/artworks-snippet.html";
-// Convenience function for inserting innerHTML for 'select'
-var insertHtml = function (selector, html) {
-  var targetElem = document.querySelector(selector);
-  targetElem.innerHTML = html;
-};
+  var toggles = document.querySelectorAll(".c-hamburger");
 
-// Show loading icon inside element identified by 'selector'.
-var showLoading = function (selector) {
-  var html = "<div class='text-center'>";
-  html += "<img src='images/ajax-loader.gif'></div>";
-  insertHtml(selector, html);
-};
-
-// Return substitute of '{{propName}}'
-// with propValue in given 'string'
-var insertProperty = function (string, propName, propValue) {
-  var propToReplace = "{{" + propName + "}}";
-  string = string
-    .replace(new RegExp(propToReplace, "g"), propValue);
-  return string;
-}
-
-
-// Remove the class 'active' from home and switch to Menu button
-var switchMenuToActive = function (name) {
-
-  var activeElements = document.getElementById("nav-list");
-
-  for (var i=0; i<activeElements.childNodes.length; i++){
-    if(activeElements.childNodes[i].className=='active'){
-      activeElements.childNodes[i].className='';
-    }
+  for (var i = toggles.length - 1; i >= 0; i--) {
+    var toggle = toggles[i];
+    toggleHandler(toggle);
   }
-  // console.log("nav"+name+"Button");
-  var nowActive = document.getElementById("nav"+name+"Button");
-  nowActive.className+='active';
-};
 
-// On page load (before images or CSS)
-document.addEventListener("DOMContentLoaded", function (event) {
-  console.log('dom content');
-    if(location.hash || location.search)
-      $dc.showPage();
-    else{
-    $dc.loadHome();
-    history.pushState('$dc.loadHome()',null,'#Home');}
-});
-
-
-dc.loadHome = function(){
-  switchMenuToActive('Home');
-  // On first load, show home view
-  showLoading("#main-content");
-
-  $('#nav-list').addClass(' header-hidden');
-  // for (var i=0; i<activeElements.childNodes.length; i++){
-  //   if(activeElements.childNodes[i].className=='active'){
-  //     activeElements.childNodes[i].className='';
-  //   }
-  // }
-  // console.log("nav"+name+"Button");
-  // var nowActive = document.getElementById("nav"+name+"Button");
-  // nowActive.className+='active';
-
-    $ajaxUtils.sendGetRequest(
-    homeHtml,
-    function (responseText) {
-      document.querySelector("#main-content")
-        .innerHTML = responseText;
-    },
-    false);
-}
-
-dc.loadProgramming= function(){
-  showLoading("#main-content");
-  switchMenuToActive('Projects');
-  $('#nav-list').removeClass('header-hidden');
-
-     $ajaxUtils.sendGetRequest(
-    programmingHTML,
-    function (exampleHTML) {
-      $.getJSON('/misc/programming.json', function(data) {
-        var finalHtml = "<h1 id=\"pagetitleh1\">Projects</h1><div id=\"projects\">";
-    // Loop over categories
-    for (var i = 0; i < data.length; i++) {
-      // Insert category values
-      var html = exampleHTML;
-      var name =  data[i].project.name;
-      var description = data[i].project.description;
-      var link = data[i].project.link;
-      var imageNames = data[i].project.images;
-      var date = data[i].project.date;
-      var images = '';
-      for (var j=0; j<imageNames.length;j++)
-      {
-          images+="<img src='images/projects/"+imageNames[j]+"'>";
-      }
-
-      var projectLink='';
-
-      if(data[i].project.projectLink){
-        projectLink = "<div id='gameLink'>Project can be seen in action <a href="+projectLink+">here</a>.</div>";
-
-      }
-
-      html =
-        insertProperty(html,
-                       "projectLink",
-                       projectLink);
-      html =
-        insertProperty(html, "name", name);
-      html =
-        insertProperty(html,
-                       "description",
-                       description);
-      html =
-        insertProperty(html,
-                       "link",
-                       link);
-      html =
-        insertProperty(html,
-                       "images",
-                       images);
-
-      html =
-        insertProperty(html,
-                       "date",
-                       date);
-
-      finalHtml += html;
-    }
-
-    finalHtml += "<div class=\"col-lg-12 col-sd-12\"><hr></div></div>";
-
-    document.querySelector("#main-content")
-    .innerHTML=finalHtml;
-
-  $('.fotorama').fotorama();
+  function toggleHandler(toggle) {
+    toggle.addEventListener( "click", function(e) {
+      e.preventDefault();
+      (this.classList.contains("is-active") === true) ? this.classList.remove("is-active") : this.classList.add("is-active");
     });
+  }
+
+  var sections = {
+    "#Introduction":0,
+    "#Education":0,
+    "#SkillsAndExperience":0,
+    "#DesignAndArtworks":0,
+    "#Projects":0,
+    "ContactMe":0
+  };
+  sections["#Introductions"] = $("#Introduction").position().top;
+  sections["#Education"] = $("#Education").position().top;
+  sections["#SkillsAndExperience"] = $("#SkillsAndExperience").position().top;
+  sections["#DesignAndArtworks"] = $("#DesignAndArtworks").position().top;
+  sections["#Projects"] = $("#Projects").position().top;
+  sections["#ContactMe"] = $("#ContactMe").position().top;
+
+  var $root = $('html, body, .docScroller');
+  $('#mySidenav a').click(function(e) {
+
+    e.preventDefault();
+      var href = $(this).attr('href');
+      $root.animate({
+          scrollTop: sections[href]
+      }, 500, function () {
+          window.location.hash = href;
+      });
+      return false;
+  });
+
+    var height = $(window).height();
+    var halfHeight = height/2;
+    var IntroHeight = $("#Introduction>div").height();
+    var setIntroHeight = halfHeight - (IntroHeight/2);
+    $("#Introduction>div").css("padding-top",setIntroHeight);
+    $(".sidenav").css("padding-top",setIntroHeight);
+
+
+    $("#socialLinks a").hover(function(){
+      $(this).find(".st0").css({"stroke":"#EEEBE3","transition":"0.5s"});
+      $(this).find(".st1").css({"fill":"#EEEBE3","transition":"0.5s"});
+      $(this).find(".st2").css({"fill":"#151515","transition":"0.5s"});
     },
-    false);
-  // type='example';
-
-
-
-}
-
-dc.showPage = function(){
-  console.log(document.location.hash);
-  if(document.location.hash == '#Home'){
-    history.pushState('$dc.loadHome()',null,'#Home');
-    $dc.loadHome();
-  }
-  else if (document.location.hash=='#Artworks'){
-    history.pushState('$dc.loadArt(\'artworks\')',null,'#Artworks');
-    $dc.loadArt('artworks');
-  }
-  else if (document.location.hash=='#Designs'){
-    history.replaceState('$dc.loadArt(\'designs\')',null,'#Designs');
-    $dc.loadArt('designs');
-  }
-  else if (document.location.hash=='#Projects'){
-    history.pushState('$dc.loadProgramming()','null','#Projects');
-    $dc.loadProgramming();
-  }
-  else if (document.location.search){
-    var name=getQueryVariable('name');
-    var filename = getQueryVariable('filename');
-    var date = getQueryVariable('date');
-    var path = getQueryVariable('path');
-
-    // history.pushState(null,null,'?name='+name+'&filename='+filename+'&date='+date+'&path='+path);
-    $dc.loadPicture(filename,name,date,path);
-  }
-
-}
-
-function getQueryVariable(variable)
-{
-       var query = window.location.search.substring(1);
-       var vars = query.split("&");
-       for (var i=0;i<vars.length;i++) {
-               var pair = vars[i].split("=");
-               if(pair[0] == variable){
-                pair[1] = pair[1]
-    .replace(new RegExp("%20", "g"), ' ');
-                return pair[1];
-              }
-       }
-       return(false);
-}
-dc.showPage2 = function(){
-  if(document.location.hash == '#Home'){
-    $dc.loadHome();
-    // history.pushState('$dc.loadHome()',null,'#Home');
-  }
-  else if (document.location.hash=='#Artworks'){
-    $dc.loadArt('artworks');
-    // history.pushState('$dc.loadArt(\'artworks\')',null,'#Artworks');
-  }
-  else if (document.location.hash=='#Designs'){
-    $dc.loadArt('designs');
-    // history.replaceState('$dc.loadArt(\'designs\')',null,'#Designs');
-  }
-  else if (document.location.hash=='#Projects'){
-    $dc.loadProgramming();
-    // history.pushState('$dc.loadProgramming()','null','#Projects');
-  }
-  else if (!document.location.hash){
-    var name=getQueryVariable('name');
-    var filename = getQueryVariable('filename');
-    var date = getQueryVariable('date');
-    var path = getQueryVariable('path');
-
-    $dc.loadImg(filename,name,date,path);
-  }
-}
-
-/**************** BUILD ARTWORKS PAGE *********************/
-dc.loadArt = function(type){
-  showLoading("#main-content");
-  switchMenuToActive(type);
-  $('#nav-list').removeClass('header-hidden');
-  $('#nav-list').addClass('header-visible');
-
-  $ajaxUtils.sendGetRequest(artworksHTML,
-    function(artsHTML){
-      $.getJSON('/misc/'+type+'.json', function(data) {
-        var finalHtml = "<h1 id=\"pagetitleh1\">"+type+"</h1><div class='container-fluid'><div class='row' id='artGrid'>";
-    // Loop over categories
-    var c=0;
-    for (var i = 0; i < data.length; i++) {
-      c++;
-      // Insert category values
-      var html = artsHTML;
-      var filename =  data[i].image.filename;
-      var name = data[i].image.name;
-      var date = data[i].image.date;
-      html =
-        insertProperty(html, "name", name);
-      html =
-        insertProperty(html,
-                       "filename",
-                       filename);
-      html =
-        insertProperty(html,
-                       "date",
-                       date);
-      html =
-        insertProperty(html,
-                       "type",
-                       type);
-      html =
-        insertProperty(html,
-                       "columncount",
-                       c);
-
-
-      finalHtml += html;
-
-      if (c==3){
-      c=0;
-     }
-    }
-
-    finalHtml += "</div></div>";
-
-    document.querySelector("#main-content")
-    .innerHTML=finalHtml;
-
+    function(){
+      $(this).find(".st0").css({"stroke":"#151515","transition":"0.5s"});
+      $(this).find(".st1").css({"fill":"#151515","transition":"0.5s"});
+      $(this).find(".st2").css({"fill":"#EEEBE3","transition":"0.5s"});
     });
-    }, false);
+})();
 
-}
-/**********************************************************/
-dc.loadImg = function(filename, name, date, path){
-  showLoading("#main-content");
-  finalHtml = "<img id='singleImg' src='images/"+path+"/"+filename+"'>"+
-  "<div id='imageName'>"+name+"</div><div id='imageDate'>"+date+"</div>";
-  insertHtml("#main-content", finalHtml);
-  console.log('show img');
-};
-dc.loadPicture = function(filename, name, date, path){
-  // showLoading("#main-content");
-  // $dc.loadImg(filename,name,date,path);
-  history.pushState(null,null,'#?name='+name+'&filename='+filename+'&date='+date+'&path='+path);
-  dc.loadImg(filename,name,date,path);
-  console.log('add history');
-};
+/********************Toggle menu bar******************/
+var isNavDisplayed = false;
 
+$(".c-hamburger").click(function(){
+  isNavDisplayed = !isNavDisplayed;
 
-
-global.$dc = dc;
-
-
-
-
-})(window);
-/************************* SLOWLY SCROLL TO TOP ******************************/
-$(document).ready(function(){
-
-    //Check to see if the window is top if not then display button
-  $(window).scroll(function(){
-    if ($(this).scrollTop() > 100) {
-      $('#backtotop').fadeIn();
-    } else {
-      $('#backtotop').fadeOut();
-    }
-  });
-
-  //Click event to scroll to top
-  $('#backtotop').click(function(){
-    $('html, body').animate({scrollTop : 0},800);
-    return false;
-  });
-
+  if(isNavDisplayed === true)
+    $("#mySidenav").css({"width":"250px","box-shadow":"0px 10px 10px 5px rgba(0,0,0,0.7)"});
+  else
+    $("#mySidenav").css({"width":"0px","box-shadow":"0px 10px 10px 5px rgba(0,0,0,0)"});
 });
-/*****************************************************************************/
-
-window.onpopstate = function(event) {
-// console.log('state change');
-    if(event || event.state) {
-        // console.log(event.state);
-        // eval(event.state);
-        $dc.showPage2();
-    }
-    // else{
-
-    // }
-}
-
-$(document).mouseup(function (e)
-{
-    var container = $("#Form");
-
-    if (!container.is(e.target) // if the target of the click isn't the container...
-        && container.has(e.target).length === 0) // ... nor a descendant of the container
-    {
-        container.hide();
-        $('#contactMeForm').hide();
-    }
-});
+/********************Toggle menu bar******************/
