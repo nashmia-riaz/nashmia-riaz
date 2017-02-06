@@ -1,0 +1,266 @@
+/*
+#581845
+#900c3f
+#c70039
+#FF5733
+#FFC300
+#EEEBE3
+*/
+*{
+  box-sizing: border-box;
+}
+
+body{
+  padding: 0;
+  margin: 0;
+}
+.centerDiv{
+    text-align:center;
+    position:relative;
+    margin:auto;
+}
+.page {
+  float: left;
+  width: 100%;
+  height: 100%;
+}
+
+.docScroller {
+  width: 100vw;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  white-space: nowrap;
+  overflow-x: hidden;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: mandatory;
+  /* older spec implementation */
+  scroll-snap-destination: 100% 0%;
+  scroll-snap-points-y: repeat(100%);
+}
+
+
+#Introduction {
+  background: radial-gradient(#802465,#581845);
+  background: -webkit-radial-gradient(#802465,#581845);
+  background: -moz-radial-gradient(#802465,#581845);
+}
+#Education {
+  background: radial-gradient(#b9215c,#900c3f);
+  background: -webkit-radial-gradient(#b9215c,#900c3f);
+  background: -moz-radial-gradient(#b9215c,#900c3f);
+  margin: 0;
+}
+#SkillsAndExperience {
+  background: radial-gradient(#de1c53,#c70039);
+  background: -webkit-radial-gradient(#de1c53,#c70039);
+  background: -moz-radial-gradient(#de1c53,#c70039);
+  margin: 0;
+}
+#DesignAndArtworks {
+  background: radial-gradient(#ff7355,#FF5733);
+  background: -webkit-radial-gradient(#ff7355,#FF5733);
+  background: -moz-radial-gradient(#ff7355,#FF5733);
+  margin: 0;
+}
+#Projects{
+  background: radial-gradient(#ffd038,#FFC300);
+  background: -webkit-radial-gradient(#ffd038,#FFC300);
+  background: -moz-radial-gradient(#ffd038,#FFC300);
+  margin: 0;
+}
+#ContactMe{
+  background: #4ae54a;
+  background: radial-gradient(#69ff69,#4ae54a);
+  background: -webkit-radial-gradient(#69ff69,#4ae54a);
+  background: -moz-radial-gradient(#69ff69,#4ae54a);
+  margin: 0;
+}
+/***************Loading Icon**************************************/
+/* Paste this css to your style sheet file or under head tag */
+/* This only works with JavaScript,
+if it's not present, don't show loader */
+.no-js #loader { display: none;  }
+.js #loader { display: block; position: absolute; left: 100px; top: 0; }
+.se-pre-con {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	width: 100%;
+	height: 100%;
+	z-index: 9999;
+	background: url(../images/Preloader.gif) center no-repeat #675a55;
+}
+/***************Loading Icon**************************************/
+/* The side navigation menu */
+.sidenav {
+   height: 100%; /* 100% Full-height */
+   width: 0; /* 0 width - change this with JavaScript */
+   position: fixed; /* Stay in place */
+   z-index: 1; /* Stay on top */
+   top: 0;
+   left: 0;
+   font-family: 'Gentium Book Basic', serif;
+   background-color: #111; /* Black*/
+   overflow-x: hidden; /* Disable horizontal scroll */
+   padding-top: 60px; /* Place content 60px from the top */
+   transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
+}
+.sidenav div{
+  padding-top: 50px;
+}
+/* The navigation menu links */
+.sidenav a {
+   padding: 8px 8px 8px 32px;
+   text-decoration: none;
+   font-size: 25px;
+   color: #529b9c;
+   display: block;
+   transition: left 0.3s;
+}
+
+/* When you mouse over the navigation links, change their color */
+.sidenav a:hover, .offcanvas a:focus{
+   color: #f1f1f1;
+}
+
+/* Position and style the close button (top right corner) */
+.sidenav .closebtn {
+   position: absolute;
+   top: 0;
+   right: 25px;
+   font-size: 36px;
+   margin-left: 50px;
+}
+
+/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
+@media screen and (max-height: 450px) {
+   .sidenav {padding-top: 15px;}
+   .sidenav a {font-size: 18px;}
+}
+/*************Animate Toggle*******************/
+.c-hamburger {
+  display: block;
+  position: absolute;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  width: 60px;
+  height: 60px;
+  font-size: 0;
+  margin: 20px;
+  text-indent: -9999px;
+  appearance: none;
+  box-shadow: none;
+  border-radius: none;
+  border: none;
+  cursor: pointer;
+  z-index:1;
+}
+
+.c-hamburger:focus {
+  outline: none;
+}
+.c-hamburger span {
+  display: block;
+  position: absolute;
+  top: 22px;
+  left: 9px;
+  right: 9px;
+  height: 4px;
+  background: #fff  ;
+}
+
+.c-hamburger span::before,
+.c-hamburger span::after {
+  position: absolute;
+  display: block;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background-color: #fff;
+  content: "";
+}
+
+.c-hamburger span::before {
+  top: -15px;
+}
+
+.c-hamburger span::after {
+  bottom: -15px;
+}
+
+.c-hamburger--htx span {
+  transition: background 0s 0.3s;
+}
+
+.c-hamburger--htx span::before,
+.c-hamburger--htx span::after {
+  transition-duration: 0.3s, 0.3s;
+  transition-delay: 0.3s, 0s;
+}
+
+.c-hamburger--htx span::before {
+  transition-property: top, transform;
+}
+
+.c-hamburger--htx span::after {
+  transition-property: bottom, transform;
+}
+
+.c-hamburger--htx.is-active span {
+  background: none;
+}
+
+.c-hamburger--htx.is-active span::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+
+.c-hamburger--htx.is-active span::after {
+  bottom: 0;
+  transform: rotate(-45deg);
+}
+
+.c-hamburger--htx.is-active span::before,
+.c-hamburger--htx.is-active span::after {
+  transition-delay: 0s, 0.3s;
+}
+button{
+  background: none;
+}
+/*************Animate Toggle*******************/
+
+#myPicture{
+  display:block;
+  margin: 0px auto ;
+  border-radius:  50%;
+  border: solid #EEEBE3 2px;
+  height: 200px;
+  width:  200px;
+}
+#name{
+  font-family: 'Alfa Slab One', cursive;
+  color:#EEEBE3;
+  text-align: center;
+}
+#profession{
+  color:#EEEBE3;
+  text-align: center;
+  font-family: 'Gentium Book Basic', serif;
+  margin-bottom: 0;
+}
+#socialLinks svg{
+  width: 45px;
+  height: 45px;
+  margin: 0 10px 0px;
+  position: relative;
+  margin-top: 0px;
+}
+#socialLinks{
+  margin: 20px;
+  height: inherit;
+}
+#socialLinks a{
+}
