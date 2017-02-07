@@ -394,6 +394,20 @@ display: inline;
   .single-exp::before {
       left: 15px;
     }
+    #expTimeline .exp-details{
+      /*padding-bottom:10px;*/
+    }
+    #Education h1{
+      margin-bottom: 10px;
+    }
+    .heading{
+      margin-bottom: 15px;
+      width: 80%;
+    }
+
+    .timeline .row{
+      width: 80%;
+    }
 }
 #edButton:hover, #expButton:hover{
   background: white;

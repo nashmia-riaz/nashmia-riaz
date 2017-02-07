@@ -86,13 +86,13 @@ $(".c-hamburger").click(function(){
 $("#expButton").click(function(){
   $("#edButton").css({"background":"#900c3f","color":"#EEEBE3"});
   $("#expButton").css({"background":"#EEEBE3","color":"#900c3f"});
-  $("#edTimeline").addClass("hidden-xs");
-  $("#expTimeline").removeClass("hidden-xs");
+  $("#edTimeline").addClass("hidden-xs hidden-sm");
+  $("#expTimeline").removeClass("hidden-xs hidden-sm");
 });
 $("#edButton").click(function(){
   $("#expButton").css({"background":"#900c3f","color":"#EEEBE3"});
   $("#edButton").css({"background":"#EEEBE3","color":"#900c3f"});
-  $("#expTimeline").addClass("hidden-xs");
-  $("#edTimeline").removeClass("hidden-xs");
+  $("#expTimeline").addClass("hidden-xs hidden-sm");
+  $("#edTimeline").removeClass("hidden-xs hidden-sm");
 });
 $("#edButton").click();
