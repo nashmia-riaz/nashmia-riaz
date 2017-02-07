@@ -83,3 +83,16 @@ $(".c-hamburger").click(function(){
     $("#mySidenav").css({"width":"0px","box-shadow":"0px 10px 10px 5px rgba(0,0,0,0)"});
 });
 /********************Toggle menu bar******************/
+$("#expButton").click(function(){
+  $("#edButton").css({"background":"#900c3f","color":"#EEEBE3"});
+  $("#expButton").css({"background":"#EEEBE3","color":"#900c3f"});
+  $("#edTimeline").addClass("hidden-xs");
+  $("#expTimeline").removeClass("hidden-xs");
+});
+$("#edButton").click(function(){
+  $("#expButton").css({"background":"#900c3f","color":"#EEEBE3"});
+  $("#edButton").css({"background":"#EEEBE3","color":"#900c3f"});
+  $("#expTimeline").addClass("hidden-xs");
+  $("#edTimeline").removeClass("hidden-xs");
+});
+$("#edButton").click();

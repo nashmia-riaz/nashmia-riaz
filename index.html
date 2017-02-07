@@ -4,11 +4,12 @@
    <head>
       <meta charset="utf-8">
       <title>Nashmia Riaz</title>
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
       <link rel="stylesheet" href="css/styles.css">
       <link href="https://fonts.googleapis.com/css?family=Gentium+Book+Basic" rel="stylesheet">
       <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One" rel="stylesheet">
    </head>
-   <body>
+   <body ng-app="myApp" ng-controller="myCtrl">
       <div class="se-pre-con"></div>
 
       <div id="mySidenav" class="sidenav">
@@ -120,7 +121,7 @@
                   <!-- PHONE LINK -->
                   <a href="#">
                      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                     	 viewBox="0 0 200 200" style="enable-background:new 0 0 200 200;" xml:space="preserve">
+                     	 viewbox="0 0 200 200" style="enable-background:new 0 0 200 200;" xml:space="preserve">
                      <style type="text/css">
                      	.st0{fill:none;stroke:#151515;stroke-width:4.2194;stroke-miterlimit:10;}
                      	.st1{fill:#151515;}
@@ -149,8 +150,72 @@
             </div>
          </div>
           <div class="page" id="Education">
-            <div class="inside">
-            </div>
+             <h2>Education & My</h2>
+             <h1>Experience</h1>
+             <div class="heading centerDiv visible-xs" id="edButton">
+                <h4>Education</h4>
+             </div>
+             <div class="heading centerDiv visible-xs" id="expButton">
+                <h4>Experience</h4>
+             </div>
+
+             <div class="container">
+                <div class="row centerDiv">
+                   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 ExpOrEd" id="edTimeline">
+                      <div class="heading hidden-xs">
+                         <h4>Education</h4>
+                      </div>
+                      <div class="timeline container">
+                        <div class="row centerDiv" ng-repeat="ed in educations">
+                           <div class="single-exp {{ed.Last}}">
+                             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                 <span class="exp-no">{{ed.No}}</span>
+                             </div>
+                             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3  ">
+                                <span class="exp-year centerDiv">{{ed.Year}}</span>
+                             </div>
+                             <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 exp-other  ">
+                                <span class="exp-institute">{{ed.Institute}}</span>
+                                <span class="exp-details">
+                                   <h4>{{ed.Pos}}</h4>
+                                   <h4>CGPA:</h4> <p>{{ed.Grade}}
+                                </p>
+                                   <h4>Major:</h4>
+                                   <p>
+                                    {{ed.Major}}
+                                   </p>
+
+                             </span>
+                             </div>
+                          </div>
+                        </div>
+                      </div>
+                   </div>
+                   <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 ExpOrEd" id="expTimeline">
+                      <div class="heading hidden-xs">
+                         <h4 id="exHeading">Experience</h4>
+                      </div>
+                      <div class="timeline container">
+                        <div class="row centerDiv" ng-repeat="ex in experiences">
+                           <div class="single-exp {{ex.Last}}">
+                             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
+                                 <span class="exp-no">{{ex.No}}</span>
+                             </div>
+                             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3  ">
+                                <span class="exp-year centerDiv">{{ex.Year}}</span>
+                             </div>
+                             <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 exp-other  ">
+                                <span class="exp-institute">{{ex.Institute}}</span>
+                                <span class="exp-details">
+                                   <h4>{{ex.Pos}}</h4>
+                             </span>
+                             </div>
+                          </div>
+                        </div>
+                      </div>
+                   </div>
+                </div>
+             </div>
          </div><div class="page" id="SkillsAndExperience">
             <div class="inside">
             </div>
@@ -172,6 +237,8 @@
    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
    <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
    <script type="text/javascript" src="js/smoothscroll.js"></script>
+   <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+   <script type="text/javascript" src="js/info.js"></script>
    <script type="text/javascript" src="js/script.js"></script>
 
 </html>

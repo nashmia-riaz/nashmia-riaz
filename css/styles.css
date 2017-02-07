@@ -13,6 +13,18 @@
 body{
   padding: 0;
   margin: 0;
+  font-family: 'Gentium Book Basic', serif;
+  color: white;
+}
+h1{
+  font-family: 'Alfa Slab One', cursive;
+  color: white;
+  text-align: center;
+  margin-top: 5px;
+  text-transform: uppercase;
+}
+h2{
+  text-align: center;
 }
 .centerDiv{
     text-align:center;
@@ -72,9 +84,9 @@ body{
 }
 #ContactMe{
   background: #4ae54a;
-  background: radial-gradient(#69ff69,#4ae54a);
-  background: -webkit-radial-gradient(#69ff69,#4ae54a);
-  background: -moz-radial-gradient(#69ff69,#4ae54a);
+  background: radial-gradient(#d4ff3e,#c5f421);
+  background: -webkit-radial-gradient(#d4ff3e,#c5f421);
+  background: -moz-radial-gradient(#d4ff3e,#c5f421);
   margin: 0;
 }
 /***************Loading Icon**************************************/
@@ -144,8 +156,6 @@ if it's not present, don't show loader */
   display: block;
   position: absolute;
   overflow: hidden;
-  margin: 0;
-  padding: 0;
   width: 60px;
   height: 60px;
   font-size: 0;
@@ -157,6 +167,8 @@ if it's not present, don't show loader */
   border: none;
   cursor: pointer;
   z-index:1;
+  background: rgba(1,1,1,0.6);
+  border-radius: 10%;
 }
 
 .c-hamburger:focus {
@@ -165,11 +177,11 @@ if it's not present, don't show loader */
 .c-hamburger span {
   display: block;
   position: absolute;
-  top: 22px;
+  top: 28px;
   left: 9px;
   right: 9px;
   height: 4px;
-  background: #fff  ;
+  background: #fff ;
 }
 
 .c-hamburger span::before,
@@ -262,5 +274,144 @@ button{
   margin: 20px;
   height: inherit;
 }
-#socialLinks a{
+#Education{
+  padding-top: 0px;
+}
+#Education>.container-fluid>.row{
+  width: 70%;
+}
+.heading{
+  text-align: center;
+  color: #EEEBE3;
+  background: #900c3f;
+  width: 100%;
+  border: 2px solid #EEEBE3;
+  margin-bottom: 40px;
+}
+.container-fluid{
+  width: 100%;
+}
+#Education h1{
+  font-size: 4em;
+  margin-bottom: 40px;
+  background: #EEEBE3;
+  color: #900c3f;
+}
+.single-exp{
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+.single-exp{
+  padding: 0;
+  height: 100%;
+  /****fix div no height****/
+  margin-bottom: -99999px;
+  padding-bottom: 99999px;
+}
+.row{
+  /****fix div no height****/
+    overflow: hidden;
+}
+.single-exp::before {
+    background-color: white;
+    content: "";
+    height: 100%;
+    left: 20px;
+    position: absolute;
+    top: 0;
+    width: 2px;
+  }
+.last::before{
+  width: 0px;
+}
+  .single-exp div{
+    height: 100%;
+  }
+.exp-no{
+  position: absolute;
+  left:0px;
+  border: 2px solid #EEEBE3;
+  padding: 10px 15px;
+  background: #900c3f;
+}
+p{
+white-space: initial;
+display: inline;
+}
+.exp-year{
+  text-align: center;
+  left:0px;
+  padding: 8px 15px;
+  font-weight: bold;
+  position: absolute;
+  text-align: cnter;
+  width: 100%;
+}
+.exp-other{
+  text-align: left;
+  padding-bottom: 30px;
+  padding-left: 25px;
+}
+.timeline{
+  width: 100%;
+}
+#Education span{
+  white-space: initial;
+}
+.timeline h4{
+  display: inline;
+}
+.timeline h4::before{
+  display: block;
+  content: "";
+  margin: 10px;
+}
+.ExpOrEd{
+  margin-top: 20px;
+}
+.exp-institute{
+  font-size: 1.5em;
+  font-weight: bold;
+  display: block;
+}
+#expTimeline .exp-details{
+  display: block;
+  padding-bottom: 60px;
+}
+@media (min-width: 768px) and (max-width: 991px){
+  .exp-year{
+    /*padding: 5px 0px;*/
+    font-size: 1.0em;
+  }
+  .exp-no{
+    padding: 5px 10px;
+  }
+
+  .exp-other{
+    width:64.5%;
+  }
+  .single-exp::before {
+      left: 15px;
+    }
+}
+#edButton:hover, #expButton:hover{
+  background: white;
+  color: #900c3f;
+}
+@media (max-width: 767px){
+
+  .heading{
+    margin-bottom: 15px;
+    width: 80%;
+  }
+  #expTimeline .exp-details{
+    padding-bottom:10px;
+  }
+  .timeline .row{
+    width: 80%;
+  }
+  #Education h1{
+    margin-bottom: 10px;
+  }
 }
