@@ -30,14 +30,17 @@
 
       <div class="docScroller" >
           <div class="page" id="Introduction">
-            <div class="centerDiv">
-               <img id="myPicture" src="images/myPicture.jpg"/>
-               <h1 id="name">
-                  Nashmia Riaz
-               </h1>
-               <p id="profession">
-                  Designer. Coder. Illustrator.
-               </p>
+            <div class="centerDiv container">
+               <div class="row">
+                  <img id="myPicture" src="images/myPicture.jpg"/>
+                  <h1 id="name">
+                     Nashmia Riaz
+                  </h1>
+                  <p id="profession">
+                     Designer. Coder. Illustrator.
+                  </p>
+               </div>
+
                <div id="socialLinks">
                   <!-- FACEBOOK LINK -->
                   <a href="#">
@@ -181,10 +184,12 @@
                                    <h4>{{ed.Pos}}</h4>
                                    <h4>CGPA:</h4> <p>{{ed.Grade}}
                                 </p>
-                                   <h4>Major:</h4>
+                                <div class="hidden-xs">
+                                <h4>Major:</h4>
                                    <p>
                                     {{ed.Major}}
                                    </p>
+                                </div>
 
                              </span>
                              </div>

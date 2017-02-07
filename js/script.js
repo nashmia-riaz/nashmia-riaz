@@ -86,7 +86,7 @@ $(".c-hamburger").click(function(){
 $("#expButton").click(function(){
   $("#edButton").css({"background":"#900c3f","color":"#EEEBE3"});
   $("#expButton").css({"background":"#EEEBE3","color":"#900c3f"});
-  $("#edTimeline").addClass("hidden-xs hidden-sm");
+  $("#edTimeline").animate().addClass("hidden-xs hidden-sm");
   $("#expTimeline").removeClass("hidden-xs hidden-sm");
 });
 $("#edButton").click(function(){
