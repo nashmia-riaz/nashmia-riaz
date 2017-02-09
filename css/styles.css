@@ -13,18 +13,37 @@
 body{
   padding: 0;
   margin: 0;
-  font-family: 'Gentium Book Basic', serif;
+  font-family: 'Poppins', sans-serif;
   color: white;
 }
 h1{
-  font-family: 'Alfa Slab One', cursive;
-  color: white;
+  font-family: 'Sintony', sans-serif;
   text-align: center;
   margin-top: 5px;
   text-transform: uppercase;
 }
 h2{
   text-align: center;
+}.typed-cursor{
+    opacity: 1;
+    -webkit-animation: blink 0.7s infinite;
+    -moz-animation: blink 0.7s infinite;
+    animation: blink 0.7s infinite;
+}
+@keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-webkit-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-moz-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
 }
 .centerDiv{
     text-align:center;
@@ -46,7 +65,6 @@ h2{
   overflow-x: hidden;
   overflow: auto;
   -webkit-overflow-scrolling: touch;
-
   -webkit-scroll-snap-type: mandatory;
       -ms-scroll-snap-type: mandatory;
           scroll-snap-type: mandatory;
@@ -64,40 +82,40 @@ h2{
 
 
 #Introduction {
-  background: radial-gradient(#802465,#581845);
-  background: -webkit-radial-gradient(#802465,#581845);
-  background: -moz-radial-gradient(#802465,#581845);
+  background: radial-gradient(white,#dadada);
+  background: -webkit-radial-gradient(white,#dadada);
+  background: -moz-radial-gradient(white,#dadada);
   height: 100%;
+  color:black!important;
 }
 #Education {
-  background: radial-gradient(#b9215c,#900c3f);
-  background: -webkit-radial-gradient(#b9215c,#900c3f);
-  background: -moz-radial-gradient(#b9215c,#900c3f);
+  background: radial-gradient(#0b0b0b,black);
+  background: -webkit-radial-gradient(#0b0b0b,black);
+  background: -moz-radial-gradient(#0b0b0b,black);
   margin: 0;
 }
-#SkillsAndExperience {
-  background: radial-gradient(#de1c53,#c70039);
-  background: -webkit-radial-gradient(#de1c53,#c70039);
-  background: -moz-radial-gradient(#de1c53,#c70039);
+#Designs {
+  background: radial-gradient(white,#dadada);
+  background: -webkit-radial-gradient(white,#dadada);
+  background: -moz-radial-gradient(white,#dadada);
   margin: 0;
 }
-#DesignAndArtworks {
-  background: radial-gradient(#ff7355,#FF5733);
-  background: -webkit-radial-gradient(#ff7355,#FF5733);
-  background: -moz-radial-gradient(#ff7355,#FF5733);
+#Artworks {
+  background: radial-gradient(#0b0b0b,black);
+  background: -webkit-radial-gradient(#0b0b0b,black);
+  background: -moz-radial-gradient(#0b0b0b,black);
   margin: 0;
 }
 #Projects{
-  background: radial-gradient(#ffd038,#FFC300);
-  background: -webkit-radial-gradient(#ffd038,#FFC300);
-  background: -moz-radial-gradient(#ffd038,#FFC300);
+  background: radial-gradient(white,#dadada);
+  background: -webkit-radial-gradient(white,#dadada);
+  background: -moz-radial-gradient(white,#dadada);
   margin: 0;
 }
 #ContactMe{
-  background: #4ae54a;
-  background: radial-gradient(#d4ff3e,#c5f421);
-  background: -webkit-radial-gradient(#d4ff3e,#c5f421);
-  background: -moz-radial-gradient(#d4ff3e,#c5f421);
+  background: radial-gradient(#0b0b0b,black);
+  background: -webkit-radial-gradient(#0b0b0b,black);
+  background: -moz-radial-gradient(#0b0b0b,black);
   margin: 0;
 }
 /***************Loading Icon**************************************/
@@ -124,7 +142,7 @@ if it's not present, don't show loader */
    z-index: 1; /* Stay on top */
    top: 0;
    left: 0;
-   font-family: 'Gentium Book Basic', serif;
+   font-family: 'Poppins', sans-serif;
    background-color: #111; /* Black*/
    overflow-x: hidden; /* Disable horizontal scroll */
    padding-top: 60px; /* Place content 60px from the top */
@@ -138,7 +156,7 @@ if it's not present, don't show loader */
    padding: 8px 8px 8px 32px;
    text-decoration: none;
    font-size: 25px;
-   color: #529b9c;
+   color: white;
    display: block;
    transition: left 0.3s;
 }
@@ -259,23 +277,17 @@ button{
   display:block;
   margin: 0px auto ;
   border-radius:  50%;
-  border: solid #EEEBE3 2px;
-  height: 50%;
-  width:  50%;
-}
-#myPicture img{
-  width: 20%;
-  height: 20%;
+  border: solid black 2px;
+  height: 200px;
+  width:  200px;
 }
 #name{
-  font-family: 'Alfa Slab One', cursive;
-  color:#EEEBE3;
+  font-family: 'Sintony', sans-serif;
   text-align: center;
 }
 #profession{
-  color:#EEEBE3;
   text-align: center;
-  font-family: 'Gentium Book Basic', serif;
+  font-family: 'Poppins', sans-serif;
   margin-bottom: 0;
 }
 #socialLinks svg{
@@ -286,31 +298,34 @@ button{
   margin-top: 0px;
 }
 #socialLinks{
-  margin: 20px;
+  margin-top: 20px;
   height: inherit;
+  display:block
 }
-#Education{
+#Education, #Artworks{
   padding-top: 0px;
+  color: white!important;
+}
+#Education .mainHeading h1, #Artworks .mainHeading h1{
+  background: white;
+  color: black;
 }
 #Education>.container-fluid>.row{
   width: 70%;
 }
 .heading{
   text-align: center;
-  color: #EEEBE3;
-  background: #900c3f;
+  color: white;
   width: 100%;
-  border: 2px solid #EEEBE3;
+  border: 2px solid white;
   margin-bottom: 40px;
 }
 .container-fluid{
   width: 100%;
 }
-#Education h1{
+.mainHeading h1{
   font-size: 4em;
   margin-bottom: 40px;
-  background: #EEEBE3;
-  color: #900c3f;
 }
 .single-exp{
   position: relative;
@@ -346,9 +361,10 @@ button{
 .exp-no{
   position: absolute;
   left:0px;
-  border: 2px solid #EEEBE3;
+  border: 2px solid white;
   padding: 10px 15px;
-  background: #900c3f;
+  background: black;
+  color:white;
 }
 p{
 white-space: initial;
@@ -394,6 +410,55 @@ display: inline;
   display: block;
   padding-bottom: 60px;
 }
+
+#Designs{
+  color: black!important;
+}
+#Designs .mainHeading h1{
+  background: black;
+  color: white;
+  margin-bottom: 20px;
+}
+.grid{
+  width: 60%;
+  margin-top: 80px;
+  position: relative;
+}
+.content {
+  width: auto;
+	margin: 0 auto;
+}
+
+.item {
+	display: block;
+	float: left;
+	width: 150px;
+	margin: 0 10px 10px 0;
+}
+
+.item img {
+	width: 100%;
+	height: auto;
+  z-index: 0;
+}
+.item img:hover{
+  cursor: pointer;
+}
+@media (min-width: 1200px) {
+
+  .item {
+  	/*width: 150px;*/
+  }
+
+}
+@media (min-width: 992px) and (max-width: 1199px){
+  .grid{
+  width: 80%;}
+  .item {
+    width: 150px;
+  }
+}
+/*******************small devices*********************/
 @media (min-width: 768px) and (max-width: 991px){
   .exp-year{
     /*padding: 5px 0px;*/
@@ -412,7 +477,7 @@ display: inline;
     #expTimeline .exp-details{
       /*padding-bottom:10px;*/
     }
-    #Education h1{
+    .mainHeading h1{
       margin-bottom: 10px;
     }
     .heading{
@@ -423,11 +488,14 @@ display: inline;
     .timeline .row{
       width: 80%;
     }
+    .item {
+      width: 150px;
+    }  .grid{
+      width: 100%;}
 }
-#edButton:hover, #expButton:hover{
-  background: white;
-  color: #900c3f;
-}
+/*******************small devices*********************/
+
+/*******************extra small devices*********************/
 @media (max-width: 767px){
 
   .heading{
@@ -440,20 +508,26 @@ display: inline;
   .timeline .row{
     width: 80%;
   }
-  #Education h1{
+  .mainHeading h1{
     margin-bottom: 10px;
   }
+  .item {
+    width: 70px;
+  }.grid{
+    width: 100%;
+    margin-top: 20px;}
 
 }
+/*******************extra small devices*********************/
 @media (max-width: 539px){
   .timeline .row{
     width: 110%;
   }
-  #Education h1{
+  .mainHeading h1{
     font-size: 1.5em;
     width: 100%;
   }
-  #Education h2{
+  .mainHeading h2{
     font-size: 1.2em;
     width: 100%;
   }
@@ -480,5 +554,6 @@ display: inline;
   }
   .exp-other{
     width:58.8%;
+    margin-bottom: 40px;
   }
 }
