@@ -2,6 +2,14 @@
 /* Set the width of the side navigation to 250px */
 var masonryWidth=0;
 
+  var sections = {
+    "#Introduction":0,
+    "#Education":0,
+    "#Designs":0,
+    "#Artworks":0,
+    "#Projects":0,
+    "#ContactMe":0
+  };
 function setMasonryWidth(){
   if($(window).width()<768){
     masonryWidth=90;
@@ -22,18 +30,26 @@ $(window).load(function(){
 	$(".se-pre-con").fadeOut();
 
   $('.content').isotope({
-    // options
-    itemSelector: '.item',
-    masonry:{
-      columnWidth: masonryWidth,
-      fitWidth: true
-    }
-  });
+  // options
+  itemSelector: '.item',
+  masonry:{
+    columnWidth: masonryWidth,
+    fitWidth: true
+  }
 });
+});
+// var $grid = $('.content').imagesLoaded( function() {
+//   // init Masonry after all images have loaded
+//   $grid.masonry({
+//     columnWidth: masonryWidth,
+//     itemSelector: '.item',
+//     isFitWidth: true,
+//     resize: true,
+//     isAnimated: !Modernizr.csstransitions
+//   });
+// });
 (function() {
   "use strict";
-  // Initialize Masonry
-
   var toggles = document.querySelectorAll(".c-hamburger");
 
   for (var i = toggles.length - 1; i >= 0; i--) {
@@ -48,20 +64,13 @@ $(window).load(function(){
     });
   }
 
-  var sections = {
-    "#Introduction":0,
-    "#Education":0,
-    "#Designs":0,
-    "#Artworks":0,
-    "#Projects":0,
-    "ContactMe":0
-  };
-  sections["#Introductions"] = $("#Introduction").position().top;
-  sections["#Education"] = $("#Education").position().top;
-  sections["#Designs"] = $("#Designs").position().top;
-  sections["#Artworks"] = $("#Artworks").position().top;
-  sections["#Projects"] = $("#Projects").position().top;
-  sections["#ContactMe"] = $("#ContactMe").position().top;
+  sections["#Introductions"] = 0;
+  sections["#Education"] = parseInt($(".page").css("height"));
+  sections["#Designs"] = parseInt($(".page").css("height"))*2;
+  sections["#Artworks"] = parseInt($(".page").css("height"))*3;
+  sections["#Projects"] = parseInt($(".page").css("height"))*4;
+  sections["#ContactMe"] = parseInt($(".page").css("height"))*5;
+
 
   var $root = $('html, body, .docScroller');
   $('#mySidenav a').click(function(e) {
@@ -96,12 +105,16 @@ $(window).load(function(){
     });
 
     var docViewTop = $(".docScroller").scrollTop();
-    if(docViewTop > sections["#Education"] || docViewTop < sections["#Education"]){
-    $("#Education .mainHeading").fadeOut();
-    }
 /****************PAGE ANIMATIONS *********************************/
     $(".docScroller").scroll(function () {
+    if(docViewTop > sections["#Education"] || docViewTop < sections["#Education"]){
+      $("#Education .mainHeading").fadeOut();
+      $("#edButton").fadeOut();
+      $("#expButton").fadeOut();
+    }
       docViewTop = $(".docScroller").scrollTop();
+        console.log(docViewTop);
+        console.log(sections);
       if(docViewTop<=sections["#Introduction"]){
         $("#Introduction>div").fadeIn(500);
       }
@@ -110,18 +123,19 @@ $(window).load(function(){
       }
 
       if(docViewTop > sections["#Education"] || docViewTop < sections["#Education"]){
-      $("#Education .mainHeading").fadeOut();
+        $("#Education .mainHeading").fadeOut();
         $("#edTimeline").css({"left":"-200px","opacity":"0"});
         $("#expTimeline").css({"right":"-200px","opacity":"0"});
       }
       if(docViewTop==sections["#Education"]){
-      $("#Education .mainHeading").fadeIn();
+        $("#Education .mainHeading").fadeIn();
+        $("#edButton").fadeIn();
+        $("#expButton").fadeIn();
         $("#edTimeline").animate({"left":"0px","opacity":"1"},500);
         $("#expTimeline").animate({"right":"0px","opacity":"1"},500);
       }
 
       if(docViewTop==sections["#Designs"]){
-        // alert("animate");
         $("#Designs").find('.item').each(function(i) {
                 $(this).delay(i*100).animate({
                     'opacity' : 1,
@@ -137,7 +151,6 @@ $(window).load(function(){
       }
 
       if(docViewTop==sections["#Artworks"]){
-        // alert("animate");
         $("#Artworks").find('.item').each(function(i) {
                 $(this).delay(i*100).animate({
                     'opacity' : 1,
@@ -154,12 +167,18 @@ $(window).load(function(){
 
     });
 
-/****************PAGE ANIMATIONS *********************************/
-
-$(".item img").hover(function(){alert("hover");},function(){alert("no hover");});
 
 })();
 
+$(window).bind('resize',function(event){
+    setMasonryWidth();
+    sections["#Introductions"] = 0;
+    sections["#Education"] = parseInt($(".page").css("height"));
+    sections["#Designs"] = parseInt($(".page").css("height"))*2;
+    sections["#Artworks"] = parseInt($(".page").css("height"))*3;
+    sections["#Projects"] = parseInt($(".page").css("height"))*4;
+    sections["#ContactMe"] = parseInt($(".page").css("height"))*5;
+});
 /********************Toggle menu bar******************/
 var isNavDisplayed = false;
 

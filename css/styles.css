@@ -421,7 +421,7 @@ display: inline;
 }
 .grid{
   width: 60%;
-  margin-top: 80px;
+  margin-top: 20px;
   position: relative;
 }
 .content {
@@ -434,6 +434,7 @@ display: inline;
 	float: left;
 	width: 150px;
 	margin: 0 10px 10px 0;
+  opacity: 0;
 }
 
 .item img {
@@ -447,7 +448,7 @@ display: inline;
 @media (min-width: 1200px) {
 
   .item {
-  	/*width: 150px;*/
+  	width: 120px;
   }
 
 }
@@ -455,7 +456,7 @@ display: inline;
   .grid{
   width: 80%;}
   .item {
-    width: 150px;
+    width: 100px;
   }
 }
 /*******************small devices*********************/
@@ -489,7 +490,7 @@ display: inline;
       width: 80%;
     }
     .item {
-      width: 150px;
+      width: 100px;
     }  .grid{
       width: 100%;}
 }
@@ -514,7 +515,7 @@ display: inline;
   .item {
     width: 70px;
   }.grid{
-    width: 100%;
+    width: 90%;
     margin-top: 20px;}
 
 }
@@ -556,4 +557,5 @@ display: inline;
     width:58.8%;
     margin-bottom: 40px;
   }
+
 }
