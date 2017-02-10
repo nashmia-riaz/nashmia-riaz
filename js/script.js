@@ -2,14 +2,21 @@
 /* Set the width of the side navigation to 250px */
 var masonryWidth=0;
 
-  var sections = {
-    "#Introduction":0,
-    "#Education":0,
-    "#Designs":0,
-    "#Artworks":0,
-    "#Projects":0,
-    "#ContactMe":0
-  };
+var sections = {
+  "#Introduction":0,
+  "#Education":0,
+  "#Designs":0,
+  "#Artworks":0,
+  "#Projects":0,
+  "#ContactMe":0
+};
+var isAndroid=false;
+if( /Android/i.test(navigator.userAgent) ) {
+  isAndroid=true;
+}
+if(isAndroid){
+  $(".item").css("opacity","1");
+}
 function setMasonryWidth(){
   if($(window).width()<768){
     masonryWidth=90;
@@ -31,23 +38,14 @@ $(window).load(function(){
 
   $('.content').isotope({
   // options
-  itemSelector: '.item',
-  masonry:{
-    columnWidth: masonryWidth,
-    fitWidth: true
-  }
+    itemSelector: '.item',
+    masonry:{
+      columnWidth: masonryWidth,
+      fitWidth: true
+    }
+  });
 });
-});
-// var $grid = $('.content').imagesLoaded( function() {
-//   // init Masonry after all images have loaded
-//   $grid.masonry({
-//     columnWidth: masonryWidth,
-//     itemSelector: '.item',
-//     isFitWidth: true,
-//     resize: true,
-//     isAnimated: !Modernizr.csstransitions
-//   });
-// });
+
 (function() {
   "use strict";
   var toggles = document.querySelectorAll(".c-hamburger");
@@ -107,62 +105,66 @@ $(window).load(function(){
     var docViewTop = $(".docScroller").scrollTop();
 /****************PAGE ANIMATIONS *********************************/
     $(".docScroller").scroll(function () {
-    if(docViewTop > sections["#Education"] || docViewTop < sections["#Education"]){
-      $("#Education .mainHeading").fadeOut();
-      $("#edButton").fadeOut();
-      $("#expButton").fadeOut();
-    }
-      docViewTop = $(".docScroller").scrollTop();
-        console.log(docViewTop);
-        console.log(sections);
-      if(docViewTop<=sections["#Introduction"]){
-        $("#Introduction>div").fadeIn(500);
-      }
-      else if(docViewTop >= sections["#Introduction"]+height){
-        $("#Introduction>div").fadeOut(0);
-      }
 
-      if(docViewTop > sections["#Education"] || docViewTop < sections["#Education"]){
-        $("#Education .mainHeading").fadeOut();
-        $("#edTimeline").css({"left":"-200px","opacity":"0"});
-        $("#expTimeline").css({"right":"-200px","opacity":"0"});
-      }
-      if(docViewTop==sections["#Education"]){
-        $("#Education .mainHeading").fadeIn();
-        $("#edButton").fadeIn();
-        $("#expButton").fadeIn();
-        $("#edTimeline").animate({"left":"0px","opacity":"1"},500);
-        $("#expTimeline").animate({"right":"0px","opacity":"1"},500);
-      }
+      if(!isAndroid){
+        if(docViewTop > sections["#Education"] || docViewTop < sections["#Education"]){
+          $("#Education .mainHeading").fadeOut();
+          $("#edButton").fadeOut();
+          $("#expButton").fadeOut();
+        }
+          docViewTop = $(".docScroller").scrollTop();
+            console.log(docViewTop);
+            console.log(sections);
+          if(docViewTop<=sections["#Introduction"]){
+            $("#Introduction>div").fadeIn(500);
+          }
+          else if(docViewTop >= sections["#Introduction"]+height){
+            $("#Introduction>div").fadeOut(0);
+          }
 
-      if(docViewTop==sections["#Designs"]){
-        $("#Designs").find('.item').each(function(i) {
-                $(this).delay(i*100).animate({
-                    'opacity' : 1,
-                }, 500);
-            });
-      }
-      if(docViewTop > sections["#Designs"] || docViewTop < sections["#Designs"]){
-        $("#Designs").find('.item').each(function(i) {
-                $(this).css({
-                    'opacity' : '0',
+          if(docViewTop > sections["#Education"] || docViewTop < sections["#Education"]){
+            $("#Education .mainHeading").fadeOut();
+            $("#edTimeline").css({"left":"-200px","opacity":"0"});
+            $("#expTimeline").css({"right":"-200px","opacity":"0"});
+          }
+          if(docViewTop==sections["#Education"]){
+            $("#Education .mainHeading").fadeIn();
+            $("#edButton").fadeIn();
+            $("#expButton").fadeIn();
+            $("#edTimeline").animate({"left":"0px","opacity":"1"},500);
+            $("#expTimeline").animate({"right":"0px","opacity":"1"},500);
+          }
+
+          if(docViewTop==sections["#Designs"]){
+            $("#Designs").find('.item').each(function(i) {
+                    $(this).delay(i*100).animate({
+                        'opacity' : 1,
+                    }, 500);
                 });
-            });
-      }
-
-      if(docViewTop==sections["#Artworks"]){
-        $("#Artworks").find('.item').each(function(i) {
-                $(this).delay(i*100).animate({
-                    'opacity' : 1,
-                }, 500);
-            });
-      }
-      if(docViewTop > sections["#Artworks"] || docViewTop < sections["#Artworks"]){
-        $("#Artworks").find('.item').each(function(i) {
-                $(this).css({
-                    'opacity' : '0',
+          }
+          if(docViewTop > sections["#Designs"] || docViewTop < sections["#Designs"]){
+            $("#Designs").find('.item').each(function(i) {
+                    $(this).css({
+                        'opacity' : '0',
+                    });
                 });
-            });
+          }
+
+          if(docViewTop==sections["#Artworks"]){
+            $("#Artworks").find('.item').each(function(i) {
+                    $(this).delay(i*100).animate({
+                        'opacity' : 1,
+                    }, 500);
+                });
+          }
+          if(docViewTop > sections["#Artworks"] || docViewTop < sections["#Artworks"]){
+            $("#Artworks").find('.item').each(function(i) {
+                    $(this).css({
+                        'opacity' : '0',
+                    });
+                });
+          }
+
       }
 
     });
