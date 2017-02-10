@@ -11,6 +11,7 @@ var sections = {
   "#ContactMe":0
 };
 var isAndroid=false;
+var docViewTop = $(".docScroller").scrollTop();
 if( /Android/i.test(navigator.userAgent) ) {
   isAndroid=true;
 }
@@ -44,6 +45,13 @@ $(window).load(function(){
       fitWidth: true
     }
   });
+  if(!isAndroid){
+    if(docViewTop > sections["#Education"] || docViewTop < sections["#Education"]){
+      $("#Education .mainHeading").fadeOut(0);
+      $("#edButton").fadeOut(0);
+      $("#expButton").fadeOut(0);
+    }
+  }
 });
 
 (function() {
@@ -102,7 +110,6 @@ $(window).load(function(){
       $(this).find(".st2").css({"fill":"#EEEBE3","transition":"0.5s"});
     });
 
-    var docViewTop = $(".docScroller").scrollTop();
 /****************PAGE ANIMATIONS *********************************/
     $(".docScroller").scroll(function () {
 
