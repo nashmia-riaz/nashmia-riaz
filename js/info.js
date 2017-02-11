@@ -1,6 +1,6 @@
 var app = angular.module("myApp",[]);
 
-app.controller("myCtrl", function($scope){
+app.controller("myCtrl", function($scope,$compile){
   $scope.educations=[{
      "No":"1",
      "Pos":"Bachelors",
@@ -153,4 +153,28 @@ app.controller("myCtrl", function($scope){
       "link":"15"
     }
   ];
+
+  $scope.projectsLeft=[{
+      "link":"1",
+      "title":"CeeVee",
+      "explanation":"CeeVee is an online resume building website that works dynamically."
+    },
+    {
+      "link":"2",
+      "title":"Online CV Template",
+      "explanation":"A website template that I made to present your extensive online CV."
+  }];
+
+  $scope.projectsRight=[
+  {
+    "link":"3",
+    "title":"Collaborative White Board",
+    "explanation":"Collaborative white board made using PubNub"
+  },
+  {
+    "link":"4",
+    "title":"Fat Cat",
+    "explanation":"Unity3D game made and coded entirely from scratch."
+  }];
+
 });

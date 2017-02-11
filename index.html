@@ -230,7 +230,7 @@
              </div>
          </div>
          <div class="displayImage">
-            
+
          </div>
          <div class="page" id="Designs">
             <div class="inside">
@@ -265,8 +265,55 @@
           </div>
           <div class="page" id="Projects">
             <div class="inside">
+              <div class="mainHeading">
+                 <h2>My</h2>
+                 <h1>Projects</h1>
+                </div>
+
+              <div class="container">
+                 <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-6 projectLeft" >
+
+                       <div class="project" ng-repeat="project in projectsLeft">
+                          <div class="projectImage">
+                             <img src="images/projects/{{project.link}}.png" alt="">
+                          </div>
+                          <div class="projectInformation">
+                             <h4>{{project.title}}</h4>
+                             <p class="hidden-xs">{{project.explanation}}</p>
+                             <a src="#">Live demo</a>
+                             <a src="#">Github</a>
+                          </div>
+                       </div>
+
+                    </div>
+
+                    <div class="col-lg-6 col-md-6 col-sm-6 projectRight ">
+
+                       <div class="project" ng-repeat="project in projectsRight">
+                          <div class="projectImage">
+                             <img src="images/projects/{{project.link}}.png" alt="">
+                          </div>
+                          <div class="projectInformation">
+                             <h4>{{project.title}}</h4>
+                             <p class="hidden-xs">{{project.explanation}}</p>
+                             <a src="#">Live demo</a>
+                             <a src="#">Github</a>
+                          </div>
+                       </div>
+
+                    </div>
+                 </div>
+              </div>
+
+
+              <div class="seeMore">
+                 <a href="#"><div class="heading centerDiv button">
+                    <h4>View More</h4>
+                 </div></a>
+              </div>
             </div>
-          </div>
+         </div>
           <div class="page" id="ContactMe">
             <div class="inside">
             </div>

@@ -411,10 +411,10 @@ display: inline;
   padding-bottom: 60px;
 }
 
-#Designs{
+#Designs, #Projects{
   color: black!important;
 }
-#Designs .mainHeading h1{
+#Designs .mainHeading h1, #Projects .mainHeading h1{
   background: black;
   color: white;
   margin-bottom: 20px;
@@ -447,7 +447,6 @@ display: inline;
 .item:hover{
     box-shadow: 10px 10px 10px rgba(1,1,1,0.5);
     transform: scale(1.5,1.5);
-
 }
 .item img:hover{
   cursor: pointer;
@@ -460,23 +459,120 @@ display: inline;
   background-color: rgba(1,1,1,0.5);
   display: none;
 
-flex-direction: column;
-justify-content: center;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .imageLarge{
-  
+
 }
 .imageLarge img{
   max-width:90vw;
   max-height:90vh;
   /*width: 100%;*/
 }
+.button{
+  color:black;
+  border: 2px solid black;
+  width: 40%;
+  transition: all 0.5s;
+}
+.button:hover{
+  color:white;
+  background-color: black;
+  cursor: pointer;
+  border: 2px solid black;
+}
+.seeMore{
+  margin-top: 20px;
+  position: absolute;
+  bottom: -10px;
+  display: block;
+  width: 100%;
+}
+a{
+  color:#c70039;
+}
+a:hover{
+  text-decoration: none;
+  cursor: pointer;
+  color: #900c3f;
+}
+
+.projectImage{
+  width: 80%;
+  position:relative;
+}
+.projectLeft .projectImage{
+  float:left;
+}
+.projectRight .projectImage{
+  float:right;
+}
+.projectImage img{
+  width: 100%;
+}
+
+.projectInformation{
+  border: 1px solid black;
+  padding: 10px;
+  position: absolute;
+  top: 10px;
+  background: rgba(255,255,255,0.8);
+  white-space: initial;
+  width: 50%;
+  transition: all 0.5s, right 0.5s;
+}
+.project{
+  position: relative;
+  padding-top:20px;
+  clear:both;
+}
+.projectInformation a{
+  display: block;
+  margin-top: 10px;
+}
+.project h4{
+  font-family: 'Sintony', sans-serif;
+  font-weight: bold;
+}
+.projectLeft .projectInformation{
+  right: 50px;
+}
+.projectRight .projectInformation{
+  left: 50px;
+}
+@media(min-width:1200px){
+
+  .project:hover > .projectInformation{
+    background: rgba(255,255,255,1);
+    box-shadow: 10px 10px 10px rgba(1,1,1,0.5);
+    right: 80px;
+  }
+  .projectRight .project:hover>.projectInformation{
+    left: 0px!important;
+  }
+  .projectLeft .project:hover>.projectInformation{
+    right: 0px!important;
+  }
+}
 @media (min-width: 992px) and (max-width: 1199px){
   .grid{
   width: 80%;}
   .item {
     width: 120px;
+  }
+
+  .project:hover > .projectInformation{
+    background: rgba(255,255,255,1);
+    box-shadow: 10px 10px 10px rgba(1,1,1,0.5);
+    right: 80px;
+  }
+  .projectRight .project:hover>.projectInformation{
+    left: 0px!important;
+  }
+  .projectLeft .project:hover>.projectInformation{
+    right: 0px!important;
   }
 }
 /*******************small devices*********************/
@@ -513,6 +609,28 @@ justify-content: center;
       width: 100px;
     }  .grid{
       width: 80%;}
+
+    .project:hover > .projectInformation{
+      background: rgba(255,255,255,1);
+      box-shadow: 10px 10px 10px rgba(1,1,1,0.5);
+      right: 80px;
+    }
+    .projectRight .project:hover>.projectInformation{
+      left: 0px!important;
+    }
+    .projectLeft .project:hover>.projectInformation{
+      right: 0px!important;
+    }
+    .projectImage{
+      width: 80%;
+    }
+    .projectInformation{
+      width: 60%;
+      top:40px;
+    }
+    .project{
+      padding-top:100px;
+    }
 }
 /*******************small devices*********************/
 
@@ -537,6 +655,25 @@ justify-content: center;
   }.grid{
     width: 100%;
     margin-top: 20px;}
+  .projectImage{
+    width: 30%;
+  }
+  .projectRight .projectImage{
+    float:left;
+  }
+  .projectInformation,.projectRight .projectInformation {
+    font-size: 0.9em;
+    border: none;
+    left: 45vw;
+    background: none;
+    width:40%;
+  }
+  .projectInformation h4{
+    font-size: 14px;
+  }
+  .project{
+    padding-top:1.2em;
+  }
 
 }
 /*******************extra small devices*********************/
@@ -565,6 +702,19 @@ justify-content: center;
   }
   .exp-year{
     top:-10px;
+  }
+  .projectInformation,.projectRight .projectInformation {
+    font-size: 10px;
+    top:0;
+  }
+  .projectInformation a{
+    margin: 2px;
+  }
+  .projectInformation h4{
+    font-size: 10px;
+  }
+  .projectImage{
+    width: 45%;
   }
 }
 

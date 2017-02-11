@@ -12,11 +12,81 @@ var sections = {
 };
 var isAndroid=false;
 var docViewTop = $(".docScroller").scrollTop();
+function initAnimate(){
+  if(!isAndroid){
+    if(docViewTop > sections["#Education"] || docViewTop < sections["#Education"]){
+      $("#Education .mainHeading").fadeOut();
+    }
+      docViewTop = $(".docScroller").scrollTop();
+      if(docViewTop<=sections["#Introduction"]){
+        $("#Introduction>div").fadeIn(500);
+      }
+      else if(docViewTop > sections["#Introduction"]){
+        $("#Introduction>div").fadeOut(0);
+      }
+
+      if(docViewTop > sections["#Education"] || docViewTop < sections["#Education"]){
+        $("#Education .mainHeading").fadeOut();
+        $("#edTimeline").css({"left":"-200px","opacity":"0"});
+        $("#expTimeline").css({"right":"-200px","opacity":"0"});
+      }
+      if(docViewTop==sections["#Education"]){
+        $("#Education .mainHeading").fadeIn();
+        $("#edButton").fadeIn();
+        $("#expButton").fadeIn();
+        $("#edTimeline").animate({"left":"0px","opacity":"1"},500);
+        $("#expTimeline").animate({"right":"0px","opacity":"1"},500);
+      }
+
+      if(docViewTop==sections["#Designs"]){
+        $("#Designs").find('.item').each(function(i) {
+                $(this).delay(i*100).animate({
+                    'opacity' : 1,
+                }, 500);
+            });
+      }
+      if(docViewTop > sections["#Designs"] || docViewTop < sections["#Designs"]){
+        $("#Designs").find('.item').each(function(i) {
+                $(this).css({
+                    'opacity' : '0',
+                });
+            });
+      }
+
+      if(docViewTop==sections["#Artworks"]){
+        $("#Artworks").find('.item').each(function(i) {
+                $(this).delay(i*100).animate({
+                    'opacity' : 1,
+                }, 500);
+            });
+      }
+      if(docViewTop > sections["#Artworks"] || docViewTop < sections["#Artworks"]){
+        $("#Artworks").find('.item').each(function(i) {
+                $(this).css({
+                    'opacity' : '0',
+                });
+            });
+      }
+
+      if(docViewTop==sections["#Projects"]){
+        $(".seeMore").show(500);
+        $(".projectLeft").animate({"left":"0","opacity":"1"},500);
+        $(".projectRight").animate({"right":"0","opacity":"1"},500);
+      }
+      if(docViewTop > sections["#Projects"] || docViewTop < sections["#Projects"]){
+        $(".seeMore").hide(500);
+        $(".projectLeft").css({"left":"-200px","opacity":"0"});
+        $(".projectRight").css({"right":"-200px","opacity":"0"});
+      }
+  }
+}
+initAnimate();
 if( /Android/i.test(navigator.userAgent) ) {
   isAndroid=true;
 }
 if(isAndroid){
   $(".item").css("opacity","1");
+  $(".seeMore").css("position","relative");
 }
 function setMasonryWidth(){
   if($(window).width()<768){
@@ -124,65 +194,74 @@ $(window).load(function(){
 
 /****************PAGE ANIMATIONS *********************************/
     $(".docScroller").scroll(function () {
-
-      if(!isAndroid){
-        if(docViewTop > sections["#Education"] || docViewTop < sections["#Education"]){
-          $("#Education .mainHeading").fadeOut();
-        }
-          docViewTop = $(".docScroller").scrollTop();
-          if(docViewTop<=sections["#Introduction"]){
-            $("#Introduction>div").fadeIn(500);
-          }
-          else if(docViewTop >= sections["#Introduction"]+height){
-            $("#Introduction>div").fadeOut(0);
-          }
-
-          if(docViewTop > sections["#Education"] || docViewTop < sections["#Education"]){
-            $("#Education .mainHeading").fadeOut();
-            $("#edTimeline").css({"left":"-200px","opacity":"0"});
-            $("#expTimeline").css({"right":"-200px","opacity":"0"});
-          }
-          if(docViewTop==sections["#Education"]){
-            $("#Education .mainHeading").fadeIn();
-            $("#edButton").fadeIn();
-            $("#expButton").fadeIn();
-            $("#edTimeline").animate({"left":"0px","opacity":"1"},500);
-            $("#expTimeline").animate({"right":"0px","opacity":"1"},500);
-          }
-
-          if(docViewTop==sections["#Designs"]){
-            $("#Designs").find('.item').each(function(i) {
-                    $(this).delay(i*100).animate({
-                        'opacity' : 1,
-                    }, 500);
-                });
-          }
-          if(docViewTop > sections["#Designs"] || docViewTop < sections["#Designs"]){
-            $("#Designs").find('.item').each(function(i) {
-                    $(this).css({
-                        'opacity' : '0',
-                    });
-                });
-          }
-
-          if(docViewTop==sections["#Artworks"]){
-            $("#Artworks").find('.item').each(function(i) {
-                    $(this).delay(i*100).animate({
-                        'opacity' : 1,
-                    }, 500);
-                });
-          }
-          if(docViewTop > sections["#Artworks"] || docViewTop < sections["#Artworks"]){
-            $("#Artworks").find('.item').each(function(i) {
-                    $(this).css({
-                        'opacity' : '0',
-                    });
-                });
-          }
-
-      }
+        initAnimate();
+      // if(!isAndroid){
+      //   if(docViewTop > sections["#Education"] || docViewTop < sections["#Education"]){
+      //     $("#Education .mainHeading").fadeOut();
+      //   }
+      //     docViewTop = $(".docScroller").scrollTop();
+      //     if(docViewTop<=sections["#Introduction"]){
+      //       $("#Introduction>div").fadeIn(500);
+      //     }
+      //     else if(docViewTop >= sections["#Introduction"]+height){
+      //       $("#Introduction>div").fadeOut(0);
+      //     }
+      //
+      //     if(docViewTop > sections["#Education"] || docViewTop < sections["#Education"]){
+      //       $("#Education .mainHeading").fadeOut();
+      //       $("#edTimeline").css({"left":"-200px","opacity":"0"});
+      //       $("#expTimeline").css({"right":"-200px","opacity":"0"});
+      //     }
+      //     if(docViewTop==sections["#Education"]){
+      //       $("#Education .mainHeading").fadeIn();
+      //       $("#edButton").fadeIn();
+      //       $("#expButton").fadeIn();
+      //       $("#edTimeline").animate({"left":"0px","opacity":"1"},500);
+      //       $("#expTimeline").animate({"right":"0px","opacity":"1"},500);
+      //     }
+      //
+      //     if(docViewTop==sections["#Designs"]){
+      //       $("#Designs").find('.item').each(function(i) {
+      //               $(this).delay(i*100).animate({
+      //                   'opacity' : 1,
+      //               }, 500);
+      //           });
+      //     }
+      //     if(docViewTop > sections["#Designs"] || docViewTop < sections["#Designs"]){
+      //       $("#Designs").find('.item').each(function(i) {
+      //               $(this).css({
+      //                   'opacity' : '0',
+      //               });
+      //           });
+      //     }
+      //
+      //     if(docViewTop==sections["#Artworks"]){
+      //       $("#Artworks").find('.item').each(function(i) {
+      //               $(this).delay(i*100).animate({
+      //                   'opacity' : 1,
+      //               }, 500);
+      //           });
+      //     }
+      //     if(docViewTop > sections["#Artworks"] || docViewTop < sections["#Artworks"]){
+      //       $("#Artworks").find('.item').each(function(i) {
+      //               $(this).css({
+      //                   'opacity' : '0',
+      //               });
+      //           });
+      //     }
+      //
+      //     if(docViewTop==sections["#Projects"]){
+      //
+      //     }
+      //     if(docViewTop > sections["#Projects"] || docViewTop < sections["#Projects"]){
+      //
+      //     }
+      //
+      // }
 
     });
+
+
 })();//end function ready
 
 $(window).bind('resize',function(event){
@@ -193,6 +272,18 @@ $(window).bind('resize',function(event){
     sections["#Artworks"] = parseInt($(".page").css("height"))*3;
     sections["#Projects"] = parseInt($(".page").css("height"))*4;
     sections["#ContactMe"] = parseInt($(".page").css("height"))*5;
+
+    $(".project").find('.project').each(function(i) {
+        var projectImgHeight = $(this).find('.projectImage').height();
+        var projectImgWidth = $(this).find('.projectImage').width();
+
+        var projectInfoHeight = projectImgHeight - 20;
+        var projectInfoWidth = projectImgWidth;
+        var projectInfoLeft = projectImgWidth/2 + 20;
+        console.log(projectImgHeight);
+        $(this).find('.projectInformation').css({"height":projectInfoHeight,"right":"50px"});
+    });
+
 });
 /********************Toggle menu bar******************/
 var isNavDisplayed = false;
