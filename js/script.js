@@ -182,14 +182,14 @@ $(window).load(function(){
 
 
     $("#socialLinks a").hover(function(){
-      $(this).find(".st0").css({"stroke":"#EEEBE3","transition":"0.5s"});
-      $(this).find(".st1").css({"fill":"#EEEBE3","transition":"0.5s"});
-      $(this).find(".st2").css({"fill":"#151515","transition":"0.5s"});
+      $(this).find(".st0").css({"stroke":"white","transition":"0.5s"});
+      $(this).find(".st1").css({"fill":"white","transition":"0.5s"});
+      $(this).find(".st2").css({"fill":"black","transition":"0.5s"});
     },
     function(){
-      $(this).find(".st0").css({"stroke":"#151515","transition":"0.5s"});
-      $(this).find(".st1").css({"fill":"#151515","transition":"0.5s"});
-      $(this).find(".st2").css({"fill":"#EEEBE3","transition":"0.5s"});
+      $(this).find(".st0").css({"stroke":"black","transition":"0.5s"});
+      $(this).find(".st1").css({"fill":"black","transition":"0.5s"});
+      $(this).find(".st2").css({"fill":"white","transition":"0.5s"});
     });
 
 /****************PAGE ANIMATIONS *********************************/
@@ -325,7 +325,7 @@ $(".content").on('mouseleave','.item',function () {
 
 $(".content").on('click','.item',function () {
   var imageLink = $(this).find("img").attr("src");
-  var appendHTML = "<div class='imageLarge centerDiv'><img src='../"+imageLink+"'</div>";
+  var appendHTML = "<div class='imageLarge centerDiv'><img src='"+imageLink+"'></div>";
   $(".displayImage").css("display","flex").html(appendHTML);
   $(".imageLarge").css({"opacity":"0"}).animate({
     opacity:1

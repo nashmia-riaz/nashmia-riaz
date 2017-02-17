@@ -17,7 +17,7 @@
            <a href="#Introduction" >About</a>
            <a href="#Education" >Education</a>
            <a href="#Designs" >Designs</a>
-           <a href="#Artwokrs" >Artworks</a>
+           <a href="#Artworks" >Artworks</a>
            <a href="#Projects" >Projects</a>
            <a href="#ContactMe" >Contact Me</a>
         </div>
@@ -43,7 +43,7 @@
 
                   <div id="socialLinks">
                      <!-- FACEBOOK LINK -->
-                     <a href="#">
+                     <a href="https://www.facebook.com/NashmiaRiaz">
                         <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                         	 viewbox="0 0 200 200" style="enable-background:new 0 0 200 200;" xml:space="preserve">
                         <style type="text/css">
@@ -66,7 +66,7 @@
                      <!-- FACEBOOK LINK -->
 
                      <!-- LINKEDIN LINK -->
-                     <a href="#">
+                     <a href="https://www.linkedin.com/in/nashmia-riaz-26b9b5b9/">
                         <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                         	 viewbox="0 0 200 200" style="enable-background:new 0 0 200 200;" xml:space="preserve">
                         <style type="text/css">
@@ -95,7 +95,7 @@
                      </a>
                      <!-- LINKEDIN LINK -->
                      <!-- EMAIL LINK -->
-                     <a href="#">
+                     <a href="mailto::nashmia-riaz@hotmail.com">
                         <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                         	 viewbox="0 0 200 200" style="enable-background:new 0 0 200 200;" xml:space="preserve">
                         <style type="text/css">
@@ -123,7 +123,7 @@
                      </a>
                      <!-- EMAIL LINK -->
                      <!-- PHONE LINK -->
-                     <a href="#">
+                     <a href="tel::+923347779866">
                         <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
                         	 viewbox="0 0 200 200" style="enable-background:new 0 0 200 200;" xml:space="preserve">
                         <style type="text/css">
@@ -150,7 +150,14 @@
                         </svg>
                      </a>
                      <!-- PHONE LINK -->
+
                   </div>
+                  <!-- sociallinks ended -->
+                  <div class="linkButton">
+                    <a href="#"><div class="heading centerDiv button">
+                       <h4>Download CV</h4>
+                    </div></a>
+                 </div>
                   </div>
                </div>
 
@@ -297,8 +304,8 @@
                           <div class="projectInformation">
                              <h4>{{project.title}}</h4>
                              <p class="hidden-xs">{{project.explanation}}</p>
-                             <a src="#">Live demo</a>
-                             <a src="#">Github</a>
+                             <a src="{{project.LiveLink}}">Live demo</a>
+                             <a src="{{project.GithubLink}}">Github</a>
                           </div>
                        </div>
 
@@ -307,17 +314,40 @@
               </div>
 
 
-              <div class="seeMore">
+              <!-- <div class="linkButton">
                  <a href="#"><div class="heading centerDiv button">
                     <h4>View More</h4>
                  </div></a>
-              </div>
+              </div> -->
+
             </div>
          </div>
+
+
           <div class="page" id="ContactMe">
+             <div class="mainHeading">
+                <h2>Get in</h2>
+                <h1>Contact</h1>
+             </div>
+
             <div class="inside">
+                <div id="contactMeForm">
+                    <div id="Form" class="centerDiv">
+                        <form action="https://formspree.io/nashmia-riaz@hotmail.com"
+                              method="POST">
+                            <label for="name">Your name:</label><input type="text" name="name" placeholder="Your name" class="input"><br/>
+                            <label for="email">Your email:</label><input type="email" name="_replyto" placeholder="Your email" class="input"><br/>
+                            <label for="message">Your message:</label><textarea type="textarea" name="message"  placeholder="Your message" class="input"  id="message" ></textarea><br/>
+                            <div class="linkButton">
+                               <input type="submit" value="Send" id="button">
+                            </div>
+                        </form>
+                    </div>
+                </div>
             </div>
           </div>
+
+
       </div>
    </body>
    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>

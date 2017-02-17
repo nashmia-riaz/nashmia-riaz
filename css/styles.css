@@ -302,11 +302,11 @@ button{
   height: inherit;
   display:block
 }
-#Education, #Artworks{
+#Education, #Artworks, #ContactMe{
   padding-top: 0px;
   color: white!important;
 }
-#Education .mainHeading h1, #Artworks .mainHeading h1{
+#Education .mainHeading h1, #Artworks .mainHeading h1, #ContactMe .mainHeading h1{
   background: white;
   color: black;
 }
@@ -469,24 +469,24 @@ display: inline;
 .imageLarge img{
   max-width:90vw;
   max-height:90vh;
-  /*width: 100%;*/
 }
 .button{
-  color:black;
-  border: 2px solid black;
-  width: 40%;
-  transition: all 0.5s;
-}
-.button:hover{
   color:white;
   background-color: black;
+  width: 20%;
+  transition: all 0.5s;
+}
+.button:hover,{
+  color:black;
+  background: white;
   cursor: pointer;
   border: 2px solid black;
 }
-.seeMore{
+
+.linkButton{
   margin-top: 20px;
-  position: absolute;
-  bottom: -10px;
+  /*position: absolute;*/
+  /*bottom: -10px;*/
   display: block;
   width: 100%;
 }
@@ -541,6 +541,31 @@ a:hover{
 }
 .projectRight .projectInformation{
   left: 50px;
+}
+label{
+  display: block;
+  margin-top: 30px;
+}
+#Form{
+    flex-direction: column;
+    justify-content: center;
+}
+#ContactMe input[type=text],#ContactMe input[type=email], #ContactMe textarea{
+  color: black!important;
+}
+#ContactMe input[type=submit]{
+  color:black;
+  background: white;
+  cursor: pointer;
+  border: 2px solid black;
+  width: 20%;
+  padding: 10px;
+  transition: all 0.5s;
+}
+#ContactMe input[type=submit]:hover{
+    color:white;
+    background-color: black;
+    border: 2px solid white;
 }
 @media(min-width:1200px){
 
