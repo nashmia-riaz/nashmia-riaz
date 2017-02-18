@@ -320,7 +320,7 @@ $(".content").on('mouseenter','.item',function () {
 });
 
 $(".content").on('mouseleave','.item',function () {
-  $(this).delay(500).css("z-index","1");
+  $(this).delay(500).css("z-index","0");
 });
 
 $(".content").on('click','.item',function () {
