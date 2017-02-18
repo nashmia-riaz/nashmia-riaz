@@ -452,7 +452,7 @@ display: inline;
   cursor: pointer;
 }
 .displayImage{
-  z-index: 6;
+  z-index: ;
   position: fixed;
   width: 100vw;
   height: 100vh;
@@ -485,10 +485,20 @@ display: inline;
 
 .linkButton{
   margin-top: 20px;
-  /*position: absolute;*/
-  /*bottom: -10px;*/
   display: block;
   width: 100%;
+  padding: 20px;
+  color: black;
+}
+.linkButton input{
+  padding: 10px;
+  width: 20%;
+  transition: all 0.5s;
+}
+.linkButton input:hover{
+  color:white;
+  border: 2px solid white;
+  background: black;
 }
 a{
   color:#c70039;
@@ -544,29 +554,28 @@ a:hover{
 }
 label{
   display: block;
-  margin-top: 30px;
+  width: 100%;
+  text-align: right;
+  vertical-align: middle;
 }
-#Form{
-    flex-direction: column;
-    justify-content: center;
+#Form .row div{
+  margin-bottom: 40px;
 }
-#ContactMe input[type=text],#ContactMe input[type=email], #ContactMe textarea{
-  color: black!important;
-}
-#ContactMe input[type=submit]{
-  color:black;
-  background: white;
-  cursor: pointer;
-  border: 2px solid black;
-  width: 20%;
-  padding: 10px;
+input[type=text],textarea, input[type=email]{
+  width: 80%;
+  float:left;
+  margin-left: 0;
+  background: #494949;
+  border: black;
+  padding: 20px;
   transition: all 0.5s;
 }
-#ContactMe input[type=submit]:hover{
-    color:white;
-    background-color: black;
-    border: 2px solid white;
+input[type=text]:focus,textarea:focus, input[type=email]:focus{
+  background: white;
+  color: black;
 }
+
+
 @media(min-width:1200px){
 
   .project:hover > .projectInformation{
@@ -699,7 +708,21 @@ label{
   .project{
     padding-top:1.2em;
   }
+  label{
+    text-align: center;
+    padding: 0;
+    margin-top: 20px;
+  }
 
+  input[type=text],textarea, input[type=email]{
+    width: 100%;
+    margin-top: 0;
+    position: relative;
+    padding: 20px;
+  }
+  #Form .row div{
+    margin-bottom: 0px;
+  }
 }
 /*******************extra small devices*********************/
 @media (max-width: 539px){
