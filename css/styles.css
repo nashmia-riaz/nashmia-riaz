@@ -452,7 +452,7 @@ display: inline;
   cursor: pointer;
 }
 .displayImage{
-  z-index: ;
+  z-index: 6!important;
   position: fixed;
   width: 100vw;
   height: 100vh;
@@ -464,7 +464,7 @@ display: inline;
 }
 
 .imageLarge{
-
+  /*z-index:6;*/
 }
 .imageLarge img{
   max-width:90vw;
