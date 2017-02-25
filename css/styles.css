@@ -53,33 +53,11 @@ h2{
 .page {
   float: left;
   width: 100%;
-  height: 100%;
+  min-height: 100vh!important;
 }
-
-.docScroller {
-  width: 100vw;
-  height: 100vh;
-  margin: 0;
-  padding: 0;
-  white-space: nowrap;
-  overflow-x: hidden;
-  overflow: auto;
-  -webkit-overflow-scrolling: touch;
-  -webkit-scroll-snap-type: mandatory;
-      -ms-scroll-snap-type: mandatory;
-          scroll-snap-type: mandatory;
-
-    /* older spec implementation */
-  -webkit-scroll-snap-destination: 100% 0%;
-      -ms-scroll-snap-destination: 100% 0%;
-          scroll-snap-destination: 100% 0%;
-
-
-  -webkit-scroll-snap-points-y: repeat(100%);
-      -ms-scroll-snap-points-y: repeat(100%);
-          scroll-snap-points-y: repeat(100%);
+.inside{
+  position: relative;
 }
-
 
 #Introduction {
   background: radial-gradient(white,#dadada);
@@ -183,7 +161,7 @@ if it's not present, don't show loader */
 /*************Animate Toggle*******************/
 .c-hamburger {
   display: block;
-  position: absolute;
+  position: fixed;
   overflow: hidden;
   width: 60px;
   height: 60px;
@@ -387,6 +365,7 @@ display: inline;
 .timeline{
   width: 100%;
 }
+
 #Education span{
   white-space: initial;
 }
@@ -422,8 +401,8 @@ display: inline;
 .grid{
   width: 60%;
   margin-top: 40px;
-  position: relative;
-}
+  position: relative;}
+
 .content {
   width: auto;
 	margin: 0 auto;
@@ -432,9 +411,8 @@ display: inline;
 .item {
 	display: block;
 	float: left;
-	width: 120px;
+	width: 150px;
 	margin: 0 10px 10px 0;
-  opacity: 0;
   transition: all 0.5s;
   transform-origin: center;
   box-shadow: 10px 10px 10px rgba(1,1,1,0.15);
@@ -443,13 +421,14 @@ display: inline;
 .item img {
 	width: 100%;
 	height: auto;
+  transition: all 0.5s;
 }
 .item:hover{
     box-shadow: 10px 10px 10px rgba(1,1,1,0.5);
-    transform: scale(1.5,1.5);
 }
 .item img:hover{
   cursor: pointer;
+  transform: scale(1.5,1.5);
 }
 .displayImage{
   z-index: 6!important;
@@ -512,48 +491,44 @@ a:hover{
 }
 
 .projectImage{
-  width: 80%;
-  position:relative;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  padding: 0!important;
+  transition: all 0.5s;
+  margin-bottom: 40px;
 }
-.projectLeft .projectImage{
-  float:left;
-}
-.projectRight .projectImage{
-  float:right;
+.projectImage:hover .projectInformation{
+  opacity: 1;
 }
 .projectImage img{
   width: 100%;
 }
 
 .projectInformation{
-  border: 1px solid black;
-  padding: 10px;
+  float: left;
   position: absolute;
-  top: 10px;
-  background: rgba(255,255,255,0.8);
-  white-space: initial;
-  width: 50%;
-  transition: all 0.5s, right 0.5s;
-}
-.project{
-  position: relative;
-  padding-top:20px;
-  clear:both;
+  left: 0;
+  top: 0;
+  z-index: 1000;
+  transition: all 0.5s;
+
+  background: rgba(0,0,0,0.8);
+  width: 100%;
+  height: 100%;
+  color: white;
+  padding: 10px;
+  opacity: 0;
+  /*margin-top: -50%; */
 }
 .projectInformation a{
   display: block;
   margin-top: 10px;
 }
-.project h4{
-  font-family: 'Sintony', sans-serif;
-  font-weight: bold;
+.projectInformation h4{
+  font-size: 1.5em;
 }
-.projectLeft .projectInformation{
-  right: 50px;
-}
-.projectRight .projectInformation{
-  left: 50px;
-}
+
 label{
   display: block;
   width: 100%;
@@ -580,36 +555,9 @@ input[type=text]:focus,textarea:focus, input[type=email]:focus{
 
 @media(min-width:1200px){
 
-  .project:hover > .projectInformation{
-    background: rgba(255,255,255,1);
-    box-shadow: 10px 10px 10px rgba(1,1,1,0.5);
-    right: 80px;
-  }
-  .projectRight .project:hover>.projectInformation{
-    left: 0px!important;
-  }
-  .projectLeft .project:hover>.projectInformation{
-    right: 0px!important;
-  }
 }
 @media (min-width: 992px) and (max-width: 1199px){
-  .grid{
-  width: 80%;}
-  .item {
-    width: 120px;
-  }
 
-  .project:hover > .projectInformation{
-    background: rgba(255,255,255,1);
-    box-shadow: 10px 10px 10px rgba(1,1,1,0.5);
-    right: 80px;
-  }
-  .projectRight .project:hover>.projectInformation{
-    left: 0px!important;
-  }
-  .projectLeft .project:hover>.projectInformation{
-    right: 0px!important;
-  }
 }
 /*******************small devices*********************/
 @media (min-width: 768px) and (max-width: 991px){
@@ -641,32 +589,8 @@ input[type=text]:focus,textarea:focus, input[type=email]:focus{
     .timeline .row{
       width: 80%;
     }
-    .item {
-      width: 100px;
-    }  .grid{
-      width: 80%;}
 
-    .project:hover > .projectInformation{
-      background: rgba(255,255,255,1);
-      box-shadow: 10px 10px 10px rgba(1,1,1,0.5);
-      right: 80px;
-    }
-    .projectRight .project:hover>.projectInformation{
-      left: 0px!important;
-    }
-    .projectLeft .project:hover>.projectInformation{
-      right: 0px!important;
-    }
-    .projectImage{
-      width: 80%;
-    }
-    .projectInformation{
-      width: 60%;
-      top:40px;
-    }
-    .project{
-      padding-top:100px;
-    }
+
 }
 /*******************small devices*********************/
 
@@ -686,30 +610,7 @@ input[type=text]:focus,textarea:focus, input[type=email]:focus{
   .mainHeading h1{
     margin-bottom: 10px;
   }
-  .item {
-    width: 70px;
-  }.grid{
-    width: 100%;
-    margin-top: 20px;}
-  .projectImage{
-    width: 30%;
-  }
-  .projectRight .projectImage{
-    float:left;
-  }
-  .projectInformation,.projectRight .projectInformation {
-    font-size: 0.9em;
-    border: none;
-    left: 45vw;
-    background: none;
-    width:40%;
-  }
-  .projectInformation h4{
-    font-size: 14px;
-  }
-  .project{
-    padding-top:1.2em;
-  }
+
   label{
     text-align: center;
     padding: 0;
@@ -724,6 +625,29 @@ input[type=text]:focus,textarea:focus, input[type=email]:focus{
   }
   #Form .row div{
     margin-bottom: 0px;
+  }
+  .projectInformation{
+    /*display: block;*/
+    position: relative;
+    opacity: 1;
+    background: none;
+    color: black;
+    float: none;
+  }
+  .project{
+    display: block;
+  }
+  .projectImage{
+    margin: 0;
+  }
+  hr{
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid black;
+    margin: 1em 0;
+    padding: 0;
+    width: 100%;
   }
 }
 /*******************extra small devices*********************/
@@ -753,19 +677,8 @@ input[type=text]:focus,textarea:focus, input[type=email]:focus{
   .exp-year{
     top:-10px;
   }
-  .projectInformation,.projectRight .projectInformation {
-    font-size: 10px;
-    top:0;
-  }
-  .projectInformation a{
-    margin: 2px;
-  }
-  .projectInformation h4{
-    font-size: 10px;
-  }
-  .projectImage{
-    width: 45%;
-  }
+
+
 }
 
 @media (max-width: 453px){

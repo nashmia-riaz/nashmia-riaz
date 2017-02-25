@@ -158,8 +158,8 @@ app.controller("myCtrl", function($scope,$compile){
       "link":"1",
       "title":"CeeVee",
       "explanation":"CeeVee is an online resume building website that works dynamically.",
-      "GithubLink":"https://github.com/nashmia-riaz/CeeVee",
-      "LiveLink":"http://nashmia-riaz.github.io/CeeVee"
+      "GithubLink":"",
+      "LiveLink":""
     },
     {
       "link":"2",
@@ -174,15 +174,15 @@ app.controller("myCtrl", function($scope,$compile){
     "link":"3",
     "title":"Collaborative White Board",
     "explanation":"Collaborative white board made using PubNub",
-    "GithubLink":"https://github.com/nashmia-riaz/collabwhiteboard",
-    "LiveLink":"http://nashmia-riaz.github.io/collabwhiteboard"
+    "GithubLink":"",
+    "LiveLink":""
   },
   {
     "link":"4",
     "title":"Fat Cat",
     "explanation":"Unity3D game made and coded entirely from scratch.",
-    "GithubLink":"https://github.com/nashmia-riaz/FatCat",
-    "LiveLink":"http://nashmia-riaz.github.io/FatCat"
+    "GithubLink":"",
+    "LiveLink":""
   }];
 
 });

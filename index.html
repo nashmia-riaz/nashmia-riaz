@@ -6,6 +6,8 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Nashmia Riaz</title>
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <link rel="stylesheet" href="css/animations.css">
+      <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
       <link rel="stylesheet" href="css/styles.css">
       <link href="https://fonts.googleapis.com/css?family=Poppins|Sintony" rel="stylesheet">
    </head>
@@ -27,9 +29,8 @@
       </button>
 
 
-      <div class="docScroller" >
-          <div class="page" id="Introduction">
-            <div class="centerDiv container">
+          <div class="page" id="Introduction" data-section-name="introduction">
+            <div class="centerDiv container inside" data-aos="zoom-in-down" data-aos-offset="500" data-aos-duration="1500">
                <div class="row">
                   <div class="col-lg-12 col-md-12 col-sm-12">
                      <img id="myPicture" src="images/myPicture.jpg"/>
@@ -163,11 +164,10 @@
 
             </div>
          </div>
-          <div class="page" id="Education">
+          <div class="page" id="Education" data-section-name="education" >
              <div class="mainHeading">
-             <h2>Education & My</h2>
-             <h1>Experience</h1>
-
+                <h2>Education &amp; My</h2>
+                <h1>Experience</h1>
              </div>
              <div class="heading centerDiv visible-xs visible-sm" id="edButton">
                 <h4>Education</h4>
@@ -177,60 +177,21 @@
              </div>
 
              <div class="container">
-                <div class="row centerDiv">
-                   <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ExpOrEd" id="edTimeline">
+                <div class="row centerDiv ">
+                   <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ExpOrEd" id="edTimeline" data-aos="fade-right">
                       <div class="heading hidden-xs hidden-sm">
                          <h4>Education</h4>
                       </div>
                       <div class="timeline container">
-                        <div class="row centerDiv" ng-repeat="ed in educations">
-                           <div class="single-exp {{ed.Last}}">
-                             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                 <span class="exp-no">{{ed.No}}</span>
-                             </div>
-                             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3  ">
-                                <span class="exp-year centerDiv">{{ed.Year}}</span>
-                             </div>
-                             <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 exp-other  ">
-                                <span class="exp-institute">{{ed.Institute}}</span>
-                                <span class="exp-details">
-                                   <h4>{{ed.Pos}}</h4>
-                                   <h4>CGPA:</h4> <p>{{ed.Grade}}
-                                </p>
-                                <div class="hidden-xs">
-                                <h4>Major:</h4>
-                                   <p>
-                                    {{ed.Major}}
-                                   </p>
-                                </div>
 
-                             </span>
-                             </div>
-                          </div>
-                        </div>
                       </div>
                    </div>
-                   <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ExpOrEd" id="expTimeline">
-                      <div class="heading hidden-xs hidden-sm">
+                   <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ExpOrEd" id="expTimeline" data-aos="fade-left">
+                      <div class="heading hidden-xs hidden-sm ">
                          <h4 id="exHeading">Experience</h4>
                       </div>
                       <div class="timeline container">
-                        <div class="row centerDiv" ng-repeat="ex in experiences">
-                           <div class="single-exp {{ex.Last}}">
-                             <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1">
-                                 <span class="exp-no">{{ex.No}}</span>
-                             </div>
-                             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3  ">
-                                <span class="exp-year centerDiv">{{ex.Year}}</span>
-                             </div>
-                             <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8 exp-other  ">
-                                <span class="exp-institute">{{ex.Institute}}</span>
-                                <span class="exp-details">
-                                   <h4>{{ex.Pos}}</h4>
-                             </span>
-                             </div>
-                          </div>
-                        </div>
+
                       </div>
                    </div>
                 </div>
@@ -239,7 +200,7 @@
          <div class="displayImage">
 
          </div>
-         <div class="page" id="Designs">
+         <div class="page" id="Designs" data-section-name="designs">
             <div class="inside">
                <div class="mainHeading">
                   <h2>My</h2>
@@ -247,90 +208,52 @@
                </div>
                <div class="centerDiv grid">
                   <div id="DesignsGrid" class="content container clearfix">
-                      <div class="item" ng-repeat="x in artworks">
-                        <img src="images/designs/{{x.link}}.png" alt="" />
-                      </div>
                   </div>
                </div>
             </div>
 
           </div>
-          <div class="page" id="Artworks">
+          <div class="page" id="Artworks" data-section-name="artworks">
             <div class="inside">
                <div class="mainHeading">
                   <h2>My</h2>
                   <h1>Artworks</h1>
                </div>
                <div class="centerDiv grid">
-                  <div  class="content centerDiv Zcontainer clearfix">
-                      <div class="item" ng-repeat="xy in artworks">
-                        <img src="images/artworks/{{xy.link}}.png" alt="" />
-                      </div>
+                  <div class="content centerDiv container clearfix">
                   </div>
                </div>
             </div>
           </div>
-          <div class="page" id="Projects">
-            <div class="inside">
+
+          <div class="page" id="Projects" data-section-name="projects">
+            <div class="inside" >
               <div class="mainHeading">
                  <h2>My</h2>
                  <h1>Projects</h1>
                 </div>
 
-              <div class="container">
+              <div class="container" data-aos="zoom-in-up" data-aos-duration="800">
                  <div class="row">
-                    <div class="col-lg-6 col-md-6 col-sm-6 projectLeft" >
-
-                       <div class="project" ng-repeat="project in projectsLeft">
-                          <div class="projectImage">
-                             <img src="images/projects/{{project.link}}.png" alt="">
-                          </div>
-                          <div class="projectInformation">
-                             <h4>{{project.title}}</h4>
-                             <p class="hidden-xs">{{project.explanation}}</p>
-                             <a src="#">Live demo</a>
-                             <a src="#">Github</a>
-                          </div>
-                       </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 projectsDiv" >
 
                     </div>
 
-                    <div class="col-lg-6 col-md-6 col-sm-6 projectRight ">
-
-                       <div class="project" ng-repeat="project in projectsRight">
-                          <div class="projectImage">
-                             <img src="images/projects/{{project.link}}.png" alt="">
-                          </div>
-                          <div class="projectInformation">
-                             <h4>{{project.title}}</h4>
-                             <p class="hidden-xs">{{project.explanation}}</p>
-                             <a src="{{project.LiveLink}}">Live demo</a>
-                             <a src="{{project.GithubLink}}">Github</a>
-                          </div>
-                       </div>
 
                     </div>
                  </div>
               </div>
-
-
-              <!-- <div class="linkButton">
-                 <a href="#"><div class="heading centerDiv button">
-                    <h4>View More</h4>
-                 </div></a>
-              </div> -->
-
             </div>
-         </div>
 
 
-          <div class="page" id="ContactMe">
+
+          <div class="page" id="ContactMe" data-section-name="contactme">
              <div class="mainHeading">
                 <h2>Get in</h2>
                 <h1>Contact</h1>
              </div>
 
-            <div class="inside">
+            <div class="inside" data-aos="fade-in" data-aos-duration="800">
 
                 <div id="contactMeForm">
                     <div id="Form" class="centerDiv">
@@ -375,17 +298,17 @@
           </div>
 
 
-      </div>
    </body>
    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-   <script type="text/javascript" src="js/angular.js"></script>
    <script src="http://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
-   <script type="text/javascript" src="js/smoothscroll.js"></script>
-   <script type="text/javascript" src="js/info.js"></script>
    <script type="text/javascript" src="js/typed.js"></script>
    <script src="https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.min.js"></script>
    <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
    <script type="text/javascript" src="js/boxShadow.js"></script>
+   <script type="text/javascript" src="js/populateIndex.js"></script>
+   <script type="text/javascript" src="js/smoothscroll.js"></script>
+   <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
    <script type="text/javascript" src="js/script.js"></script>
+   <script type="text/javascript" src="js/css3-animate-it.js"></script>
 
 </html>
