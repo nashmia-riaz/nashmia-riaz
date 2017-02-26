@@ -53,10 +53,10 @@ h2{
 .page {
   float: left;
   width: 100%;
-  min-height: 100vh!important;
 }
 .inside{
   position: relative;
+  min-height: 100vh;
 }
 
 #Introduction {
@@ -117,7 +117,7 @@ if it's not present, don't show loader */
    height: 100%; /* 100% Full-height */
    width: 0; /* 0 width - change this with JavaScript */
    position: fixed; /* Stay in place */
-   z-index: 1; /* Stay on top */
+   z-index: 9; /* Stay on top */
    top: 0;
    left: 0;
    font-family: 'Poppins', sans-serif;
@@ -173,7 +173,7 @@ if it's not present, don't show loader */
   border-radius: none;
   border: none;
   cursor: pointer;
-  z-index:1;
+  z-index:10;
   background: rgba(1,1,1,0.6);
   border-radius: 10%;
 }
@@ -442,6 +442,41 @@ display: inline;
   justify-content: center;
 }
 
+.cross{
+  background: rgba(0,0,0,0.5);
+  position: fixed;
+  width: 50px;
+  height: 50px;
+  top: 20px;
+  right: 20px;
+}
+.cross::before{
+  content: "";
+  width: 50px;
+  height: 2px;
+  position: absolute;
+  right: 0px;
+  top:20px;
+  background: white;
+  /*border: 2px solid pink;*/
+  z-index: 5;
+  transform: rotate(45deg);
+}
+.cross::after{
+  content: "";
+  width: 50px;
+  height: 2px;
+  position: absolute;
+  right: 0px;
+  top:20px;
+  background: white;
+  /*border: 2px solid pink;*/
+  z-index: 5;
+  transform: rotate(-45deg);
+}
+.cross:hover{
+  cursor: pointer;
+}
 .imageLarge{
   /*z-index:6;*/
 }
@@ -557,7 +592,9 @@ input[type=text]:focus,textarea:focus, input[type=email]:focus{
 
 }
 @media (min-width: 992px) and (max-width: 1199px){
-
+  .grid{
+    width: 80%;
+  }
 }
 /*******************small devices*********************/
 @media (min-width: 768px) and (max-width: 991px){
@@ -587,6 +624,9 @@ input[type=text]:focus,textarea:focus, input[type=email]:focus{
     }
 
     .timeline .row{
+      width: 80%;
+    }
+    .grid{
       width: 80%;
     }
 

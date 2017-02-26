@@ -1,11 +1,11 @@
 
 var docViewTop = $(".docScroller").scrollTop();
-
+var sections = ["introduction", "education","designs","artworks","projects","contactme"];
 $(window).load(function(){
 	// Animate loader off screen
 	$(".se-pre-con").fadeOut();
 
-  $('.content').isotope({
+  var $grid = $('.content').isotope({
   // options
     itemSelector: '.item',
     masonry:{
@@ -14,31 +14,16 @@ $(window).load(function(){
     }
   });
 
+  $grid.imagesLoaded().progress( function() {
+    $grid.isotope('layout');
+  });
+
+  window.dispatchEvent(new Event('resize'));
 
 });
 
+
 (function() {
-  $.scrollify({
-        section : ".page",
-        sectionName : "section-name",
-        interstitialSection : "",
-        easing: "easeOutExpo",
-        scrollSpeed: 1100,
-        offset : 0,
-        scrollbars: true,
-        standardScrollElements: "",
-        setHeights: true,
-        overflowScroll: true,
-        updateHash: true,
-        touchScroll:true,
-        before:function() {},
-        after:function() {},
-        afterResize:function() {},
-        afterRender:function() {}
-    });
-    AOS.init({
-      easing: 'ease-in-out-sine'
-    });
   var toggles = document.querySelectorAll(".c-hamburger");
 
   for (var i = toggles.length - 1; i >= 0; i--) {
@@ -63,6 +48,7 @@ $(window).load(function(){
       }, 500, function () {
           window.location.hash = href;
       });
+      // $.scrollify("move",sections[href]);
       return false;
   });
 
@@ -90,7 +76,27 @@ $(window).load(function(){
 
     });
 
-
+    $.scrollify({
+          section : ".page",
+          sectionName : "section-name",
+          interstitialSection : "",
+          easing: "easeOutExpo",
+          scrollSpeed: 1100,
+          offset : 0,
+          scrollbars: true,
+          // standardScrollElements: ".inside",
+          setHeights: true,
+          overflowScroll: true,
+          updateHash: true,
+          touchScroll:true,
+          before:function() {},
+          after:function() {},
+          afterResize:function() {},
+          afterRender:function() {}
+      });
+      AOS.init({
+        easing: 'ease-in-out-sine'
+      });
 })();//end function ready
 
 $(window).bind('resize',function(event){
@@ -136,10 +142,14 @@ $(".content").on('mouseleave','.item',function () {
 
 $(".content").on('click','.item',function () {
   var imageLink = $(this).find("img").attr("src");
-  var appendHTML = "<div class='imageLarge centerDiv'><img src='../"+imageLink+"'</div>";
+  var appendHTML = "<div class='imageLarge centerDiv'><img src='../"+imageLink+"'><span class='cross'></span></div>";
   $(".displayImage").css("display","flex").html(appendHTML);
   $(".imageLarge").css({"opacity":"0"}).animate({
     opacity:1
+  });
+
+  $(".cross").click(function(){
+    $('.displayImage').hide();
   });
 
   $(document).mouseup(function (e)
