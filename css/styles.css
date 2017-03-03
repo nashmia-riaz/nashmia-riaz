@@ -251,6 +251,15 @@ button{
 }
 /*************Animate Toggle*******************/
 
+#Introduction .inside{
+  height: 100vh!important;
+}
+#Introduction .inside .row>div{
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  margin: 0;
+}
 #myPicture{
   display:block;
   margin: 0px auto ;

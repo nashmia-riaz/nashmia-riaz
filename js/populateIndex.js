@@ -155,8 +155,8 @@ var projects=[{
     "link":"1",
     "title":"CeeVee",
     "explanation":"CeeVee is an online resume building website that works dynamically.",
-    "GithubLink":"",
-    "LiveLink":""
+    "GithubLink":"https://github.com/nashmia-riaz/CeeVee",
+    "LiveLink":"http://nashmia-riaz.github.io/CeeVee"
   },
   {
     "link":"2",
@@ -169,15 +169,15 @@ var projects=[{
   "link":"3",
   "title":"Collaborative White Board",
   "explanation":"Collaborative white board made using PubNub",
-  "GithubLink":"",
-  "LiveLink":""
+  "GithubLink":"https://github.com/nashmia-riaz/collabwhiteboard",
+  "LiveLink":"http://nashmia-riaz.github.io/collabwhiteboard"
 },
 {
   "link":"4",
   "title":"Fat Cat",
   "explanation":"Unity3D game made and coded entirely from scratch.",
-  "GithubLink":"",
-  "LiveLink":""
+  "GithubLink":"https://github.com/nashmia-riaz/FatCat",
+  "LiveLink":"http://nashmia-riaz.github.io/FatCat"
 }];
 
 
