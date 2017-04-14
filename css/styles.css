@@ -508,10 +508,11 @@ display: inline;
 }
 
 .linkButton{
-  margin-top: 20px;
+  margin-top: 0px;
   display: block;
   width: 100%;
-  padding: 20px;
+  height: 70px;
+  padding: 20px 20px 0px;
   color: black;
 }
 
