@@ -22,8 +22,6 @@ $(window).load(function(){
   window.dispatchEvent(new Event('resize'));
 
 });
-
-
 (function() {
   var toggles = document.querySelectorAll(".c-hamburger");
 
@@ -116,6 +114,7 @@ $(".c-hamburger").click(function(){
     $("#mySidenav").css({"width":"250px","box-shadow":"0px 10px 10px 5px rgba(0,0,0,0.7)"});
     setTimeout(function(){ 
         $("#mySidenav div").fadeIn(250);
+
      }, 300);
   }
   else{
