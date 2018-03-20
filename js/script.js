@@ -2,6 +2,7 @@
 var docViewTop = $(".docScroller").scrollTop();
 var sections = ["introduction", "education","designs","artworks","projects","contactme"];
 $(window).load(function(){
+  $("#mySidenav div").fadeOut(250);
 	// Animate loader off screen
 	$(".se-pre-con").fadeOut();
 
@@ -39,7 +40,7 @@ $(window).load(function(){
   }
 
   var $root = $('html, body, .docScroller');
-  $('#mySidenav a').click(function(e) {
+  $('#mySidenav>a').click(function(e) {
 
     e.preventDefault();
       var href = $(this).attr('href');
@@ -59,16 +60,19 @@ $(window).load(function(){
     $("#Introduction>div").css("padding-top",setIntroHeight);
     $(".sidenav").css("padding-top",setIntroHeight);
 
-
+    function setSocialLinks(){   
+      $("#socialLinks a").find(".st0").css({"stroke":"#353535","transition":"0.5s"});
+      $("#socialLinks a").find(".st1").css({"fill":"white","transition":"0.5s"});
+      $("#socialLinks a").find(".st2").css({"fill":"#353535","transition":"0.5s"});   
+    }
+    setSocialLinks();
     $("#socialLinks a").hover(function(){
-      $(this).find(".st0").css({"stroke":"#EEEBE3","transition":"0.5s"});
-      $(this).find(".st1").css({"fill":"#EEEBE3","transition":"0.5s"});
-      $(this).find(".st2").css({"fill":"#151515","transition":"0.5s"});
+      $(this).find(".st0").css({"stroke":"#353535","transition":"0.5s"});
+      $(this).find(".st1").css({"fill":"#353535","transition":"0.5s"});
+      $(this).find(".st2").css({"fill":"white","transition":"0.5s"});
     },
     function(){
-      $(this).find(".st0").css({"stroke":"#151515","transition":"0.5s"});
-      $(this).find(".st1").css({"fill":"#151515","transition":"0.5s"});
-      $(this).find(".st2").css({"fill":"#EEEBE3","transition":"0.5s"});
+      setSocialLinks();
     });
 
 /****************PAGE ANIMATIONS *********************************/
@@ -76,24 +80,24 @@ $(window).load(function(){
 
     });
 
-    $.scrollify({
-          section : ".page",
-          sectionName : "section-name",
-          interstitialSection : "",
-          easing: "easeOutExpo",
-          scrollSpeed: 1100,
-          offset : 0,
-          scrollbars: true,
-          // standardScrollElements: ".inside",
-          setHeights: true,
-          overflowScroll: true,
-          updateHash: true,
-          touchScroll:true,
-          before:function() {},
-          after:function() {},
-          afterResize:function() {},
-          afterRender:function() {}
-      });
+    // $.scrollify({
+    //       section : ".page",
+    //       sectionName : "section-name",
+    //       interstitialSection : "",
+    //       easing: "easeOutExpo",
+    //       scrollSpeed: 1100,
+    //       offset : 0,
+    //       scrollbars: true,
+    //       // standardScrollElements: ".inside",
+    //       setHeights: true,
+    //       overflowScroll: true,
+    //       updateHash: true,
+    //       touchScroll:true,
+    //       before:function() {},
+    //       after:function() {},
+    //       afterResize:function() {},
+    //       afterRender:function() {}
+    //   });
       AOS.init({
         easing: 'ease-in-out-sine'
       });
@@ -108,21 +112,28 @@ var isNavDisplayed = false;
 $(".c-hamburger").click(function(){
   isNavDisplayed = !isNavDisplayed;
 
-  if(isNavDisplayed === true)
+  if(isNavDisplayed === true){
     $("#mySidenav").css({"width":"250px","box-shadow":"0px 10px 10px 5px rgba(0,0,0,0.7)"});
-  else
+    setTimeout(function(){ 
+        $("#mySidenav div").fadeIn(250);
+     }, 300);
+  }
+  else{
+    $("#mySidenav div").fadeOut(250, function(){
     $("#mySidenav").css({"width":"0px","box-shadow":"0px 10px 10px 5px rgba(0,0,0,0)"});
+    });
+  }
 });
 /********************Toggle menu bar******************/
 $("#expButton").click(function(){
-  $("#edButton").css({"background":"black","color":"white"});
-  $("#expButton").css({"background":"white","color":"black"});
+  $("#edButton").css({"background":"#353535","color":"white"});
+  $("#expButton").css({"background":"white","color":"#353535"});
   $("#edTimeline").animate().addClass("hidden-xs hidden-sm");
   $("#expTimeline").removeClass("hidden-xs hidden-sm");
 });
 $("#edButton").click(function(){
-  $("#expButton").css({"background":"black","color":"white"});
-  $("#edButton").css({"background":"white","color":"black"});
+  $("#expButton").css({"background":"#353535","color":"white"});
+  $("#edButton").css({"background":"white","color":"#353535"});
   $("#expTimeline").addClass("hidden-xs hidden-sm");
   $("#edTimeline").removeClass("hidden-xs hidden-sm");
 });
