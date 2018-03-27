@@ -167,10 +167,10 @@ var projects=[{
 },
 {
   "link":"3",
-  "title":"Collaborative White Board",
-  "explanation":"Collaborative white board made using PubNub",
-  "GithubLink":"https://github.com/nashmia-riaz/collabwhiteboard",
-  "LiveLink":"http://nashmia-riaz.github.io/collabwhiteboard"
+  "title":"Virtual Pakistan",
+  "explanation":"Explore Pakistan using minimal 3D models.",
+  "GithubLink":"https://github.com/nashmia-riaz/ComputerGraphics/tree/master/Virtual%20Pakistan%20Webgl",
+  "LiveLink":"https://nashmia-riaz.github.io/ComputerGraphics/Virtual%20Pakistan%20Webgl/index.html"
 },
 {
   "link":"4",
