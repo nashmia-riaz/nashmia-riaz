@@ -38,15 +38,21 @@ $(window).load(function(){
   }
 
   var $root = $('html, body, .docScroller');
-  $('#mySidenav>a').click(function(e) {
-
+  $('#mySidenav a').click(function(e) {
     e.preventDefault();
-      var href = $(this).attr('href');
-      $root.animate({
-          scrollTop: sections[href]
-      }, 500, function () {
-          window.location.hash = href;
-      });
+      var href = $(this).attr("href");
+      var elementHash = $(this.hash);
+      console.log(href);
+      // $root.animate({
+      //     scrollTop: sections[href]
+      // }, 500, function () {
+      //     window.location.hash = href;
+      // });
+      $('html, body').animate({
+        scrollTop: elementHash.offset().top
+        }, 500, function () {
+            window.location.hash = href;
+        });
       // $.scrollify("move",sections[href]);
       return false;
   });
@@ -58,10 +64,10 @@ $(window).load(function(){
     $("#Introduction>div").css("padding-top",setIntroHeight);
     $(".sidenav").css("padding-top",setIntroHeight);
 
-    function setSocialLinks(){   
+    function setSocialLinks(){
       $("#socialLinks a").find(".st0").css({"stroke":"#353535","transition":"0.5s"});
       $("#socialLinks a").find(".st1").css({"fill":"white","transition":"0.5s"});
-      $("#socialLinks a").find(".st2").css({"fill":"#353535","transition":"0.5s"});   
+      $("#socialLinks a").find(".st2").css({"fill":"#353535","transition":"0.5s"});
     }
     setSocialLinks();
     $("#socialLinks a").hover(function(){
@@ -112,7 +118,7 @@ $(".c-hamburger").click(function(){
 
   if(isNavDisplayed === true){
     $("#mySidenav").css({"width":"250px","box-shadow":"0px 10px 10px 5px rgba(0,0,0,0.7)"});
-    setTimeout(function(){ 
+    setTimeout(function(){
         $("#mySidenav div").fadeIn(250);
 
      }, 300);
