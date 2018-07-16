@@ -160,10 +160,10 @@ var projects=[{
   },
   {
     "link":"2",
-    "title":"Online CV Template",
-    "explanation":"A website template that I made to present your extensive online CV.",
-    "GithubLink":"https://github.com/nashmia-riaz/OldResume",
-    "LiveLink":"http://nashmia-riaz.github.io/OldResume"
+    "title":"Snek",
+    "explanation":"A multiplayer game made with Unity3D.",
+    "GithubLink":"https://github.com/nashmia-riaz/Snek",
+    "LiveLink":"https://nashmia-riaz.github.io/Snek/"
 },
 {
   "link":"3",
