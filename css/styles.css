@@ -169,6 +169,7 @@ div.download{
   padding: 5px;
   margin-top: 10px;
   transition: 0.5s;
+  margin-right: 10px;
 }
 div.download>a{
   color: #c3073f;
