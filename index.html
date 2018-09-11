@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html>
+<html ng-app="resumeApp">
    <head>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,335 +8,46 @@
       <title>Nashmia Riaz</title>
       <link rel="icon" href="images/favicon_32x32.ico">
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-      <link rel="stylesheet" href="css/animations.css">
-      <link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
       <link rel="stylesheet" href="css/styles.css">
-      <link href="https://fonts.googleapis.com/css?family=Poppins|Sintony" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Open+Sans|Open+Sans+Condensed:300" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+      <base href="/">
    </head>
-   <body ng-app="myApp" ng-controller="myCtrl">
-      <div class="se-pre-con"></div>
+   <body ng-controller="defaultController" class="parent-center">
+     <div class="se-pre-con"></div>
+     <nav class="navbar">
+         <div class="container-fluid">
+           <div class="navbar-header">
+             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+               <span class="sr-only">Toggle navigation</span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+               <span class="icon-bar"></span>
+             </button>
+             <a class="navbar-brand" href="About"><img src="images/Icon.png"</a>
+           </div>
 
-      <div id="mySidenav" class="sidenav">
-        <div class="">
-           <a class="bookmark" href="#Introduction" >About</a>
-           <a class="bookmark" href="#Education" >Education</a>
-           <a class="bookmark" href="#Designs" >Designs</a>
-           <a class="bookmark" href="#Artworks" >Artworks</a>
-           <a class="bookmark" href="#Projects" >Projects</a>
-           <a class="bookmark" href="#ContactMe" >Contact Me</a>
-        </div>
-      </div>
-      <button class="c-hamburger c-hamburger--htx">
-        <span>toggle menu</span>
-      </button>
-
-        <div class="docScroller">
-          <div class="page" id="Introduction" data-section-name="introduction">
-            <div class="centerDiv container inside" data-aos="zoom-in-down" data-aos-duration="1500">
-               <div class="row">
-                  <div class="col-lg-12 col-md-12 col-sm-12">
-                     <img id="myPicture" src="images/myPicture.jpg"/>
-                     <h1 id="name">
-                        Nashmia Riaz
-                     </h1>
-                     I am a
-                     <p id="profession">
-
-                     </p>
-
-                  <div id="socialLinks">
-                     <!-- FACEBOOK LINK -->
-                     <a href="https://www.facebook.com/NashmiaRiaz">
-                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                        	 viewbox="0 0 200 200" style="enable-background:new 0 0 200 200;" xml:space="preserve">
-                        <style type="text/css">
-                        	.st0{fill:none;stroke:#151515;stroke-width:4;stroke-miterlimit:10;}
-                        	.st1{fill:#151515;}
-                        	.st2{fill:#EEEBE3;}
-                        </style>
-                        <g>
-                        	<g>
-                        		<g>
-                        			<path class="st0" d="M100,198c-54,0-98-44-98-98C2,46,46,2,100,2c54,0,98,44,98,98C198,154,154,198,100,198z"/>
-                        		</g>
-                        		<circle class="st1" cx="100" cy="99.8" r="85.9"/>
-                        	</g>
-                        	<path class="st2" d="M86.3,156.3h21.9v-55.1h15.4l1.7-18.6h-17.1c0,0,0-7,0-10.5c0-4.4,0.8-6.1,5.1-6.1c3.4,0,12,0,12,0V46.8
-                        		c0,0-12.7,0-15.2,0c-16.5,0-23.8,7.2-23.8,21.1c0,12,0,14.8,0,14.8H74.9v18.8h11.4C86.3,101.5,86.3,156.3,86.3,156.3z"/>
-                        </g>
-                        </svg>
-                     </a>
-                     <!-- FACEBOOK LINK -->
-
-                     <!-- LINKEDIN LINK -->
-                     <a href="https://www.linkedin.com/in/nashmia-riaz-26b9b5b9/">
-                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                        	 viewbox="0 0 200 200" style="enable-background:new 0 0 200 200;" xml:space="preserve">
-                        <style type="text/css">
-                        	.st0{fill:none;stroke:#151515;stroke-width:4.2194;stroke-miterlimit:10;}
-                        	.st1{fill:#151515;}
-                        	.st2{fill:#EEEBE3;}
-                        </style>
-                        <g id="XMLID_3_">
-                        	<g>
-                        		<g>
-                        			<path class="st0" d="M100,198c-54,0-98-44-98-98C2,46,46,2,100,2c54,0,98,44,98,98C198,154,154,198,100,198z"/>
-                        		</g>
-                        		<circle class="st1" cx="100" cy="100" r="85.9"/>
-                        	</g>
-                        	<g id="XMLID_6_">
-                        		<g id="XMLID_8_">
-                        			<rect x="59.3" y="82.5" class="st2" width="18.8" height="60.5"/>
-                        			<ellipse class="st2" cx="68.6" cy="63.5" rx="11" ry="11.2"/>
-                        			<path id="XMLID_7_" class="st2" d="M108,111.2c0-8.4,4-13.5,11.4-13.5c7,0,10.1,4.9,10.1,13.5s0,31.9,0,31.9h18.6
-                        				c0,0,0-22.2,0-38.4s-9.3-24.1-21.9-24.1c-12.9,0-18.1,9.9-18.1,9.9v-8.2H90.1v60.5H108C108,143,108,120.5,108,111.2z"/>
-                        		</g>
-                        	</g>
-                        </g>
-                        </svg>
-
-                     </a>
-                     <!-- LINKEDIN LINK -->
-                    <!-- Blog LINK -->
-                     <a href="https://nashmia-riaz.github.io/Blog">
-                        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                           viewBox="-25 -28 200 200" style="enable-background:new -25 -28 200 200;" xml:space="preserve">
-                        <style type="text/css">
-                          .st0{fill:none;stroke:#151515;stroke-width:4.2194;stroke-miterlimit:10;}
-                          .st1{fill:#151515;}
-                          .st2{fill:#FFFFFF;}
-                        </style>
-                        <g id="XMLID_4_">
-                          <g id="XMLID_15_">
-                            <g id="XMLID_17_">
-                              <path class="st0" d="M75,170c-54,0-98-44-98-98s44-98,98-98s98,44,98,98S129,170,75,170z"/>
-                            </g>
-                            <circle id="XMLID_16_" class="st1" cx="75" cy="72" r="85.9"/>
-                          </g>
-                          <g>
-                            <path class="st2" d="M92.5,115c14.4,0,26.1-11.7,26.2-26.1l0.2-21.1l-0.2-1.1l-0.7-1.4l-1.2-0.9c-1.5-1.2-9.2,0.1-11.3-1.8
-                              c-1.5-1.3-1.7-3.8-2.1-7.1c-0.8-6.4-1.3-6.7-2.3-8.9C97.4,39,87.5,33.2,80.8,32.4H62.5c-14.4,0-26.2,11.8-26.2,26.1v30.4
-                              c0,14.3,11.8,26.1,26.2,26.1H92.5z M62.8,53.7h14.5c2.8,0,5,2.2,5,5c0,2.7-2.2,5-5,5H62.8c-2.8,0-5-2.3-5-5
-                              C57.8,56,60,53.7,62.8,53.7L62.8,53.7z M57.8,88.6c0-2.7,2.2-5,5-5h29.5c2.8,0,5,2.2,5,5c0,2.7-2.2,5-5,5H62.8
-                              C60,93.5,57.8,91.3,57.8,88.6L57.8,88.6z M57.8,88.6"/>
-                          </g>
-                        </g>
-                        </svg>
-                     </a>
-                     <!-- Blog LINK -->
-                     <!-- EMAIL LINK -->
-                     <a href="mailto::nashmia-riaz@hotmail.com">
-                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                           viewbox="0 0 200 200" style="enable-background:new 0 0 200 200;" xml:space="preserve">
-                        <style type="text/css">
-                          .st0{fill:none;stroke:#151515;stroke-width:4.2335;stroke-miterlimit:10;}
-                          .st1{fill:#151515;}
-                          .st2{fill:#FFFFFF;}
-                        </style>
-                        <g id="XMLID_5_">
-                          <g id="XMLID_2_">
-                            <g>
-                              <path class="st0" d="M100,199.3c-54,0-98-44.3-98-98.7C2,46.3,46,2,100,2c54,0,98,44.3,98,98.7C198,155.1,154,199.3,100,199.3z"
-                                />
-                            </g>
-                            <ellipse class="st1" cx="99.5" cy="100.2" rx="88.1" ry="88.7"/>
-                          </g>
-                          <g>
-                            <path class="st2" d="M98.8,118.9l-15.1-13.3l-43.3,37.2c1.5,1.5,3.7,2.4,6.1,2.4H151c2.4,0,4.5-0.9,6.1-2.4l-43.3-37.2L98.8,118.9
-                              z"/>
-                            <path class="st2" d="M157.3,59.9c-1.5-1.5-3.7-2.4-6.1-2.4H46.5c-2.4,0-4.5,0.9-6.1,2.4l58.4,50.3L157.3,59.9z"/>
-                            <polygon class="st2" points="37.8,65.1 37.8,138.1 80,102.1    "/>
-                            <polygon class="st2" points="117.9,102.1 159.9,138.1 159.9,65.1     "/>
-                          </g>
-                        </g>
-                        </svg>
-                     </a>
-                     <!-- EMAIL LINK -->
-                     <!-- PHONE LINK -->
-                     <a href="tel::+923347779866">
-                        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-                           viewbox="0 0 200 200" style="enable-background:new 0 0 200 200;" xml:space="preserve">
-                        <style type="text/css">
-                          .st0{fill:none;stroke:#151515;stroke-width:4.2194;stroke-miterlimit:10;}
-                          .st1{fill:#151515;}
-                          .st2{fill:#FFFFFF;}
-                        </style>
-                        <g id="XMLID_4_">
-                          <g id="XMLID_15_">
-                            <g id="XMLID_17_">
-                              <path class="st0" d="M100,198c-54,0-98-44-98-98C2,46,46,2,100,2c54,0,98,44,98,98C198,154,154,198,100,198z"/>
-                            </g>
-                            <circle id="XMLID_16_" class="st1" cx="100" cy="100" r="85.9"/>
-                          </g>
-                          <path id="XMLID_9_" class="st2" d="M144.5,125.3c0.2,1.5-0.2,2.7-1.3,3.8l-12.7,12.4c-0.6,0.6-1.3,1.3-2.3,1.7
-                            c-0.8,0.4-1.9,0.6-2.7,0.8c0,0-0.2,0-0.6,0c-0.2,0-0.6,0-1.3,0c-1.3,0-3.2-0.2-5.9-0.6c-2.7-0.4-5.9-1.5-9.9-3
-                            c-3.8-1.7-8.2-4-13.1-7.2c-4.9-3.2-10.1-7.6-15.6-13.3c-4.4-4.4-8-8.4-11-12.4c-3-4-5.3-7.6-7-11c-1.7-3.4-3.2-6.3-4-9.1
-                            c-0.8-2.7-1.5-5.1-1.9-7.2c-0.2-1.9-0.4-3.6-0.4-4.6c0-1.1,0-1.7,0-1.9c0.2-0.8,0.4-1.7,0.8-2.7c0.4-0.8,1.1-1.7,1.7-2.3L70,56.1
-                            c0.8-0.8,1.9-1.3,3-1.3c0.8,0,1.5,0.2,2.1,0.6c0.6,0.4,1.3,1.1,1.7,1.7l10.1,19.2c0.6,1.1,0.6,2.1,0.4,3.4c-0.2,1.3-0.8,2.1-1.7,3
-                            L81,87.3c0.4,0.4,0.4,0.6,0.2,0.8c0,0.2-0.2,0.4-0.2,0.6c0.2,1.3,0.8,2.7,1.7,4.4c0.8,1.5,1.9,3.4,3.6,5.5c1.5,2.1,3.8,4.6,6.8,7.6
-                            c2.7,3,5.3,5.1,7.6,6.8c2.1,1.7,4,2.7,5.5,3.6c1.5,0.8,2.5,1.3,3.4,1.3l1.3,0.2c0.2,0,0.4,0,0.6-0.2c0.2,0,0.4-0.2,0.6-0.4l5.5-5.5
-                            c1.1-1.1,2.5-1.5,4-1.5c1.1,0,1.9,0.2,2.5,0.6l0,0l18.1,10.8C143.5,123.2,144.3,124.1,144.5,125.3z"/>
-                        </g>
-                        </svg>
-                     </a>
-                     <!-- PHONE LINK -->
-                  </div>
-                  <!-- sociallinks ended -->
-                  <div class="linkButton">
-                    <a href="misc/CV - Nashmia Riaz.pdf"><div class="heading centerDiv button">
-                       <h4>Download CV</h4>
-                    </div></a>
-                 </div>
-
-                 <div class="linkButton">
-                   <a href="misc/Resume - Nashmia Riaz.pdf"><div class="heading centerDiv button">
-                      <h4>Download Resume</h4>
-                   </div></a>
-                 </div>
-                  </div>
-               </div>
-
+           <div id="navbar" class="navbar-collapse collapse">
+             <ul class="nav navbar-nav navbar-right">
+               <li ng-repeat="x in navLinks" class="ng-class:{ 'active': x.isActive };" ng-click="ClickNavbarLink($index)"><a href="/{{x.link}}">{{x.link}}</a></li>
+             </ul>
             </div>
          </div>
-          <div class="page" id="Education" data-section-name="education" >
-             <div class="mainHeading">
-                <h2>Education &amp; My</h2>
-                <h1>Experience</h1>
-             </div>
-             <div class="heading centerDiv visible-xs visible-sm" id="edButton">
-                <h4>Education</h4>
-             </div>
-             <div class="heading centerDiv visible-xs visible-sm" id="expButton">
-                <h4>Experience</h4>
-             </div>
+       </nav>
 
-             <div class="container">
-                <div class="row centerDiv ">
-                   <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ExpOrEd" id="edTimeline" data-aos="fade-right">
-                      <div class="heading hidden-xs hidden-sm">
-                         <h4>Education</h4>
-                      </div>
-                      <div class="timeline container">
+       <div ng-view></div>
 
-                      </div>
-                   </div>
-                   <div class="col-lg-6 col-md-6 col-sm-12 col-xs-12 ExpOrEd" id="expTimeline" data-aos="fade-left">
-                      <div class="heading hidden-xs hidden-sm ">
-                         <h4 id="exHeading">Experience</h4>
-                      </div>
-                      <div class="timeline container">
-
-                      </div>
-                   </div>
-                </div>
-             </div>
-         </div>
-         <div class="displayImage">
-
-         </div>
-         <div class="page" id="Designs" data-section-name="designs">
-            <div class="inside">
-               <div class="mainHeading">
-                  <h2>My</h2>
-                  <h1>Designs</h1>
-               </div>
-               <div class="centerDiv grid">
-                  <div id="DesignsGrid" class="content container clearfix">
-                  </div>
-               </div>
-            </div>
-
-          </div>
-          <div class="page" id="Artworks" data-section-name="artworks">
-            <div class="inside">
-               <div class="mainHeading">
-                  <h2>My</h2>
-                  <h1>Artworks</h1>
-               </div>
-               <div class="centerDiv grid">
-                  <div id="ArtworksGrid" class="content centerDiv container clearfix">
-                  </div>
-               </div>
-            </div>
-          </div>
-
-          <div class="page" id="Projects" data-section-name="projects">
-            <div class="inside" >
-              <div class="mainHeading">
-                 <h2>My</h2>
-                 <h1>Projects</h1>
-                </div>
-
-              <div class="container" data-aos="zoom-in-up" data-aos-duration="800">
-                 <div class="row">
-                    <div class="col-lg-6 col-md-6 col-sm-6 projectsDiv" >
-
-                    </div>
-
-
-                    </div>
-                 </div>
-              </div>
-            </div>
-
-          <div class="page" id="ContactMe" data-section-name="contactme">
-            <div class="inside" data-aos="fade-in" data-aos-duration="800">
-               <div class="mainHeading">
-                  <h2>Get in</h2>
-                  <h1>Contact</h1>
-                 </div>
-                <div id="contactMeForm">
-                    <div id="Form" class="centerDiv">
-                        <form action="https://formspree.io/nashmia-riaz@hotmail.com" method="POST">
-                           <div class="container">
-                              <div class="row">
-                                 <div class="col-lg-3 col-md-3 col-sm-3">
-                                    <label for="name">Your name:</label>
-                                 </div>
-                                 <div class="col-lg-9 col-md-9 col-sm-9">
-                                    <input type="text" name="name" placeholder="Your name" class="input"><br/>
-                                 </div>
-                              </div>
-
-                              <div class="row">
-                                 <div class="col-lg-3 col-md-3 col-sm-3">
-                                    <label for="email">Your email:</label>
-                                 </div>
-                                 <div class="col-lg-9 col-md-9 col-sm-9">
-                                    <input type="email" name="_replyto" placeholder="Your email" class="input"><br/>
-                                 </div>
-                              </div>
-
-                              <div class="row">
-                                 <div class="col-lg-3 col-md-3 col-sm-3">
-                                    <label for="message">Your message:</label>
-                                 </div>
-                                 <div class="col-lg-9 col-md-9 col-sm-9">
-                                   <textarea type="textarea" name="message"  placeholder="Your message" class="input"  id="message" ></textarea><br/>
-                                 </div>
-                              </div>
-                           </div>
-
-
-                            <div class="linkButton">
-                               <input type="submit" value="Send">
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-          </div>
-        </div>
    </body>
-   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.2/modernizr.js"></script>
-   <script type="text/javascript" src="js/typed.js"></script>
-   <script src="https://npmcdn.com/imagesloaded@4.1/imagesloaded.pkgd.min.js"></script>
-   <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script>
-   <script type="text/javascript" src="js/boxShadow.js"></script>
-   <script type="text/javascript" src="js/populateIndex.js"></script>
-   <script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script>
-   <script type="text/javascript" src="js/smoothscroll.js"></script>
-   <script type="text/javascript" src="js/script.js"></script>
-
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="js/angular.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+    <script src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+    <script src="js/isotope.pkgd.min.js"></script>
+    <script src="js/masonry-horizontal.js"></script>
+    <script type="text/javascript" src="js/autosize.js"></script>
+    <script type="text/javascript" src="js/projects.js"></script>
+    <script type="text/javascript" src="js/experience.js"></script>
+    <script type="text/javascript" src="js/contact.js"></script>
+    <script type="text/javascript" src="js/script.js"></script>
 </html>

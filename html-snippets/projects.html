@@ -1,18 +1,73 @@
 
-    <div class="col-lg-6 col-md-6 col-sm-6">
-
-      <div class="project">
-        <div class="projectImage">
-           <img src="images/projects/{{link}}.png" alt="">
-           <div class="projectInformation">
-              <h4>{{title}}</h4>
-              <p class="">{{explanation}}</p>
-              <a href="{{LiveLink}}" target="_blank">Live demo</a>
-              <a href="{{GithubLink}}" target="_blank">Github</a>
-           </div>
-        </div>
+ <div class="project" controller="projectsController" ng-cloak>
+   <div class="container">
+    <div class="projectInfo ng-class:{ 'hidden': isHidden };">
+    <span class="glyphicon glyphicon-remove hideIcon" ng-click="ClickCross()" aria-hidden="false"></span>
+      <div class="child-center"></i><h1>{{projectName}}</h1>
+        <a href="{{projectLink}}">Link</a>
+        <hr align="left">
+        <p>{{projectInfo}}</p>
       </div>
-
     </div>
+     <div class="row child-center ">
 
-    <hr class="visible-xs">
+       <i class="fa fa-briefcase projectsIcon"></i><h1>Projects</h1>
+       <div class="filters">
+         <button type="button" ng-click="allFilter()" name="button" data-filter="*" class="button is-checked">All</button>
+         <button type="button" ng-click="GDFilter()" name="button" data-filter="graphic-design" class="button">Graphic Design</button>
+         <button type="button" ng-click="gameFilter()" name="button" data-filter="game-development" class="button">Game Development</button>
+         <button type="button" ng-click="otherFilter()" name="button" data-filter="other" class="button">Other</button>
+       </div>
+        <div class="centerdiv projects-holder ">
+          <div class="grid col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+
+            <a href="#" class="grid-item {{x.category}}" ng-click="ClickProject($index)" ng-repeat="x in projects">
+              <img ng-src="images/projects/{{x.image}}" alt="">
+              <div class="projectPrev"><h3>{{x.name}}</h3></div>
+            </a>
+
+          </div>
+
+        </div>
+     </div>
+   </div>
+ </div>
+<script type="text/javascript">
+// $(".grid").load(function(){
+//   alert("grid loaded");alert('All resources have loaded');
+//   var $container = $('.grid');
+  // use imagesLoaded, instead of window.load
+  // print($(window).width());
+  if($(window).width()>768){
+    $('.grid').imagesLoaded( function() {
+      $('.grid').isotope({
+        layoutMode: 'masonryHorizontal',
+        itemSelector: '.grid-item',
+        masonryHorizontal: {
+          rowHeight: 10,
+          gutter: 20
+        }
+      })
+    });
+  }
+  else{
+    $('.grid').imagesLoaded( function() {
+      $('.grid').isotope({
+        itemSelector: '.grid-item',
+        layoutMode: 'fitRows',
+        masonry:{
+          columnWidth: 200,
+          fitWidth: true
+        }
+      })
+    });
+  }
+
+  $('.filters').each( function( i, buttonGroup ) {
+  var $buttonGroup = $('.filters' );
+  $buttonGroup.on( 'click', 'button', function() {
+    $buttonGroup.find('.is-checked').removeClass('is-checked');
+    $( this ).addClass('is-checked');
+  });
+});
+</script>

@@ -1,0 +1,28 @@
+
+<div class="experience"  ng-controller="experienceController">
+ <div class="container">
+   <div class="row child-center">
+     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+      <h2>Education</h2>
+      <ul class="education-ul fa-ul">
+        <li ng-repeat="x in educations">
+          <span class="fa-li" ><i class="fa fa-graduation-cap"></i></span>
+          <h3>{{x.institute}}</h3>
+          <p class="date">{{x.date}}</p>
+          <p class="details">{{x.details}}</p>
+        </li>
+      </ul>
+     </div>
+     <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+       <h2>Experience</h2>
+       <ul class="experience-ul fa-ul">
+         <li ng-repeat="x in experiences"><span class="fa-li"><i class="fa fa-handshake-o"></i></span>
+           <h3>{{x.organisation}}</h3>
+           <p class="date">{{x.date}}</p>
+           <p class="details">{{x.details}}</p>
+         </li>
+       </ul>
+     </div>
+   </div>
+ </div>
+</div>
