@@ -125,10 +125,6 @@ h3{
   display: block;
 }
 
-.centerdiv>div{
-  display: inline-block;
-}
-
 .picture-outline{
   border: 8px solid transparent;
   border-image: linear-gradient(to left, #950740 0%, #c3073f 100%);
@@ -148,8 +144,9 @@ h3{
 .icon-holder a{
   display: inline;
   margin-right: 10px;
+
 }
-.icon-holder svg{
+.icon-holder i{
   width: 30px;
   height: 30px;
   padding: 5px;
@@ -158,38 +155,34 @@ h3{
   margin-top: 35px;
   transition: 0.5s;
 }
-.icon-holder path{
-  fill: #c3073f;
-  transition: 0.5s;
-}
-.icon-holder polygon{
-  fill: #c3073f;
-  transition: 0.5s;
-}
-.icon-holder:hover svg{
+.icon-holder:hover i{
   background-color: #c3073f;
+  color: #1a1a1d;
 }
-.icon-holder:hover path{
-  fill: #1a1a1d;
+.download-buttons{
+  display: inline-block;
+  width: 100%;
 }
-.icon-holder:hover polygon{
-  fill: #1a1a1d;
-}
-.download{
-  color: #c3073f;
-  display: block;
-  font-family: 'Open Sans Light', sans-serif;
+div.download{
+  display:inline-block;
   border: 2px solid #c3073f;
   padding: 5px;
   margin-top: 10px;
   transition: 0.5s;
 }
-.download:hover{
+div.download>a{
+  color: #c3073f;
+  font-family: 'Open Sans Light', sans-serif;
+}
+div.download:hover{
   background-color: #c3073f;
   color:#1a1a1d;
   text-decoration: none;
 }
-
+div.download:hover > a{
+  color: #1a1a1d;
+  text-decoration: none;
+}
 .grid{
   height: 50vh;
   width: inherit;
@@ -583,10 +576,6 @@ textarea{
     .child-center{
       margin-top: 20px;
       width: 65%;
-    }
-    .icon-holder svg{
-      width: 25px;
-      height: 25px;
     }
     .picture-outline{
       width: 150px;
