@@ -18,30 +18,12 @@
       $routeProvider
 
           // route for the home page
-          .when('/', {
-              templateUrl : 'html-snippets/About.html',
-              controller  : 'aboutController',
-              resolve: {
-                init: function() {
-                  return function() {
-                    console.log("LOAD HOME");
-                    $scope.ClickNavbarLink(0);
-                  }
-                }
-              }
+          .when('/', {redirectTo:'/About'
           })
 
           .when('/About', {
               templateUrl : 'html-snippets/About.html',
-              controller  : 'aboutController',
-              resolve: {
-                init: function() {
-                  return function() {
-                    console.log("LOAD HOME");
-                    $scope.ClickNavbarLink(0);
-                  }
-                }
-              }
+              controller  : 'aboutController'
           })
 
           .when('/Projects', {
@@ -61,7 +43,7 @@
           .otherwise({ redirectTo: '/About' });
 
           // use the HTML5 History API
-          $locationProvider.html5Mode(true);
+          $locationProvider.html5Mode(false).hashPrefix('');
   });
 
   function defaultController($scope) {
@@ -72,6 +54,7 @@
 
     $scope.ClickNavbarLink = function(linkIndex){
       if(linkIndex != previousLink){
+        $('.se-pre-con').removeClass("hidden");
         $scope.dataHasLoaded = false;
         $scope.isViewLoading = true;
         $scope.navLinks[linkIndex].isActive = true;
@@ -81,21 +64,9 @@
     };
 
     $scope.$on('$viewContentLoaded', function(){
-      // $(window).load(function(){
         console.log("loaded");
       $('.se-pre-con').addClass("hidden");
-        $scope.dataHasLoaded = true;
-      // });
     });
-    $scope.$on('$viewContentLoading', function (event, next, current) {
-      $scope.isViewLoading = true;
-      // $('.se-pre-con').fadeIn();
-      console.log("Loading");
-        $('.se-pre-con').removeClass("hidden");
-    });
-    // $scope.$on('$viewContentLoading', function(){
-    //   $('.se-pre-con').removeClass("hidden");
-    // });
   }
     function aboutController($scope) {}
 })();

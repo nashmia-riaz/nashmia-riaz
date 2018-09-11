@@ -88,7 +88,7 @@ h3{
 .navbar .navbar-toggle .icon-bar {
     background-color: #c3073f;
 }
-@media (min-width: 768px) and (max-width: 991px) {
+/* @media (min-width: 768px) and (max-width: 991px) {
     .navbar-collapse.collapse {
         display: none !important;
     }
@@ -101,7 +101,7 @@ h3{
     .navbar-header {
         float:none;
     }
-}
+} */
 
 .parent-center {
   position: relative;
