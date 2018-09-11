@@ -1,12 +1,12 @@
 
- <div class="project" controller="projectsController" ng-cloak>
+ <div class="project" controller="projectsController">
    <div class="container">
     <div class="projectInfo ng-class:{ 'hidden': isHidden };">
     <span class="glyphicon glyphicon-remove hideIcon" ng-click="ClickCross()" aria-hidden="false"></span>
       <div class="child-center"></i><h1>{{projectName}}</h1>
-        <a href="{{projectLink}}">Link</a>
-        <hr align="left">
+        <hr align="left" class="visible-lg visible-md visible-sm">
         <p>{{projectInfo}}</p>
+        <a href="{{projectLink}}" target="_blank">Link</a>
       </div>
     </div>
      <div class="row child-center ">
@@ -19,9 +19,9 @@
          <button type="button" ng-click="otherFilter()" name="button" data-filter="other" class="button">Other</button>
        </div>
         <div class="centerdiv projects-holder ">
-          <div class="grid col-lg-12 col-md-12 col-sm-12 col-xs-12 ">
+          <div class="grid col-lg-12 col-md-12 col-sm-12 col-xs-12 text-center">
 
-            <a href="#" class="grid-item {{x.category}}" ng-click="ClickProject($index)" ng-repeat="x in projects">
+            <a href="" class="center-div grid-item {{x.category}}" ng-click="ClickProject($index)" ng-repeat="x in projects">
               <img ng-src="images/projects/{{x.image}}" alt="">
               <div class="projectPrev"><h3>{{x.name}}</h3></div>
             </a>
@@ -33,13 +33,9 @@
    </div>
  </div>
 <script type="text/javascript">
-// $(".grid").load(function(){
-//   alert("grid loaded");alert('All resources have loaded');
-//   var $container = $('.grid');
-  // use imagesLoaded, instead of window.load
-  // print($(window).width());
-  if($(window).width()>768){
-    $('.grid').imagesLoaded( function() {
+$(function(){
+var $grid;
+    $grid = $('.grid').imagesLoaded( function() {
       $('.grid').isotope({
         layoutMode: 'masonryHorizontal',
         itemSelector: '.grid-item',
@@ -49,25 +45,19 @@
         }
       })
     });
-  }
-  else{
-    $('.grid').imagesLoaded( function() {
-      $('.grid').isotope({
-        itemSelector: '.grid-item',
-        layoutMode: 'fitRows',
-        masonry:{
-          columnWidth: 200,
-          fitWidth: true
-        }
-      })
-    });
-  }
+
 
   $('.filters').each( function( i, buttonGroup ) {
-  var $buttonGroup = $('.filters' );
-  $buttonGroup.on( 'click', 'button', function() {
-    $buttonGroup.find('.is-checked').removeClass('is-checked');
-    $( this ).addClass('is-checked');
+    var $buttonGroup = $('.filters' );
+    $buttonGroup.on( 'click', 'button', function() {
+      $buttonGroup.find('.is-checked').removeClass('is-checked');
+      $( this ).addClass('is-checked');
+    });
+  });
+
+  $grid.on( 'layoutComplete', function( ) {
+    console.log("layout complete");
+      $('.se-pre-con').addClass("hidden");
   });
 });
 </script>

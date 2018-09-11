@@ -1,4 +1,5 @@
 function experienceController($scope) {
+  $scope.ClickNavbarLink(2);
   $scope.educations = [{
       institute:"NUST",
       date:"2014-2018",
@@ -30,4 +31,9 @@ function experienceController($scope) {
       date:"2015-2017",
       details:"Graphic Designer"
     }];
+
+    $scope.$on('$viewContentLoaded', function(){
+      $('.se-pre-con').addClass("hidden");
+    });
+
 }

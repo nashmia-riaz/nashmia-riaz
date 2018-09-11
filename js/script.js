@@ -47,26 +47,35 @@
   });
 
   function defaultController($scope) {
-    $scope.navLinks=[{link:"About",isActive:true}, {link:"Projects",isActive:false}, {link:"Experience",isActive:false}, {link:"Contact",isActive:false}];
-    var previousLink = 0;
+    $scope.navLinks=[{link:"About",isActive:false}, {link:"Projects",isActive:false}, {link:"Experience",isActive:false}, {link:"Contact",isActive:false}];
+    $scope.previousLink=-1;
     $scope.dataHasLoaded;
     $scope.isViewLoading = false;
 
     $scope.ClickNavbarLink = function(linkIndex){
-      if(linkIndex != previousLink){
+      if(linkIndex != $scope.previousLink){
         $('.se-pre-con').removeClass("hidden");
         $scope.dataHasLoaded = false;
         $scope.isViewLoading = true;
         $scope.navLinks[linkIndex].isActive = true;
-        $scope.navLinks[previousLink].isActive = false;
-        previousLink = linkIndex;
+        if($scope.previousLink>=0){
+          $scope.navLinks[$scope.previousLink].isActive = false;
+        }
+        $scope.previousLink = linkIndex;
       }
     };
 
-    $scope.$on('$viewContentLoaded', function(){
-        console.log("loaded");
+    $scope.load = function(){
       $('.se-pre-con').addClass("hidden");
-    });
+    };
   }
-    function aboutController($scope) {}
+    function aboutController($scope) {
+      $scope.ClickNavbarLink(0);
+
+      // $scope.$on('$viewContentLoaded', function(){
+      //   $(window).load(function(){
+      //     $('.se-pre-con').addClass("hidden");
+      //   });
+      // });
+    }
 })();

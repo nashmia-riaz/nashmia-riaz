@@ -1,4 +1,12 @@
 function projectsController($scope) {
+  if($scope.previousLink == -1){
+    $scope.ClickNavbarLink(1);
+  }else{
+    $scope.$on('$viewContentLoaded', function(){
+      $('.se-pre-con').addClass("hidden");
+    });
+  }
+
   $scope.projects=[{
     image:"8.png",
     name:"App Design: Am Sporty",
@@ -55,6 +63,7 @@ function projectsController($scope) {
     $scope.isHidden = false;
     $scope.projectName = $scope.projects[projectIndex].name;
     $scope.projectInfo = $scope.projects[projectIndex].description;
+    $scope.projectLink = $scope.projects[projectIndex].link;
     $('.projectInfo').fadeIn();
   };
 

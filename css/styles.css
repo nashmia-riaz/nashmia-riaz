@@ -88,7 +88,7 @@ h3{
 .navbar .navbar-toggle .icon-bar {
     background-color: #c3073f;
 }
-/* @media (min-width: 768px) and (max-width: 991px) {
+@media (min-width: 768px) and (max-width: 991px) {
     .navbar-collapse.collapse {
         display: none !important;
     }
@@ -101,7 +101,7 @@ h3{
     .navbar-header {
         float:none;
     }
-} */
+}
 
 .parent-center {
   position: relative;
@@ -112,7 +112,7 @@ h3{
   resize: both;
 }
 .child-center {
-  width: 50%;
+  width: 55%;
   transform: translate(-50%, -50%);
   position: absolute;
   top: 50%;
@@ -122,6 +122,7 @@ h3{
 .centerdiv{
   margin:0 auto;
   text-align: center;
+  display: block;
 }
 
 .centerdiv>div{
@@ -492,7 +493,50 @@ textarea{
       width: 90%;
     }
     .filters{
-      width: 100vw;
+      /* width: 100vw; */
+    }
+
+    .project>div>div.child-center{
+      width: 80%;
+    }
+
+    .projectInfo>div>a{
+      text-align: center;
+      display: block;
+      position: relative;
+      top: 10px;
+      padding: 10px;
+      outline: 1px solid #c3073f;
+      color: #c3073f;
+      font-family: 'Open Sans Condensed', sans-serif;
+      letter-spacing: 2px;
+      font-weight: Light;
+      margin-bottom: 3em;
+    }
+
+    .projectInfo>div>p{
+      margin-top: 2em;
+    }
+    .projects-holder{
+      width: 100%;
+      max-height: 55vh;
+    }
+
+    .grid{
+      /* padding-left:10%; */
+      padding: 0!important;
+      margin:0 auto;
+    }
+
+    .grid-item{
+      width: 300px;
+      padding:0!important;
+      margin-bottom: 20px;
+    }
+    .grid-item>img{
+      /* width: 200px; */
+      /* height: 200px; */
+      width: 100%;
     }
     .experience>div>div.child-center{
       width: 90%;
@@ -546,23 +590,4 @@ textarea{
       box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
     }
 
-    .projects-holder{
-      overflow-x:hidden;
-      overflow-y: scroll;
-      width: 100%;
-      max-height: 55vh;
-    }
-
-    .grid{
-      padding-left:10%;
-    }
-
-    .grid-item{
-      width: 200px;
-      padding:0!important;
-      margin-bottom: 20px;
-    }
-    .grid-item>img{
-      width: 200px;
-    }
 }

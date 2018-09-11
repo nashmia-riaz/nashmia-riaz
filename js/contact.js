@@ -1,4 +1,5 @@
 function contactController($scope) {
+    $scope.ClickNavbarLink(3);
     console.log("controller");
     autosize($('.message'));
     // var ta = document.querySelector('textarea');
@@ -10,4 +11,9 @@ function contactController($scope) {
     // autosize.update(ta);
 
     // $('textarea').autogrow();
+
+    $scope.$on('$viewContentLoaded', function(){
+      $('.se-pre-con').addClass("hidden");
+    });
+
 }
