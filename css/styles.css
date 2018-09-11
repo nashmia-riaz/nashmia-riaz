@@ -112,7 +112,7 @@ h3{
   resize: both;
 }
 .child-center {
-  width: 55%;
+  width: 50%;
   transform: translate(-50%, -50%);
   position: absolute;
   top: 50%;
