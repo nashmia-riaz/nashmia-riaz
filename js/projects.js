@@ -1,10 +1,6 @@
 function projectsController($scope) {
-  if($scope.previousLink == -1){
+  if($scope.previousLink !== 1){
     $scope.ClickNavbarLink(1);
-  }else{
-    $scope.$on('$viewContentLoaded', function(){
-      $('.se-pre-con').addClass("hidden");
-    });
   }
 
   $scope.projects=[{
