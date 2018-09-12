@@ -68,9 +68,34 @@ function projectsController($scope) {
       $scope.isHidden=true;
     });
   }
-  // $scope.$on('$viewContentLoading', function(){
-  //   $(".se-pre-con").fadeIn();
-  // });
+  $scope.$on('$viewContentLoaded', function(){
+    var $grid;
+        $grid = $('.grid').imagesLoaded( function() {
+          $('.grid').isotope({
+            layoutMode: 'masonryHorizontal',
+            itemSelector: '.grid-item',
+            masonryHorizontal: {
+              rowHeight: 10,
+              gutter: 20
+            }
+          })
+        });
+
+
+      $('.filters').each( function( i, buttonGroup ) {
+        var $buttonGroup = $('.filters' );
+        $buttonGroup.on( 'click', 'button', function() {
+          $buttonGroup.find('.is-checked').removeClass('is-checked');
+          $( this ).addClass('is-checked');
+        });
+      });
+
+      $grid.on( 'layoutComplete', function( ) {
+        console.log("layout complete");
+          $('.se-pre-con').addClass("hidden");
+      });
+        $(".se-pre-con").fadeOut();
+  });
   $scope.allFilter = function(){
     $('.grid').isotope({ filter: '*' });
   }
