@@ -68,10 +68,7 @@ function projectsController($scope, $timeout) {
       $scope.isHidden=true;
     });
   }
-  $scope.$on('$viewContentLoaded', function(){
-    onRenderReadyStartIsotope();
-    $(".se-pre-con").fadeOut();
-  });
+
   $scope.allFilter = function(){
     $('.grid').isotope({ filter: '*' });
   }

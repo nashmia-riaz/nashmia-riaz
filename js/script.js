@@ -49,14 +49,10 @@
   function defaultController($scope) {
     $scope.navLinks=[{link:"About",isActive:false}, {link:"Projects",isActive:false}, {link:"Experience",isActive:false}, {link:"Contact",isActive:false}];
     $scope.previousLink=-1;
-    $scope.dataHasLoaded;
-    $scope.isViewLoading = false;
 
     $scope.ClickNavbarLink = function(linkIndex){
       if(linkIndex != $scope.previousLink){
         $('.se-pre-con').removeClass("hidden");
-        $scope.dataHasLoaded = false;
-        $scope.isViewLoading = true;
         $scope.navLinks[linkIndex].isActive = true;
         if($scope.previousLink>=0){
           $scope.navLinks[$scope.previousLink].isActive = false;
@@ -64,18 +60,12 @@
         $scope.previousLink = linkIndex;
       }
     };
-
-    $scope.load = function(){
-      $('.se-pre-con').addClass("hidden");
-    };
   }
     function aboutController($scope) {
       $scope.ClickNavbarLink(0);
 
-      // $scope.$on('$viewContentLoaded', function(){
-      //   $(window).load(function(){
-      //     $('.se-pre-con').addClass("hidden");
-      //   });
-      // });
+      $scope.$on('$viewContentLoaded', function(){
+          $('.se-pre-con').addClass("hidden");
+      });
     }
 })();

@@ -48,10 +48,10 @@ h1{
   display: block;
 }
 h3{
-  font-weight: small;
+  font-weight: 300;
   font-family: 'Open Sans', sans-serif;
   font-size: 1.2em;
-  letter-spacing: 2px;
+  /* letter-spacing: 2px; */
 }
 .navbar-brand>img{
   margin-top: none!important;
@@ -88,7 +88,7 @@ h3{
 .navbar .navbar-toggle .icon-bar {
     background-color: #c3073f;
 }
-@media (min-width: 768px) and (max-width: 991px) {
+/* @media (min-width: 768px) and (max-width: 991px) {
     .navbar-collapse.collapse {
         display: none !important;
     }
@@ -101,7 +101,7 @@ h3{
     .navbar-header {
         float:none;
     }
-}
+} */
 
 .parent-center {
   position: relative;
@@ -277,7 +277,7 @@ div.download:hover > a{
   font-weight: lighter;
   transition: 0.5s;
 }
-button:focus{
+.filters button:focus{
   outline: 1px solid #c3073f;
   border: 1px solid #c3073f;
   background-image: linear-gradient(to left,#950740, #c3073f);
@@ -493,6 +493,11 @@ textarea{
       border-left: 1px solid #c3073f;
       border-bottom: 1px solid #c3073f;backdrop-filter: blur(10px);
     }
+    
+    nav.navbar{
+      margin-bottom: 0;
+    }
+
     #navbar>ul>li{
         background-color: #1a1a1d!important;
         z-index: 1!important;

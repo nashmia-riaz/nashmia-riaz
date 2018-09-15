@@ -47,7 +47,6 @@ function onRenderReadyStartIsotope(){
       })
     });
 
-
   $('.filters').each( function( i, buttonGroup ) {
     var $buttonGroup = $('.filters' );
     $buttonGroup.on( 'click', 'button', function() {
@@ -55,5 +54,8 @@ function onRenderReadyStartIsotope(){
       $( this ).addClass('is-checked');
     });
   });
+
+  $(".se-pre-con").fadeOut();
+
 }
 </script>
