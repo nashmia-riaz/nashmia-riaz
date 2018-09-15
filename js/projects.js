@@ -85,8 +85,8 @@ function projectsController($scope, $timeout) {
     $('.grid').isotope({ filter: '.other' });
   }
 
-
   $timeout(function() {
-    onRenderReadyStartIsotope();
-  });
+      onRenderReadyStartIsotope();
+  }, 1000);
+
 }

@@ -8,11 +8,11 @@
   .controller('experienceController', experienceController)
   .controller('contactController', contactController);
 
-  aboutController.$inject = ['$scope'];
+  aboutController.$inject = ['$scope', '$timeout'];
   projectsController.$inject = ['$scope', '$timeout'];
-  experienceController.$inject = ['$scope'];
-  contactController.$inject = ['$scope'];
-  defaultController.$inject = ['$scope'];
+  experienceController.$inject = ['$scope', '$timeout'];
+  contactController.$inject = ['$scope', '$timeout'];
+  defaultController.$inject = ['$scope', '$timeout'];
 
   myApp.config(function($routeProvider, $locationProvider) {
       $routeProvider
@@ -60,12 +60,16 @@
         $scope.previousLink = linkIndex;
       }
     };
-  }
-    function aboutController($scope) {
-      $scope.ClickNavbarLink(0);
 
-      $scope.$on('$viewContentLoaded', function(){
-          $('.se-pre-con').addClass("hidden");
-      });
-    }
+  }
+
+  function aboutController($scope, $timeout) {
+    $scope.ClickNavbarLink(0);
+
+    $scope.$on('$viewContentLoaded', function(){
+      $('.se-pre-con').addClass("hidden");
+    });
+
+  }
+
 })();
