@@ -11,7 +11,7 @@ font-family: 'Open Sans Condensed', sans-serif;
 }
 
 a:hover{
-  color: #c3073f;
+  color:transparent;
 }
 
 a:focus{
@@ -493,7 +493,7 @@ textarea{
       border-left: 1px solid #c3073f;
       border-bottom: 1px solid #c3073f;backdrop-filter: blur(10px);
     }
-    
+
     nav.navbar{
       margin-bottom: 0;
     }
