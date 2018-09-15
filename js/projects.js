@@ -1,4 +1,4 @@
-function projectsController($scope) {
+function projectsController($scope, $timeout) {
   if($scope.previousLink !== 1){
     $scope.ClickNavbarLink(1);
   }
@@ -69,32 +69,8 @@ function projectsController($scope) {
     });
   }
   $scope.$on('$viewContentLoaded', function(){
-    var $grid;
-        $grid = $('.grid').imagesLoaded( function() {
-          $('.grid').isotope({
-            layoutMode: 'masonryHorizontal',
-            itemSelector: '.grid-item',
-            masonryHorizontal: {
-              rowHeight: 10,
-              gutter: 20
-            }
-          })
-        });
-
-
-      $('.filters').each( function( i, buttonGroup ) {
-        var $buttonGroup = $('.filters' );
-        $buttonGroup.on( 'click', 'button', function() {
-          $buttonGroup.find('.is-checked').removeClass('is-checked');
-          $( this ).addClass('is-checked');
-        });
-      });
-
-      $grid.on( 'layoutComplete', function( ) {
-        console.log("layout complete");
-          $('.se-pre-con').addClass("hidden");
-      });
-        $(".se-pre-con").fadeOut();
+    onRenderReadyStartIsotope();
+    $(".se-pre-con").fadeOut();
   });
   $scope.allFilter = function(){
     $('.grid').isotope({ filter: '*' });
@@ -111,4 +87,9 @@ function projectsController($scope) {
   $scope.otherFilter = function(){
     $('.grid').isotope({ filter: '.other' });
   }
+
+
+  $timeout(function() {
+    onRenderReadyStartIsotope();
+  });
 }

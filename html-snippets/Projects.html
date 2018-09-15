@@ -33,8 +33,9 @@
    </div>
  </div>
 <script type="text/javascript">
-$(function(){
-var $grid;
+
+function onRenderReadyStartIsotope(){
+  var $grid;
     $grid = $('.grid').imagesLoaded( function() {
       $('.grid').isotope({
         layoutMode: 'masonryHorizontal',
@@ -54,10 +55,5 @@ var $grid;
       $( this ).addClass('is-checked');
     });
   });
-
-  $grid.on( 'layoutComplete', function( ) {
-    console.log("layout complete");
-      $('.se-pre-con').addClass("hidden");
-  });
-});
+}
 </script>

@@ -30,7 +30,7 @@ a:focus{
 }
 body{
   background-color: #1a1a1d;
-  font-family:'Open Sans Condensed', sans-serif;
+  font-family:'Open Sans', sans-serif;
   color: white;
 }
 html,body {
@@ -49,7 +49,7 @@ h1{
 }
 h3{
   font-weight: small;
-  font-family: 'Open Sans Condensed', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 1.2em;
   letter-spacing: 2px;
 }
@@ -272,9 +272,9 @@ div.download:hover > a{
   color: #4e4e50;
   padding: 10px;
   margin-bottom: 10px;
-  font-family: 'Open Sans Condensed', sans-serif;
-  letter-spacing: 2px;
-  font-weight: bold;
+  font-family: 'Open Sans', sans-serif;
+  letter-spacing: 1px;
+  font-weight: lighter;
   transition: 0.5s;
 }
 button:focus{
@@ -314,16 +314,17 @@ button:focus{
 }
 .projectPrev>h3{
   color: white;
-  font-family: 'Open Sans Condensed', sans-serif;
-  letter-spacing: 2px;
-  font-weight: Light;
+  font-family: 'Open Sans', sans-serif;
+  letter-spacing: 1px;
+  font-weight: 300;
   font-size: 1.5em;
 }
 .projectInfo>div>p{
   color: white;
-  font-family: 'Open Sans Condensed', sans-serif;
-  letter-spacing: 2px;
-  font-weight: Light;
+  font-family: 'Open Sans', sans-serif;
+  letter-spacing: 1px;
+  font-weight: 300;
+  font-size: 1.1em;
 }
 .projectInfo>div>h1{
   display: inline;
@@ -336,9 +337,9 @@ button:focus{
   padding: 10px;
   outline: 1px solid #c3073f;
   color: #c3073f;
-  font-family: 'Open Sans Condensed', sans-serif;
-  letter-spacing: 2px;
-  font-weight: Light;
+  font-family: 'Open Sans', sans-serif;
+  letter-spacing: 1px;
+  font-weight: 700;
 }
 .projectInfo{
   position: absolute;
@@ -390,6 +391,9 @@ ul.education-ul>li, ul.experience-ul>li{
   border-bottom: 1px solid #4e4e50;
   padding-bottom: 10px;
   margin-bottom: 10px;
+
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
 }
 .education-ul>div>div>div,.experience-ul>div>div>div{
   padding-right: 20px;
@@ -402,6 +406,10 @@ input[type=text], textarea{
   width: 30%;
   font-size: 1.2em;
   margin-top: 20px;
+
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  font-size: 1em;
 }
 input[type=text]:focus, textarea:focus{
   border:none;
@@ -511,9 +519,9 @@ textarea{
       padding: 10px;
       outline: 1px solid #c3073f;
       color: #c3073f;
-      font-family: 'Open Sans Condensed', sans-serif;
-      letter-spacing: 2px;
-      font-weight: Light;
+      font-family: 'Open Sans', sans-serif;
+      letter-spacing: 1px;
+      font-weight: 700;
       margin-bottom: 3em;
     }
 

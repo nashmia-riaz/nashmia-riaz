@@ -9,7 +9,7 @@
   .controller('contactController', contactController);
 
   aboutController.$inject = ['$scope'];
-  projectsController.$inject = ['$scope'];
+  projectsController.$inject = ['$scope', '$timeout'];
   experienceController.$inject = ['$scope'];
   contactController.$inject = ['$scope'];
   defaultController.$inject = ['$scope'];
