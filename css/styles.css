@@ -133,12 +133,22 @@ h3{
   width: 200px;
   height: 200px;
   margin-top: -20px;
+  opacity: 0;
+  animation: 1s fadeIn;
+  animation-fill-mode: forwards;
 }
 .picture img{
   width: 200px;
   margin-left: 20px;
   margin-top: 20px;
   box-shadow: 5px 5px 5px rgba(0,0,0,0.5);
+
+  /* animation: 0.75s fadeInLeft; */
+}
+.name{
+  opacity: 0;
+  animation: 1s fadeIn 0.25s;
+  animation-fill-mode: forwards;
 }
 .icon-holder a{
   display: inline;
@@ -225,22 +235,27 @@ div.download:hover > a{
 .projects-holder{
   overflow-x:scroll;
   overflow-y: hidden;
+
+  opacity: 0;
+  animation: 1.75s fadeIn 1s;
+  animation-fill-mode: forwards;
 }
 /* width */
 ::-webkit-scrollbar {
-    height: 5px;
+    height: 0.5em;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
     background: #4e4e50;
-    border-radius: 5px;
+        height: 0.5em;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
     background: #6f2232;
-    border-radius: 5px;
+    height: 0.5em;
+    transition: 0.5s;
 }
 
 /* Handle on hover */
@@ -283,6 +298,9 @@ div.download:hover > a{
   background-image: linear-gradient(to left,#950740, #c3073f);
   color: #1a1a1d;
 }
+/* .project{
+  animation: 1.25s fadeIn 0.75s;
+} */
 .projectPrev{
   position: absolute;
   top: 0;
@@ -387,6 +405,12 @@ h2{
 .details{
   font-style: italic;
 }
+.experience-ul, .experienceHeading{
+  animation: 1s fadeInRight;
+}
+.education-ul, .educationHeading{
+  animation: 1s fadeInLeft;
+}
 ul.education-ul>li, ul.experience-ul>li{
   border-bottom: 1px solid #4e4e50;
   padding-bottom: 10px;
@@ -433,11 +457,14 @@ textarea{
   margin-top: 20px;
   color: #c3073f;
 }
-.send-button:hover{
+.send-button:hover,
+button.send-button:focus{
   background-color: #c3073f;
-  /* padding: 15px; */
   color:#1a1a1d;
+  border: 1px solid #c3073f;
+  outline: 0!important;
 }
+
 .send-button>i{
   transition: 0.5s;
   margin-right: 10px;
@@ -446,6 +473,10 @@ textarea{
 .send-button:hover>i{
   color:#1a1a1d;
 }
+.send-button:focus>i{
+  animation: 0.5s fadeOutRight;
+  animation-fill-mode: forwards;
+}
 .form-icon{
   margin-right: 10px;
   position: relative;
@@ -453,6 +484,8 @@ textarea{
 .contactHeader{
   text-align: center;
   margin-bottom: 20px;
+
+  animation: 1s fadeInUp;
 }
 .form-icon.message-icon>i{
   position: absolute;
@@ -462,6 +495,12 @@ textarea{
   margin-right: 10px;
   /* border: 2px solid red; */
 }
+form>div{  opacity: 0; animation: 1s fadeInUp; animation-fill-mode: forwards; }
+form>div:nth-child(1){ animation-delay: 0.25s; }
+form>div:nth-child(2){ animation-delay: 0.50s; }
+form>div:nth-child(3){ animation-delay: 0.75s; }
+form>div:nth-child(4){ animation-delay: 1.00s; }
+
 @media only screen and (max-width: 1200px) {
     .child-center{
       width: 65%;
