@@ -182,7 +182,8 @@ div.download{
 }
 div.download>a{
   color: #c3073f;
-  font-family: 'Open Sans Light', sans-serif;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
 }
 div.download:hover{
   background-color: #c3073f;

@@ -4,7 +4,19 @@ function projectsController($scope, $timeout) {
   }
 
   $scope.projects=[{
-    image:"8.png",
+    image:"10.png",
+    name:"SOPlayer Logo",
+    link:"https://www.behance.net/gallery/71286167/SOPlayer-Logo-Business-Cards",
+    description:"A logo done for an online video player that supports multiple platforms.",
+    category:"graphic-design"},
+
+    {image:"9.png",
+      name:"Logofolio",
+      link:"https://www.behance.net/gallery/70838699/Logofolio",
+      description:"Various logos I've done over the past year or so for different companies. Some were just ideas while other ended up being finalised.",
+      category:"graphic-design"},
+
+    {image:"8.png",
     name:"App Design: Am Sporty",
     link:"https://www.behance.net/gallery/69738257/App-Design-Am-Sporty",
     description:"A series of app screens designed as part of a freelancing gig. Am Sporty was an AR sports app that was supposed to be the 'it' hub for everything related to sports. The colors to be used were red and black and that's all that the client specified.",
