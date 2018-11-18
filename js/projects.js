@@ -4,7 +4,26 @@ function projectsController($scope, $timeout) {
   }
 
   $scope.projects=[{
-    image:"10.png",
+    image:"13.png",
+    name:"Animated Banner for Waterz",
+    link:"https://www.behance.net/gallery/72735225/Animated-Banner-Waterz",
+    description:"This was an animated banner done to bring some color and life to the site for Waterz, a service in the UK that aims to reduce plastic water bottle usage by installing refilling stations everywhere.",
+    category:"graphic-design"},
+
+    {
+    image:"12.png",
+    name:"Becoming Beautiful Site",
+    link:"http://becomingbeautiful.us",
+    description:"The site was designed and developed for a children's book author, who wrote a book called Becoming Beautiful to inspire young girls.",
+    category:"other"},
+
+    {image:"11.png",
+    name:"GGPrizes Logo",
+    link:"https://www.behance.net/gallery/72365439/Logo-Design-GGPrizes",
+    description:"GGPrizes is a brand that does give aways for gamers, mainly Fortnite players. This was a really fun project and the client was very helpful in communicating what he wanted.",
+    category:"graphic-design"},
+
+    {image:"10.png",
     name:"SOPlayer Logo",
     link:"https://www.behance.net/gallery/71286167/SOPlayer-Logo-Business-Cards",
     description:"A logo done for an online video player that supports multiple platforms.",
