@@ -53,6 +53,25 @@ h3{
   font-size: 1.2em;
   /* letter-spacing: 2px; */
 }
+
+h5{
+  font-weight: 700;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.8em;
+  margin-top: 20px;
+  text-transform: uppercase;
+  color: #c3073f;
+}
+
+.rights > h5{
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  color: #353535;
+  text-transform: none;
+  transform: translate(-50%, 0%);
+}
+
 .navbar-brand>img{
   margin-top: none!important;
   width:20px;
@@ -122,6 +141,10 @@ h3{
   margin:0 auto;
   text-align: center;
   display: block;
+}
+
+h5{
+
 }
 
 .picture-outline{
