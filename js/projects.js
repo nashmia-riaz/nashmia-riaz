@@ -4,18 +4,38 @@ function projectsController($scope, $timeout) {
   }
 
   $scope.projects=[{
+    image:"14.png",
+    name:"Floopy Birdie",
+    link:"https://nashmia-riaz.github.io/kin-test-game/",
+    description:"A game inspired from Flappy Bird, Floopy Birdie integrates Kin SDK with the game along with additional features such as the ability to revive player after death.",
+    category:"game-development"},
+
+    {
+      image:"Merkurdrome.png",
+      name:"Logo Design | Merkurdrome",
+      link:"https://www.behance.net/gallery/77445117/Logo-Design-MERKURDROME",
+      description:"Logo design and branding brief done for Merkurdrome - a nightclub near Berlin themed after the planet Mercury.",
+      category:"graphic-design"},
+
+    {
+    image:"bldup-03.png",
+    name:"Web Design | In The Know",
+    link:"https://www.behance.net/gallery/74131263/Web-Design-In-The-Know",
+    description:"A web redesign concept proposed for the site In The Know. Site includes any colors of the brand and their app.",
+    category:"graphic-design"},
+
+    {image:"5.png",
+    name:"Snek",
+    link:"https://nashmia-riaz.github.io/Snek/",
+    description:"A multiplayer take on the class Snake game, Snek was built from scratch on Unity. Originally intended to be multiplayer, Snek was later kept to local multiplayer due to limitations of UNet. The game allows up to 4 players to play at once against each other.",
+    category:"game-development"},
+
+    {
     image:"13.png",
     name:"Animated Banner for Waterz",
     link:"https://www.behance.net/gallery/72735225/Animated-Banner-Waterz",
     description:"This was an animated banner done to bring some color and life to the site for Waterz, a service in the UK that aims to reduce plastic water bottle usage by installing refilling stations everywhere.",
     category:"graphic-design"},
-
-    {
-    image:"12.png",
-    name:"Becoming Beautiful Site",
-    link:"http://becomingbeautiful.us",
-    description:"The site was designed and developed for a children's book author, who wrote a book called Becoming Beautiful to inspire young girls.",
-    category:"other"},
 
     {image:"11.png",
     name:"GGPrizes Logo",
@@ -41,23 +61,11 @@ function projectsController($scope, $timeout) {
     description:"A series of app screens designed as part of a freelancing gig. Am Sporty was an AR sports app that was supposed to be the 'it' hub for everything related to sports. The colors to be used were red and black and that's all that the client specified.",
     category:"graphic-design"},
 
-    {image:"7.png",
-    name:"Ad Design: Trains From A-Z",
-    link:"https://www.behance.net/gallery/69740887/Ad-Flyer-Design-Trains-From-A-Z",
-    description:"As part of a freelancing job, this was a series of ads done for children's book called \"Trains From A-Z\". The client wanted something that was colorful and fun, all the while sleek and professional. The ads were meant to be used on social media.",
-    category:"graphic-design"},
-
     {image:"6.png",
     name:"Web Design: Am Sporty",
     link:"https://www.behance.net/gallery/69718371/Web-Design-Am-Sporty",
     description:"The design for a website for Am Sporty; an AR sports app. The site was small and client wanted to keep the focus on the app and it's AR feature. The colors were same as the app - red and black. ",
     category:"graphic-design"},
-
-    {image:"5.png",
-    name:"Snek",
-    link:"https://nashmia-riaz.github.io/Snek/",
-    description:"A multiplayer take on the class Snake game, Snek was built from scratch on Unity. Originally intended to be multiplayer, Snek was later kept to local multiplayer due to limitations of UNet. The game allows up to 4 players to play at once against each other.",
-    category:"game-development"},
 
     {image:"4.png",
     name:"UI Animations",
