@@ -1,6 +1,11 @@
 function experienceController($scope) {
   $scope.ClickNavbarLink(2);
   $scope.educations = [{
+      institute:"City, University of London",
+      date:"2019-2020",
+      details:"Masters in Computer Games Technology"
+    },
+    {
       institute:"NUST",
       date:"2014-2018",
       details:"Bachelors in Software Engineering"
@@ -9,11 +14,6 @@ function experienceController($scope) {
       institute: "Beaconhouse School System",
       date:"2012-2014",
       details:"A levels"
-    },
-    {
-      institute: "Beaconhouse School System",
-      date:"2009-2012",
-      details:"O levels"
     }];
 
     $scope.experiences = [{

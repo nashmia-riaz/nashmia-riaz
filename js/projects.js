@@ -3,12 +3,31 @@ function projectsController($scope, $timeout) {
     $scope.ClickNavbarLink(1);
   }
 
-  $scope.projects=[{
-    image:"14.png",
-    name:"Floopy Birdie",
-    link:"https://nashmia-riaz.github.io/kin-test-game/",
-    description:"A game inspired from Flappy Bird, Floopy Birdie integrates Kin SDK with the game along with additional features such as the ability to revive player after death.",
-    category:"game-development"},
+  $scope.projects=[
+    {
+      image:"Damage Control.png",
+      name:"Game Development | Damage Control",
+      link:"https://blastinghavoc.github.io/DamageControl/",
+      description:"For Global Game Jam 2020, a game about the theme 'repair' where you follow the hero around trying to clean up his mess. Made using Unity.",
+      category:"game-development"},
+  {
+      image:"Stack It Up.png",
+      name:"Game Development | Stack It Up",
+      link:"https://nashmia-riaz.github.io/StackItUp/",
+      description:"A game made as a marketing tool for a fictional company, Stack It Up is a simplified version of Overcooked for mobile. Get in the antics of the burger making world! Made with Unity.",
+      category:"game-development"},
+  {
+      image:"Perdita.png",
+      name:"Game Development | Perdita",
+      link:"https://github.com/nashmia-riaz/Perdita",
+      description:"A horror game with procedurally-generated maps and a smart A* based AI. Made in OpenGL and C++.",
+      category:"game-development"},
+  {
+      image:"14.png",
+      name:"Floopy Birdie",
+      link:"https://nashmia-riaz.github.io/kin-test-game/",
+      description:"A game inspired from Flappy Bird, Floopy Birdie integrates Kin SDK with the game along with additional features such as the ability to revive player after death.",
+      category:"game-development"},
 
     {
       image:"Merkurdrome.png",
