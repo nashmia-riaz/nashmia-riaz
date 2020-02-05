@@ -14,7 +14,7 @@ function projectsController($scope, $timeout) {
       image:"Stack It Up.png",
       name:"Game Development | Stack It Up",
       link:"https://nashmia-riaz.github.io/StackItUp/",
-      description:"A game made as a marketing tool for a fictional company, Stack It Up is a simplified version of Overcooked for mobile. Get in the antics of the burger making world! Made with Unity.",
+      description:"A game made as a marketing tool for a fictional company, Stack It Up is a simplified version of Overcooked for mobile. Get in the antics of the burger making world! Designed and developed from scratch, made with Unity.",
       category:"game-development"},
   {
       image:"Perdita.png",
