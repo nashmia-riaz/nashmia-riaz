@@ -29,6 +29,7 @@ a:focus{
     background: url(../images/Preloader.gif) center no-repeat #1f2030;
 }
 body{
+  border: #cc1646 8px solid;
   background-color: #1f2030;
   font-family:'Monsterrat', sans-serif;
   color: #babfde;
