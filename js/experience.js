@@ -9,27 +9,17 @@ function experienceController($scope) {
       institute:"NUST",
       date:"2014-2018",
       details:"Bachelors in Software Engineering"
-    },
-    {
-      institute: "Beaconhouse School System",
-      date:"2012-2014",
-      details:"A levels"
     }];
 
     $scope.experiences = [{
-      organisation:"Freelancer",
-      date:"2017 - current",
-      details:"Working as a freelance graphic designer and game developer"
+      organisation:"Purramid Learning",
+      date:"2020 - Current",
+      details:"Lead Developer"
     },
     {
-      organisation:"Webtronix",
-      date:"Summer Intern 2017",
-      details:"Web intern for summer of 2017, worked on ASP.net"
-    },
-    {
-      organisation:"Diode",
-      date:"2015-2017",
-      details:"Graphic Designer"
+      organisation:"Knockout Nation",
+      date:"2018-2019",
+      details:"Lead Developer"
     }];
 
     $scope.$on('$viewContentLoaded', function(){
