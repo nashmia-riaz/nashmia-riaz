@@ -12,13 +12,13 @@ function experienceController($scope) {
     }];
 
     $scope.experiences = [{
-      organisation:"Purramid Learning",
-      date:"2020 - Current",
-      details:"Lead Developer"
+      organisation:"Filament Games",
+      date:"March 2023 - November 2023",
+      details:"Consultant Game Engineer II"
     },
     {
-      organisation:"Knockout Nation",
-      date:"2018-2019",
+      organisation:"Purramid Learning",
+      date:"2020 - Current",
       details:"Lead Developer"
     }];
 
