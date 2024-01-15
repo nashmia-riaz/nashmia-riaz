@@ -19,6 +19,13 @@ a:focus{
   text-decoration: none!important;
   outline: none;
 }
+#about-me{
+  color: #8494b5;
+}
+#link-icons{
+  margin-top: -1.2em!important;
+  padding-top: 0!important;
+}
 .se-pre-con {
     position: fixed;
     left: 0px;
